@@ -1,0 +1,15 @@
+# Local Python environment managed by uv
+/.venv/
+/.local/
+/.cache/
+
+# West workspace metadata and upstream source dependencies
+/.west/
+/zephyr/
+/modules/
+/bootloader/
+/tools/
+
+# Zephyr/CMake build output
+/build/
+**/build/
