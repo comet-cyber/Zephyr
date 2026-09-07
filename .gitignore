@@ -2,12 +2,14 @@
 /.venv/
 /.local/
 /.cache/
+/.sdk/
 
 # West workspace metadata and upstream source dependencies
 /.west/
 /zephyr/
 /modules/
 /bootloader/
+/doc/
 /tools/
 
 # Zephyr/CMake build output
