@@ -1,0 +1,30 @@
+/*
+ * Titan Mini 板级默认已经够用：
+ *   - 控制台：SCI2 / UART2，P801=TX、P802=RX，115200
+ *   - RGB LED：gpio-leds 的 led1/led2/led3（P108 绿、P109 红、P110 蓝，低电平点亮）
+ *
+ * 本 overlay 只做两件板文件不会替应用做的事：
+ *   1. 给三颗灯起应用侧别名，main.c 用颜色名去取
+ *   2. 关掉 Option-setting / OTP 节点，避免链接进配置区（下载红线）
+ *
+ * 不要在这里重配 UART，也不要把这三颗灯改成 PWM。
+ * 官方 FSP PWM 例程用的是 P714（GPT12），不是板上 RGB。
+ */
+
+/ {
+	aliases {
+		red-led = &led2;
+		green-led = &led1;
+		blue-led = &led3;
+	};
+};
+
+&option_setting_ofs0 { status = "disabled"; };
+&option_setting_ofs2 { status = "disabled"; };
+&option_setting_sas { status = "disabled"; };
+&option_setting_ofs1_sec { status = "disabled"; };
+&option_setting_ofs3_sec { status = "disabled"; };
+&option_setting_ofs1_sel { status = "disabled"; };
+&option_setting_ofs3_sel { status = "disabled"; };
+&option_setting_bps_sec { status = "disabled"; };
+&option_setting_otp_pbps_sec { status = "disabled"; };

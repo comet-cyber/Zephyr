@@ -22,7 +22,14 @@
 
 - 先安全 hello/blinky，再 DT/GPIO，再按键，再树外应用。
 - 双核、MCUboot、以太网、NPU 不作为入门前置。
-- 长期应用放到 `F:\zephyr\apps\`，不在上游 `samples/` 里长出项目。
+- 长期学习草稿可以放 `F:\zephyr\apps\`（现有 `rgb_led`），不在上游 `samples/` 里长出项目。
+- **ECSDC 比赛固件不放本仓。** 树外应用根目录为 `F:\ECSDC\firmware`，west/SDK 仍用本工作区。详见 `F:\ECSDC\.agents\DECISIONS.md`。
+
+## 2026-10-03  rgb_led 跟板级默认走
+
+- `F:\zephyr\apps\rgb_led` 不再改 UART：控制台用板默认 UART2 / SCI2（P801/P802）。
+- 板上 RGB 是 GPIO 共阳灯（P108 绿、P109 红、P110 蓝），不是 PWM。应用用 `gpio-leds` + 颜色别名，不重配 GPT。
+- overlay 只保留：颜色别名、关掉 `option_setting_*`。官方 FSP PWM 例程用的是 P714，不要和 RGB 灯混为一谈。
 
 ## 待决（先不要猜）
 

@@ -1,6 +1,6 @@
 # STATUS
 
-> 更新日期：2026-09-22
+> 更新日期：2026-10-03
 
 ## 项目
 
@@ -71,10 +71,13 @@ Titan Mini 裸机系统监视器仍在：
 3. 备份当前 Code MRAM 后，再请求用户批准第一次 `west flash`。
 4. 用 UART2 或 LED1 做板上验收。
 
+## 树外应用
+
+`F:\zephyr\apps\rgb_led` 已按板级默认改过（2026-10-03）：UART2 控制台 + GPIO RGB，overlay 只关 OFS/OTP 并补颜色别名。构建通过，hex 未出现 `0x02C9` / `0x02E1` 扩展地址。未下载、未板上验证。
+
 ## 未做
 
 - 板上运行 Zephyr
 - 双核 CM33
 - MCUboot
 - 以太网 / SD / USB
-- 树外正式应用仓库结构（`apps/` 尚未创建）

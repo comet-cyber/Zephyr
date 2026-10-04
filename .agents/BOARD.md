@@ -46,9 +46,9 @@
 
 | 节点 | 引脚 | CM85 alias | 备注 |
 | --- | --- | --- | --- |
-| `led1` | P108 `ioport1 8` | `led0` | 裸机 Stage 1 验证过的绿 LED |
-| `led2` | P109 `ioport1 9` | blinky overlay 里的 `led1` | |
-| `led3` | P110 `ioport1 10` | blinky overlay 里的 `led2` | |
+| `led1` | P108 `ioport1 8` | `led0` | RGB 绿色通道，低有效 |
+| `led2` | P109 `ioport1 9` | blinky overlay 里的 `led1` | RGB 红色通道，低有效 |
+| `led3` | P110 `ioport1 10` | blinky overlay 里的 `led2` | RGB 蓝色通道，低有效 |
 | `button0` / SW1 | P201 `ioport2 1` | `sw0` | 文档：USER/BOOT，port IRQ4 |
 | `button1` / SW2 | P008 `ioport0 8` | CM33 的 `sw0` | CM85 DTS 里默认 disabled |
 
