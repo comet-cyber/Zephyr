@@ -1,0 +1,3 @@
+west build -b ra8p1_titan_mini/r7ka8p1kflcac/cm85 F:\zephyr_blinky\blinky -d F:\zephyr_blinky\blinky\build
+west flash -d F:\zephyr_blinky\blinky\build --runner jlink -- --commander "D:\Program Files\IAR\arm\bin\jlink.exe"
+west build -t menuconfig -d F:\zephyr_blinky\blinky\build
