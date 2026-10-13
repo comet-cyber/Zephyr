@@ -3,6 +3,7 @@
 /.local/
 /.cache/
 /.sdk/
+/toolchains/
 
 # West workspace metadata and upstream source dependencies
 /.west/

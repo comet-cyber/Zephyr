@@ -1,6 +1,6 @@
 # DECISIONS
 
-> 更新日期：2026-09-22
+> 更新日期：2026-10-06
 
 记录已经选定、后续默认遵守的决定。要改这些决定，先更新本文件和 `STATUS.md`。
 
@@ -24,6 +24,13 @@
 - 双核、MCUboot、以太网、NPU 不作为入门前置。
 - 长期学习草稿可以放 `F:\zephyr\apps\`（现有 `rgb_led`），不在上游 `samples/` 里长出项目。
 - **ECSDC 比赛固件不放本仓。** 树外应用根目录为 `F:\ECSDC\firmware`，west/SDK 仍用本工作区。详见 `F:\ECSDC\.agents\DECISIONS.md`。
+
+## 2026-10-06  用 rgb_led 当唯一学习载体
+
+- Titan Mini Zephyr 入门不再平行养 sample 工程。Z0–Z8 都加在 `F:\zephyr\apps\rgb_led` 上。
+- 阶段顺序改为：守门 → 上板看见灯/串口 → 读懂 DT → SW1 → 收口树外骨架 → 线程 → 自定义 shell → 日志 →（有需求再）I2C。
+- `prj.conf` 里已经打开的 shell 不算 Z6 完成；Z6 的验收是应用命令能改灯。
+- 以太网 / MQTT / WireGuard 继续只在 ECSDC 轨做，不写进 rgb_led。
 
 ## 2026-10-03  rgb_led 跟板级默认走
 

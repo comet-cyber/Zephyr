@@ -2,5 +2,12 @@
     "terminal.integrated.defaultProfile.windows": "Zephyr IDE Terminal",
     "C_Cpp.default.compileCommands": "${workspaceFolder}/.vscode/compile_commands.json",
     "cmake.configureOnOpen": false,
-    "cmake.sourceDirectory": "F:/zephyr/zephyr"
+    "cmake.sourceDirectory": "F:/zephyr/zephyr",
+    "zephyr-ide.toolchainDirectory": "F:/zephyr/toolchains",
+    "zephyr-ide.venvFolder": "f:\\zephyr\\.venv",
+    "zephyr-ide.zephyrBaseOverride": "f:\\zephyr\\zephyr",
+    "zephyr-ide.buildBeforeFlash": true,
+    "terminal.integrated.env.windows": {
+        "ZEPHYR_SDK_INSTALL_DIR": "F:/zephyr/toolchains/zephyr-sdk-1.0.1"
+    }
 }

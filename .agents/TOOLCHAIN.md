@@ -1,6 +1,6 @@
 # TOOLCHAIN
 
-> 更新日期：2026-09-22
+> 更新日期：2026-10-12
 
 ## 环境
 
@@ -9,7 +9,7 @@
 ```powershell
 Set-Location F:\zephyr
 & F:\zephyr\.venv\Scripts\Activate.ps1
-$env:ZEPHYR_SDK_INSTALL_DIR = 'F:\zephyr\.sdk'
+$env:ZEPHYR_SDK_INSTALL_DIR = 'F:\zephyr\toolchains\zephyr-sdk-1.0.1'
 $env:ZEPHYR_BASE = 'F:\zephyr\zephyr'
 ```
 
@@ -17,13 +17,15 @@ $env:ZEPHYR_BASE = 'F:\zephyr\zephyr'
 | --- | --- |
 | Python | `F:\zephyr\.venv`，3.12.14 |
 | west | 1.5.0，`F:\zephyr\.venv\Scripts\west.exe` |
-| SDK | `F:\zephyr\.sdk`，sdk_version `1.0.1` |
-| 交叉编译器 | `F:\zephyr\.sdk\gnu\arm-zephyr-eabi\bin\arm-zephyr-eabi-gcc.exe` |
+| SDK | `F:\zephyr\toolchains\zephyr-sdk-1.0.1`，sdk_version `1.0.1`，官方 Windows x86_64 完整 GNU 包（35 套工具链） |
+| 交叉编译器 | `F:\zephyr\toolchains\zephyr-sdk-1.0.1\gnu\arm-zephyr-eabi\bin\arm-zephyr-eabi-gcc.exe` |
 | CMake/Ninja | 使用 SDK/hosttools 与当前 PATH；不要改去用 STM32CubeCLT 的 CMake 除非构建失败时再查 |
 | 包装 Git | `F:\zephyr` → `comet-cyber/Zephyr` |
 | 上游 Zephyr git | `F:\zephyr\zephyr`，当前 `4c6971ba90a` |
 
-VS Code 工作区已推荐 `ms-vscode.cpptools` 与 `kylemicallefbonnici.dts-lsp`，并设置了 Zephyr IDE Terminal。`zephyr-ide.json` 里 `projects` 仍为空。
+VS Code 工作区已推荐 `ms-vscode.cpptools` 与 `kylemicallefbonnici.dts-lsp`，并设置了 Zephyr IDE Terminal。`zephyr-ide.json` 已登记 `rgb_led`，构建配置尚未登记。
+
+IDE for Zephyr 的 `zephyr-ide.toolchainDirectory` 指向 SDK 管理父目录 `F:/zephyr/toolchains`。新终端的 `ZEPHYR_SDK_INSTALL_DIR` 和用户级 SDK 环境变量均指向上述 SDK 本体；CMake 用户包登记同步为新目录。更新后需完全退出并重开 VS Code，让扩展进程也继承新环境变量。新 SDK 来源与构建日志在 `F:\ai_lab\zephyr-sdk-reinstall`。
 
 ## 常用命令
 

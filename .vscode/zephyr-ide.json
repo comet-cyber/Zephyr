@@ -1,3 +1,63 @@
 {
-  "projects": {}
+  "projects": {
+    "rgb_led": {
+      "relPath": "apps/rgb_led",
+      "name": "rgb_led",
+      "buildConfigs": {},
+      "twisterConfigs": {},
+      "confFiles": {
+        "config": [],
+        "overlay": []
+      }
+    },
+    "blinky": {
+      "relPath": "../zephyr_blinky/blinky",
+      "name": "blinky",
+      "buildConfigs": {
+        "build/ra8p1_titan_mini/r7ka8p1kflcac/cm85": {
+          "relBoardDir": "../zephyr_blinky/blinky/boards",
+          "relBoardSubDir": "../../../zephyr/zephyr/boards/ruiside/ra8p1_titan_mini",
+          "board": "ra8p1_titan_mini/r7ka8p1kflcac/cm85",
+          "name": "build/ra8p1_titan_mini/r7ka8p1kflcac/cm85",
+          "compilerOptimization": "debug",
+          "westBuildArgs": [],
+          "westBuildCMakeArgs": [
+            "-DCONFIG_DEBUG_OPTIMIZATIONS=y",
+            "-DCONFIG_DEBUG_THREAD_INFO=y"
+          ],
+          "confFiles": {
+            "config": [],
+            "overlay": []
+          }
+        }
+      },
+      "twisterConfigs": {},
+      "confFiles": {
+        "config": [],
+        "overlay": []
+      }
+    }
+  },
+  "runnerProfiles": [
+    {
+      "name": "Jlink_IAR",
+      "flash": {
+        "kind": "west-flash",
+        "runner": "jlink",
+        "extraArgs": [
+          "--commander",
+          "D:\\Program Files\\IAR\\arm\\bin\\jlink.exe",
+          "--dev-id=601012527",
+          "--iface=swd",
+          "--speed=1000"
+        ]
+      },
+      "debug": {
+        "kind": "auto"
+      },
+      "attach": {
+        "kind": "auto"
+      }
+    }
+  ]
 }
