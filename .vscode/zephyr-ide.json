@@ -3,7 +3,24 @@
     "rgb_led": {
       "relPath": "apps/rgb_led",
       "name": "rgb_led",
-      "buildConfigs": {},
+      "buildConfigs": {
+        "build/ra8p1_titan/r7ka8p1kflcac/cm85": {
+          "relBoardSubDir": "ruiside/ra8p1_titan",
+          "board": "ra8p1_titan/r7ka8p1kflcac/cm85",
+          "name": "build/ra8p1_titan/r7ka8p1kflcac/cm85",
+          "compilerOptimization": "debug",
+          "westBuildArgs": [],
+          "westBuildCMakeArgs": [
+            "-DCONFIG_DEBUG_OPTIMIZATIONS=y",
+            "-DCONFIG_DEBUG_THREAD_INFO=y"
+          ],
+          "confFiles": {
+            "config": [],
+            "overlay": []
+          },
+          "activeProfile": "Ra8p1 Titan Board"
+        }
+      },
       "twisterConfigs": {},
       "confFiles": {
         "config": [],
@@ -50,6 +67,22 @@
           "--dev-id=601012527",
           "--iface=swd",
           "--speed=1000"
+        ]
+      },
+      "debug": {
+        "kind": "auto"
+      },
+      "attach": {
+        "kind": "auto"
+      }
+    },
+    {
+      "name": "Ra8p1 Titan Board",
+      "flash": {
+        "kind": "west-flash",
+        "runner": "jlink",
+        "extraArgs": [
+          "--commander=\\\"D:/Program Files/IAR/arm/bin/jlink.exe\\\""
         ]
       },
       "debug": {

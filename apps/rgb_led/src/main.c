@@ -103,7 +103,7 @@ int main(void)
 				printk("Error: RGB write failed (%d)\n", ret);
 				return 0;
 			}
-			k_msleep(800);
+			k_msleep(80);
 		}
 	}
 
