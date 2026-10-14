@@ -27,15 +27,14 @@
         "overlay": []
       }
     },
-    "blinky": {
-      "relPath": "../zephyr_blinky/blinky",
-      "name": "blinky",
+    "wireguard": {
+      "relPath": "apps/wireguard",
+      "name": "wireguard",
       "buildConfigs": {
-        "build/ra8p1_titan_mini/r7ka8p1kflcac/cm85": {
-          "relBoardDir": "../zephyr_blinky/blinky/boards",
-          "relBoardSubDir": "../../../zephyr/zephyr/boards/ruiside/ra8p1_titan_mini",
-          "board": "ra8p1_titan_mini/r7ka8p1kflcac/cm85",
-          "name": "build/ra8p1_titan_mini/r7ka8p1kflcac/cm85",
+        "build/ra8p1_titan/r7ka8p1kflcac/cm85": {
+          "relBoardSubDir": "ruiside/ra8p1_titan",
+          "board": "ra8p1_titan/r7ka8p1kflcac/cm85",
+          "name": "build/ra8p1_titan/r7ka8p1kflcac/cm85",
           "compilerOptimization": "debug",
           "westBuildArgs": [],
           "westBuildCMakeArgs": [
@@ -44,8 +43,14 @@
           ],
           "confFiles": {
             "config": [],
-            "overlay": []
-          }
+            "overlay": [
+              {
+                "path": "apps/wireguard/boards/ra8p1_titan_r7ka8p1kflcac_cm85.overlay",
+                "extra": false
+              }
+            ]
+          },
+          "activeProfile": "Ra8p1 Titan Board"
         }
       },
       "twisterConfigs": {},

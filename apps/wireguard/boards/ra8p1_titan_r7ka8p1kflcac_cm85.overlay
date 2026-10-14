@@ -1,0 +1,12 @@
+
+
+
+&option_setting_ofs0 { status = "disabled"; };
+&option_setting_ofs2 { status = "disabled"; };
+&option_setting_sas { status = "disabled"; };
+&option_setting_ofs1_sec { status = "disabled"; };
+&option_setting_ofs3_sec { status = "disabled"; };
+&option_setting_ofs1_sel { status = "disabled"; };
+&option_setting_ofs3_sel { status = "disabled"; };
+&option_setting_bps_sec { status = "disabled"; };
+&option_setting_otp_pbps_sec { status = "disabled"; };
