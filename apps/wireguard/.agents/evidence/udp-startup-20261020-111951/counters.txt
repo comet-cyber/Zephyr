@@ -1,0 +1,17 @@
+﻿
+NIC: Realtek PCIe GbE Family Controller
+ ID 名称                         计数器      方向               数据包             字节 | 方向               数据包             字节 
+ -- --                         ---      --               ---             -- | --               ---             -- 
+161 Realtek PCIe GbE Family... Lower    Rx                 2            120 | Tx                 1             42 
+ 16 Realtek PCIe GbE Family... Upper    Rx                 2            120 | Tx                 1             42 
+                                                                            |                                     
+ 55 WFP Native Filter          Lower    Rx                 2            120 | Tx                 1             42 
+                               Upper    Rx                 2            120 | Tx                 1             42 
+ 54 VirtualBox NDIS Light-W... Lower    Rx                 2            120 | Tx                 1             42 
+                               Upper    Rx                 2            120 | Tx                 1             42 
+ 52 WFP 802.3 Filter           Lower    Rx                 2            120 | Tx                 1             42 
+                               Upper    Rx                 2            120 | Tx                 1             42 
+                                                                            |                                     
+117 TCPIP                      丢弃       Rx                 3             92 | Tx                 0              0 
+                               Lower    Rx                 2            120 | Tx                 1             42 
+

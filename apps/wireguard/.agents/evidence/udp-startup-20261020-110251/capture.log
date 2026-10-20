@@ -1,0 +1,40 @@
+﻿鏁版嵁鍖呯瓫閫夊櫒:
+    鏃?
+宸叉坊鍔犵瓫閫夊櫒銆?
+
+璁板綍绋嬪簭鍙傛暟:
+    璁板綍绋嬪簭鍚嶇О:        PktMon
+    鏃ュ織妯″紡:       寰幆
+    鏃ュ織鏂囦欢:           F:\zephyr\apps\wireguard\.agents\evidence\udp-startup-20261020-110251\packets.etl
+    鏈€澶ф枃浠跺ぇ灏?      16 MB
+    宸茬敤鍐呭瓨:        768 MB
+
+鏀堕泦鐨勬暟鎹?
+    鏁版嵁鍖呰鏁板櫒锛屾暟鎹寘鎹曡幏
+
+鎹曡幏绫诲瀷:
+    鎵€鏈夋暟鎹寘
+
+鐩戣鐨勭粍浠?
+    鍏ㄩ儴
+
+鏁版嵁鍖呯瓫閫夊櫒:
+     # 鍚嶇О             MAC 鍦板潃            
+     - --             ------            
+     1 ZephyrTitanUdp 74-90-50-01-02-03 
+11:02:55.774 READY: capturing Titan traffic for 90 seconds.
+姝ｅ湪鍒锋柊鏃ュ織...
+姝ｅ湪鍚堝苟鍏冩暟鎹?..
+鏃ュ織鏂囦欢: F:\zephyr\apps\wireguard\.agents\evidence\udp-startup-20261020-110251\packets.etl (鏃犱簨浠朵涪澶?
+姝ｅ湪澶勭悊...
+
+鏁版嵁鍖呮€绘暟:       0
+鏁版嵁鍖呬涪寮冭鏁?   0
+鏍煎紡鍖栨暟鎹寘鏁?   0
+宸茶缃牸寮忕殑鏂囦欢:      F:\zephyr\apps\wireguard\.agents\evidence\udp-startup-20261020-110251\packets.pcapng
+姝ｅ湪澶勭悊...
+
+宸叉牸寮忓寲浜嬩欢鏁?    3
+宸茶缃牸寮忕殑鏂囦欢:      F:\zephyr\apps\wireguard\.agents\evidence\udp-startup-20261020-110251\packets.txt
+宸插垹闄ゆ墍鏈夌瓫閫夊櫒銆?
+11:04:29.060 DONE

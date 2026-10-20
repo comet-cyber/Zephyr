@@ -1,0 +1,20 @@
+[
+  {
+    "Path": "F:\\zephyr\\apps\\wireguard\\src\\main.c",
+    "LastWriteTime": "2026-10-20T16:10:32.1665880+08:00",
+    "Length": 1965,
+    "SHA256": "72DE93100A826F3E93BF3F6DAD8C0852382C5C85533D6C1C9E9953668EE953C9"
+  },
+  {
+    "Path": "F:\\zephyr\\apps\\wireguard\\build\\ra8p1_titan\\r7ka8p1kflcac\\cm85\\zephyr\\zephyr.elf",
+    "LastWriteTime": "2026-10-20T12:15:10.3732093+08:00",
+    "Length": 16974288,
+    "SHA256": "E6F361124B14820F6CCFEC1F4E5C6641C983CB420A2BC1F5B91DD0ACF21854C6"
+  },
+  {
+    "Path": "F:\\zephyr\\apps\\wireguard\\build\\ra8p1_titan\\r7ka8p1kflcac\\cm85\\zephyr\\zephyr.hex",
+    "LastWriteTime": "2026-10-20T12:15:10.5264744+08:00",
+    "Length": 847787,
+    "SHA256": "3F6DD048F045CC957ECAC72FF78F21CEC11F1DDC6BFF7155FFBDA4E73D966DD6"
+  }
+]
