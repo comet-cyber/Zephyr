@@ -1,10 +1,11 @@
 # DECISIONS
 
-更新日期：2026-10-14
+更新日期：2026-10-23
 
 ## 已锁
 
 - 开发入口：VS Code IDE for Zephyr 插件；Titan 当前使用 jlink runner 和板载探针 UID 24060501，复用用户已打通的 rgb_led 编译/下载链路。
+- 2026-10-23 下载配置：保留 Titan profile 中的 `--dev-id=24060501 --iface=swd --speed=1000 --pre-script-cmd=connect`，Commander 仍为 IAR 自带 J-Link 8.74。用户已再次确认可下载；`connect` 放在复位/烧录命令之前明确建立连接，尚未证明它是必需项。重新插拔 USB 与调整命令均参与恢复，不能据此认定旧配置错误或板载 J-Link 不适配；暂不拆除已成功使用的参数，也不升级探针固件。
 
 - home：F:\zephyr\apps\wireguard，用户明确指定。
 - MCU/核：已有 RA8P1，Cortex-M85/CPU0 单核；首轮锁定 Titan 大板。

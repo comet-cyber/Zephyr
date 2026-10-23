@@ -87,7 +87,11 @@
         "kind": "west-flash",
         "runner": "jlink",
         "extraArgs": [
-          "--commander=\\\"D:/Program Files/IAR/arm/bin/jlink.exe\\\""
+          "--commander=\\\"D:/Program Files/IAR/arm/bin/jlink.exe\\\"",
+          "--dev-id=24060501",
+          "--iface=swd",
+          "--speed=1000",
+          "--pre-script-cmd=connect"
         ]
       },
       "debug": {

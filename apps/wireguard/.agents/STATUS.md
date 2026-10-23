@@ -1,6 +1,17 @@
 # 当前状态
 
-更新日期：2026-10-20
+更新日期：2026-10-23
+
+## 最新摘要与下次入口（2026-10-23）
+
+- 用户本轮明确确认“我这边也验证了可以下载程序了”，下载问题按已恢复处理。2026-10-22 已有编程/校验 100%、J-Link `O.K.` 和 west 退出码 0 的记录；本轮补充依据为用户确认，未新增下载测试或日志。
+- 当前仍处于 P2 普通 UDP：P1 已完成，最小双向回显已由用户确认成功，接收超时已有日志。编号发送源码已存在；带序号正文的真实收发、回复长度/内容校验、成功/超时/错误计数及至少 100 条验收尚待完成。WireGuard 隧道尚未配置或验收。
+- 下载沿用当前 VS Code Titan profile，保留 `--dev-id=24060501 --iface=swd --speed=1000 --pre-script-cmd=connect`；Commander 仍为 IAR J-Link 8.74。不要重复搭建环境或把下载排障扩成前置课程。
+- 根因表述修正：当时日志卡在 `Connecting to J-Link via USB...`；重新插拔 USB 后再显式连接/下载成功。由于同时改变了 USB 状态和命令流程，尚不能隔离具体诱因，不能据此认定先前配置错误、板载 J-Link 不适配，或 `connect` 是必需项。用户此前已有多次成功下载经历。
+- 本轮只读源码为 `snprintk(message, sizeof(message), "Hello from Titan #%d->", i)`，包含截断检查，`zsock_sendto()` 使用实际 `message_len`，接收仍为两秒超时和正文打印。#1–#9 的当前正文为 21 字节，#10 为 22 字节；历史 19/20 字节预期对应不含 `->` 的旧格式，不直接用于当前源码。本轮未核对 ELF/HEX 内容或板上运行镜像。
+- 下次先在 Windows 启动 `& 'C:\Python314\python.exe' 'F:\zephyr\apps\wireguard\tools\udp_receiver.py' --host 0.0.0.0`，再按 Titan Reset，查看 Windows `Data` 与板端 `reply` 的 `Hello from Titan #1->` 至 `#10->`。确认后再逐步学习回复校验和计数，最后完成 P2 至少 100 条统计；不以发送返回成功代替对端实收。
+- 继续以辅助学习为主：解释 Zephyr API 的参数、返回值和边界，由用户动手修改，再结合日志验收；不重复最小回显或 ping，不直接跳到 WireGuard。
+- 本轮仅保存本地 `.agents` 记录；业务源码、IDE 配置和系统设置均未改动，未构建、下载或提交/推送 Git。以下日期记录保留历史过程，当前入口以本摘要和 INDEX/PLAN 为准。
 
 ## 环境基线
 
@@ -160,3 +171,62 @@
 - 延时有效支持启动阶段的就绪/时序问题，不能表述为 UDP 需要先建立连接。UDP 没有连接建立握手，创建本地 socket 和 sendto 返回成功也不保证对端应用已收到；既有抓包至少确认过一次有效包到达电脑后被 Windows 接收路径丢弃。
 - 教学阶段可以保留当前延时继续收发。后续若要判断对端应用可用，应通过应用层回复确认、超时重试等实际通信结果判断，而非把固定十秒当作 UDP 的协议要求。继续 P2 回显，不再要求重复同一延时实验。
 - 本次收尾仅同步项目记录；未更改业务代码、防火墙或网卡，未接管用户接收进程，未新增抓包、下载或 Git 操作。
+
+## 2026-10-21 Windows UDP 原样回显
+
+- 用户希望通过当前项目逐步学习 Zephyr API，沿普通 UDP 回显继续，每次结合参数、返回值、阻塞与实测结果推进。
+- 前轮 `set receive timeout failed, errno=109` 已查明为 `ENOPROTOOPT`：构建未启用 `CONFIG_NET_CONTEXT_RCVTIMEO`。本地 `sockets_inet.c` 的 `ZSOCK_SO_RCVTIMEO` 分支受此配置控制。用户现已在 `prj.conf` 加入 `CONFIG_NET_CONTEXT_RCVTIMEO=y`，板端源码含两秒接收超时及 `zsock_recvfrom()`；用户报告 Titan 板端已经成功，尚无本轮完整收发日志，不据此宣称端到端回显已验收。
+- 按用户要求修改 `tools/udp_receiver.py`：默认使用同一个 socket 将收到的原始 bytes 回显到发送方的实际 IP/端口，并显示 `Echo` 发送结果；不重新编码显示文本。发送计数仅表示本机 `sendto` 成功，不表示 Titan 已收到。
+- 保留 `--host`、`--port`、持续运行及 Ctrl+C 退出；`--once` 完成回显后退出。新增 `--no-echo` 仅接收，用于对照板端接收超时。
+- 使用 Python 3.14 在隔离回环地址及临时端口完成真实 UDP 验证：文本/空数据报/含 NUL 和非法 UTF-8 的数据原样返回；两个不同客户端端口各自收到回复；持续模式不自行退出；`--once` 回复后退出并释放端口；`--no-echo --once` 实收且不回复；语法和 `--help` 正常。所有自建测试进程已结束，未创建测试脚本文件，未占用实验端口 4242。
+- 运行入口：`& 'C:\Python314\python.exe' 'F:\zephyr\apps\wireguard\tools\udp_receiver.py' --host 0.0.0.0`。先退出旧接收脚本并启动新版，再按现有流程运行 Titan；验收板端 `reply 16 bytes: Hello from Titan`，然后用 `--no-echo` 或关闭接收器验证约两秒接收超时。
+- 本轮仅修改 Windows 脚本和项目记录；未修改用户板端源码及配置，未构建、烧录、改防火墙或网卡，未接管用户自己的接收进程，未提交或推送 Git。下一步取得真实回显/超时输出后，再指导消息序号、回复校验与计数。
+
+### 2026-10-21 最小回显成功，接收超时已有日志
+
+- 用户提供板端完整一轮日志：socket 创建成功，十次 `sent 16 bytes` 后各有 `receive timeout`，最后 `socket closed`。这证明接收等待能够结束并继续循环；单靠发送返回值不证明对端已收到。
+- 随后的本机只读检查发现当时 UDP 4242 没有监听进程，`udp_receiver.py` 未运行；网卡为 Up。该快照不追溯推定整轮测试期间的进程状态。指导先启动 Windows 回显脚本、保持窗口运行，再复位 Titan。
+- 用户随后明确回复“成功了”，据此将 Titan ↔ Windows 最小 UDP 回显标为成功（用户报告）。未收到成功轮的逐包输出，不虚构精确成功包数、时延或零丢包结论。P2 的至少 100 条统计尚未验收。
+- 下一增量由用户动手：用 `snprintk()` 在消息正文加入发送序号，并用实际格式化长度作为 `zsock_sendto()` 的数据长度；随后再学习回复长度/内容校验和计数。保持辅助教学，不代改板端业务代码。
+- 本轮仅同步项目 INDEX、PLAN、STATUS；未改业务代码、配置或系统设置，未构建、下载、启动接收器或提交/推送 Git。
+
+## 2026-10-22 消息序号代码复查
+
+- 用户报告消息后面似乎没有数字，请求检查。实际 `main.c` 已正确使用可写 `message[64]`、循环内 `snprintk(message, sizeof(message), "Hello from Titan #%d", i)`、截断检查和 `(size_t)message_len` 作为发送长度。
+- 源码最后修改于 19:53:35，现有 ELF/HEX 最后生成于 20:04:19/20:04:20。进一步只读反汇编确认 `main` 调用 `snprintf`（本配置的 `snprintk` 映射）并将返回长度传给 `zsock_sendto`；ELF 和 HEX 在 0x0203CCE0 均含 `Hello from Titan #%d` 格式串。因此不能简单归因为源码未改或未重新构建；板上是否下载、运行该新镜像尚未核对。
+- 当前 `printk("UDP #%d sent %d bytes\n", i, (int)sent)` 只显示本地轮次和发送字节数，并不显示发送正文。应查看 `reply` 行或 Windows `Data` 行的正文；第一至第九包应为 19 字节，第十包为 20 字节，旧固定正文为 16 字节。
+- 已请用户提供本轮没有数字的实际输出，以区分日志显示方式、旧镜像运行或其它问题；尚无该轮运行证据，不认定根因。Windows 脚本仍原样回显收到的 bytes。
+- 本轮仅只读检查源码及既有构建产物、同步项目记录；未修改业务代码，未重新构建、下载、调试或改系统设置。
+
+### Windows 截图确认实际收到的正文仍无序号
+
+- 用户提供 Windows 终端截图：累计接收第 36 至 40 个数据报，来源 `192.168.50.2:42762`，每包均为 16 字节，原始 `Bytes: b'Hello from Titan'`，并原样回显 16 字节。这证明截图中的实际数据未带序号，不能归因于发送日志没有打印正文；累计接收计数不等于板端发送序号。
+- 再次只读核对，源码与现有构建产物未变化，编号代码正确；构建缓存指向本应用及 Titan CM85。IDE 的 wireguard 配置指向对应构建目录，使用 `Ra8p1 Titan Board` 的 jlink profile，但静态配置不能证明最近一次下载实际成功。
+- 对近期 VS Code 日志作针对性查找，未找到可确认本次固件路径和下载成功的记录。优先核对 IDE 的实际下载命令、目标 HEX/ELF 和下载完成日志；尚不能断言板上一定运行旧固件，也需确认截图是否来自新一轮复位后的输出。
+- 本轮未改 Windows/板端业务代码、未构建或下载，仅同步项目记录。需要板上新日志或下载证据后再判断根因，不通过电脑端追加数字掩盖原始数据。
+
+### 下载任务长时间未退出，J-Link 输出被 runner 隐藏
+
+- 用户提供 IDE 命令及输出：`west flash` 使用本应用正确构建目录、jlink runner、IAR J-Link 8.74，停在正确 HEX 路径的 `Flashing file`；`ninja: no work to do` 表示无需重新构建，不是下载成功证据。
+- 只读进程检查确认 J-Link PID 37344 从 19:54:45 启动，在 20:24:37 及后续检查仍未退出；对应 west/Python 调用链仍存在。用户也确认一直没有结束提示。不能将此任务标为成功下载；具体卡在连接、交互还是下载步骤尚未查明。
+- 当前仅枚举到一个 SEGGER USB 探针，实例号 `000024060501`（Titan 板载探针 24060501）。实际进程加载 IAR 目录中的 `JLink_x64.dll` 8.74，参数为 SWD、speed auto、R7KA8P1KF_CPU0；没有证据表明选中了另一块板。
+- 已读取该用户任务的临时 runner 脚本：reset → little endian → loadfile 本应用 HEX → reset → go → writeDP/readDP → quit。脚本内容只证明计划执行的命令，不能证明已走到 loadfile 或完成。
+- 本地 `scripts/west_commands/runners/jlink.py:617` 先打印 `Flashing file`，非 DEBUG 日志级别下将 J-Link stdout 重定向到 DEVNULL，再等待 Commander 退出。因此无详细输出并不能直接判断失败位置；下一次由用户在结束当前任务后，用 `west -v flash` 显示完整输出，并显式指定 `--dev-id=24060501 --iface=swd --speed=1000`。
+- 当前 HEX 所有数据记录校验和通过，实际数据 302212 B，地址范围 0x02000000–0x02049C8B，未发现 Code MRAM 窗口外数据记录；此镜像审计不替代下载与恢复授权。
+- 本轮仅只读检查和同步记录，未终止用户进程、未启动第二个 J-Link、未下载或复位目标、未修改 IDE profile/业务代码/系统设置。
+
+### 用户无法结束任务：已清理当前卡住的进程链
+
+- 用户报告任务好像无法结束。只读复查时，旧 PID 37344 已退出，当前是 20:31:16 新启动的同一 IDE 下载任务：west 35440 → Python 17704 → Python 10552 → J-Link 42388。新任务仍使用 speed auto 且没有详细日志参数；在 20:33 检查时相关线程均处于等待状态，无法据此确定具体卡住步骤。
+- 按用户结束卡住任务的意图，精确核对 PID 42388 的可执行文件路径和临时 runner 脚本路径后，已终止该 J-Link 进程。随后确认其上游 west/Python 自行退出，没有残留的 J-Link 或 west flash 进程；未按名称批量结束其它 Python 或 IDE 进程。
+- 在上述进程退出后，用 IAR Commander 8.74 执行限时只读 `ShowEmuList` → `q`，设置 AutoConnect=0；成功显示 USB Serial 24060501、ProductName SAM-ICE，退出码 0、未超时。这证明 Commander 和 USB 枚举路径可用，不代表 SWD 目标连接或下载已成功。
+- 只读检查所用临时脚本目录由 TemporaryDirectory 自动清理；未下载、复位目标或更改 IDE profile。下一步使用已提供的 `west -v flash` 命令显示目标连接/下载的完整输出，再定位卡住原因。
+
+### 2026-10-22 显式连接后下载成功
+
+- 用户重新插拔 USB 后，限时目标连接测试成功：J-Link USB `O.K.`，`VTref=3.300V`，SWD DAP ID `0x6BA02477`，识别 Cortex-M85 r1p1，Secure Debug enabled，退出码 0。这证明测试时 USB、目标供电与 SWD 链路可用，不能排除此前的临时异常。
+- runner 生成的默认脚本先执行 `r`，失败轮日志停在由此触发的 USB 连接。重新插拔 USB，并使用 `--pre-script-cmd=connect` 将显式连接放在 `r` 之前后，`west -vv flash` 成功：识别 `R7KA8P1KF_CPU0`，`loadfile` 当前 `zephyr.hex`，擦除/编程/校验均到 100%，J-Link 报告 `O.K.`，随后 reset、go、writeDP/readDP 和 `q` 完成，west 退出码 0。没有改动配置区或 OTP；本次写入为用户正在进行的应用下载。两项干预未做单变量对照，不将隐式连接或板卡适配认定为已证实根因。
+- 成功命令包含：`--dev-id=24060501 --iface=swd --speed=1000 --pre-script-cmd=connect`；当前 HEX 地址仍在 Code MRAM 审计范围内。
+- 已持久修改 `F:\zephyr\.vscode\zephyr-ide.json` 中 `Ra8p1 Titan Board` profile，加入上述探针、接口、速度及显式连接参数；JSON 解析和 `git diff --check` 通过。后续从 IDE 触发下载应使用同样参数，不需要手工重复命令。
+- 目前尚未获得这次下载后板端的串口/Windows 实际收发输出。下一步先启动 `udp_receiver.py --host 0.0.0.0`，再按板上 Reset；预期 Windows Data 为 `Hello from Titan #1` 等，长度为 19 字节（#1–#9）和 20 字节（#10）。
+- 本轮下载前卡住的 J-Link/west 进程已结束；本次成功下载进程已正常退出。未升级探针固件、未改系统设置、未提交或推送 Git。
