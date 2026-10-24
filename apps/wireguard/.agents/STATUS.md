@@ -1,8 +1,23 @@
 # 当前状态
 
-更新日期：2026-10-23
+更新日期：2026-10-24
 
-## 最新摘要与下次入口（2026-10-23）
+## 最新摘要与下次入口（2026-10-24）
+
+- 底层补充：本地 FSP r_sdhi.c 的 R_SDHI_ReadIo/WriteIo/ReadIoExt/WriteIoExt/IoIntEnable 都是返回 FSP_ERR_UNSUPPORTED 的占位实现；Zephyr RA SDHC 也未提供 SDIO enable_interrupt/disable_interrupt 回调。需要核对通知方式并实现必要传输，不能只包装现成 HAL 函数。下一验证目标为最小 SDIO 枚举及实际响应，再接入完整 Wi-Fi 固件与接口。
+
+- 扫描失败补充：用户截图执行 wifi scan 后立即显示 Scan request failed，没有 Scan requested 或结果列表。本地 prj.conf 已由用户增加 CONFIG_WIFI=y、CONFIG_NET_L2_WIFI_SHELL=y；15:45 的 .config 与 15:46 的 ELF/HEX 已生成。该构建没有 CONFIG_WIFI_AIROC/CONFIG_CYW43438，SDIO_STACK 未启用、sdhc1 disabled，也没有 infineon,airoc-wifi 节点。当前只具备命令/管理层，未接入板载模块；用户随后贴出 net iface：默认接口 1，仅 eth0[1]、eth1[2]、wg0[3]、wg_ctrl[4]，全部 down，没有 Wi-Fi 接口。此输出确认运行时未注册 Wi-Fi，不能把接口 down 与接口不存在混为一谈。
+- 已定位原文：wifi_shell.c 在 net_mgmt(NET_REQUEST_WIFI_SCAN, ...) 返回非零时打印不带错误码的 Scan request failed；不能仅凭该文本认定具体 errno 或热点/信号问题。本轮未修改用户新增配置、业务源码、驱动或目标板。
+
+- 用户明确目标：Titan 与鲁班猫 3 分别处在两个不同网络，通过 WireGuard 打通应用通信；Titan 优先使用板载 CYW43438 Wi-Fi 独立联网。有线直连作为联调基线，不是最终验收拓扑。
+- 本次静态核对：厂商 Wi-Fi 示例确认 CYWL6208-GS 模块（CYW43438）、SDHI1/SDIO、WHD。当前 Zephyr 有 CONFIG_CYW43438 和 AIROC 原生网络驱动，但 Titan 板级 DTS 没有 Wi-Fi 子节点，最初构建 CONFIG_WIFI 未启用；用户随后新增的构建已启用 Wi-Fi 命令支持，但 sdhc1 仍 disabled，AIROC/CYW43438 驱动未启用。
+- 当前 RA SDHC 驱动的 request switch 未实现 CMD5/52/53，未支持命令走 -ENOTSUP；AIROC SDIO 路径需要这些命令。存在明确适配缺口，尚未构建、下载或在板上验证 Wi-Fi。不能承诺仅改 Kconfig 即可联网。详见 [核对依据](WIFI_FEASIBILITY.md)。
+- 本对话已有进度：普通 UDP 编号、长度及内容校验按用户成功反馈通过，100 条统计移至隧道应用阶段。现源码含 memcmp 与 app_wireguard_init()，后者目前只定位 VPN 接口。
+- 对端已从 Windows 切换鲁班猫 3，实测 Debian 12、内核 6.1.99-rk3576-wg。以太网临时 192.168.50.1/24，Titan 192.168.50.2/24，鲁班猫 ping Titan 3/3 成功；鲁班猫临时 wg0/peer 已配置。Titan 隧道初始化、握手及隧道 IP 通信尚无验收证据。
+- 公网入口、直接 peer 或 VPS 中心转发尚未选定。下一增量围绕 Wi-Fi/SDIO 适配与必要原理推进，不反复要求普通 UDP 100 条作为门槛。
+- 本轮只读核对本地源码与厂商公开示例，并同步项目文档；未改业务源码、未构建、未下载、未调整任何设备或 VPS 网络。
+
+## 2026-10-23 历史摘要（当前入口以上节为准）
 
 - 用户本轮明确确认“我这边也验证了可以下载程序了”，下载问题按已恢复处理。2026-10-22 已有编程/校验 100%、J-Link `O.K.` 和 west 退出码 0 的记录；本轮补充依据为用户确认，未新增下载测试或日志。
 - 当前仍处于 P2 普通 UDP：P1 已完成，最小双向回显已由用户确认成功，接收超时已有日志。编号发送源码已存在；带序号正文的真实收发、回复长度/内容校验、成功/超时/错误计数及至少 100 条验收尚待完成。WireGuard 隧道尚未配置或验收。
