@@ -1,0 +1,7 @@
+{
+  "stack_base": "0x2200c7d8",
+  "stack_size": 800,
+  "unused_prefix": 0,
+  "stack_first_32": "ffffffffffffffff0000040000000000000000002f230402ffffffffffffffff",
+  "halted": false
+}

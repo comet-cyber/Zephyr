@@ -1,0 +1,21 @@
+{
+  "elf": "F:\\zephyr\\apps\\wifi\\build\\ra8p1_titan\\r7ka8p1kflcac\\cm85\\zephyr\\zephyr.elf",
+  "elf_sha256": "974340216346fc4aa338184eb4965883d8fb2b4f64b90f3412f2a46a549255e7",
+  "backup_sha256": "70af671fbda2ac68d1b027a0d943d1be21fbf756eb774ab11c2c1a035b82b248",
+  "segments": [
+    {
+      "address": "0x2000000",
+      "size": 392492
+    },
+    {
+      "address": "0x205fd2c",
+      "size": 7404
+    },
+    {
+      "address": "0x2061a18",
+      "size": 4
+    }
+  ],
+  "sections": 34,
+  "initial_halted": false
+}

@@ -1,0 +1,4 @@
+/* Temporary A/B test: constrain SDHI1's maximum SDIO bus rate to 1 MHz. */
+&sdhc1 {
+	max-bus-freq = <1000000>;
+};

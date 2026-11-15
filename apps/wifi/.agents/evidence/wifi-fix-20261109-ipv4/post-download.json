@@ -1,0 +1,7 @@
+{
+  "elf_sha256": "974340216346fc4aa338184eb4965883d8fb2b4f64b90f3412f2a46a549255e7",
+  "bin_sha256": "be480a92e28d00d35ced00c43a36128e112cd86b566ffc4fc139383beaf5430b",
+  "verified_sections": 34,
+  "target_halted": false,
+  "status": "code sections readback verified"
+}

@@ -7,7 +7,7 @@
 - 最终目标是 Titan 和鲁班猫在两个不同网络中经 WireGuard 完成应用通信；Titan 优先使用板载 Wi-Fi 独立联网。
 - 普通 UDP 编号、回复长度与内容校验已由用户反馈成功，100 条统计放在隧道应用阶段；不再要求重复 P2 才能进入 WireGuard。
 - 对端已改为鲁班猫 3（Debian 12）；本地以太网 192.168.50.1 ↔ 192.168.50.2/24，物理 ping 3/3 成功。鲁班猫临时 wg0/peer 已配置，Titan C 初始化只定位 VPN 接口，握手未验收。
-- 当前先处理 Wi-Fi 适配可行性：本地有 CYW43438/AIROC 驱动，但 Titan 的 Wi-Fi 节点未接入，RA SDHC 驱动未处理 CMD5/52/53。详见 [适配核对](WIFI_FEASIBILITY.md)。
+- 用户更新后的 Zephyr 4.5.0-rc3 / 2a9e8ac155a 已具备 RA SDIO 命令与中断，不再安排从零移植这部分驱动。当前先对齐 HAL 依赖，再接入 Titan SDHI1/Wi-Fi 的 overlay、驱动选项与固件/模块参数。详见 [更新复核](WIFI_FEASIBILITY.md)。
 - 后续根据当前增量推进板载 Wi-Fi 联网与本地隧道，最后验收跨网络通信。下面阶段用于定位验收项，不要求机械按编号完成全部理论。
 - 公网入口尚未选择；直接 peer 需要一侧可达入口，VPS 中心方案则是两段 WireGuard 并由 VPS 解密/转发，不能混称为两端直接隧道。
 - 下载保留当前 Titan profile 的 `--dev-id=24060501 --iface=swd --speed=1000 --pre-script-cmd=connect`；不重复环境或探针排障，下载仍遵循 SAFETY。
@@ -50,7 +50,8 @@
 ## P4：Titan 板载 Wi-Fi 独立联网
 
 - 对照厂商 CYWL6208-GS/CYW43438 示例，确认 SDHI1、供电/唤醒 GPIO、固件及模块参数；RT-Thread 代码只作硬件参考，继续使用 Zephyr。
-- 补齐当前 RA SDHC 的必要 SDIO 能力，再接入 AIROC 的板级设备树和固件资源。不能把普通 SD 卡支持等同于 Wi-Fi SDIO 支持。
+- 复用上游 37ff7a7f1b1 的 RA SDIO 实现，接入 AIROC 板级设备树和固件资源；先完成依赖、设备树和构建核对，再用实际模块响应与扫描结果验收。仅在出现具体故障证据时修改驱动。
+- 新 RA SDHC 需要 accs/card/dma-req/sdio-int 中断配置，SDHI1 的引脚及中断编号按板型核对，不直接照抄 SDHC0 的编号。
 - 验收顺序：模块枚举与初始化 → 扫描 2.4 GHz AP → 连接 → DHCP 地址/网关 → 到选定公网端点的可达路径。DNS 在使用域名时验证。
 - Wi-Fi 驱动使用 Zephyr 原生网络栈，后续继续复用 WireGuard 和现有 socket 应用；不改换另一套应用 TCP/IP 栈。
 

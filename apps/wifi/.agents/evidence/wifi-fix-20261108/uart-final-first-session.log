@@ -1,0 +1,7 @@
+Code MRAM backup saved
+Traceback (most recent call last):
+  File "F:\zephyr\apps\wifi\.agents\tools\check_wifi_board.py", line 152, in <module>
+    main()
+  File "F:\zephyr\apps\wifi\.agents\tools\check_wifi_board.py", line 92, in main
+    raise RuntimeError(f"MRAM verification failed at {address:#x}")
+RuntimeError: MRAM verification failed at 0x2000000

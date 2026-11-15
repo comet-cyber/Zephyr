@@ -1,0 +1,149 @@
+[00:00:01.299,000] <inf> sd: Card does not support CMD8, assuming legacy card
+
+[1324] chip ID: 43430 
+
+[1567] WLAN FW download size: 419799 bytes
+
+[1571] WLAN FW download time: 240 ms
+
+[1688] WLAN MAC Address : 8C:EA:12:52:AE:32
+
+[1693] WLAN Firmware    : wl0: Mar 28 2021 22:55:55 version 7.45.98.117 (dc5d9c4 CY) FWID 01-d36e8386
+
+[1704] WLAN CLM         : API: 12.2 Data: 9.10.39 Compiler: 1.29.4 ClmImport: 1.36.3 Creation: 2021-03-28 22:47:33 
+
+[1715] WHD VERSION      : 3.3.3.26653
+[1719]  : WIFI5-v3.3.3
+[1721]  : GCC 14.3
+[1723]  : 2025-04-14 03:18:50 +0000
+
+*** Booting Zephyr OS build v4.5.0-rc3-3-g2a9e8ac155a3 ***
+uart:~$ wifi scan[
+00:00:16.982,000] <err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=3398 last_cb=0x00000048 completed=0
+Scan requested
+uart:~$ 
+Num  | SSID                             (len) | Chan (Band)   | RSSI | Security             | BSSID             | MFP     
+uart:~$ 1    | 21-C214                          7     | 1    (2.4GHz) | -69  | WPA2-PSK             | 04:67:61:58:6E:E5 | Disable 
+uart:~$ 2    | ZstuTeacherWeb                   14    | 1    (2.4GHz) | -53  | OPEN                 | 06:5F:02:A5:AB:4B | Disable 
+uart:~$ 3    | AP10027140                       10    | 1    (2.4GHz) | -76  | WPA2-PSK             | 20:57:9E:5A:D4:8D | Disable 
+uart:~$ 4    | ZstuTeacherWeb                   14    | 1    (2.4GHz) | -64  | OPEN                 | 06:5F:02:A5:AA:97 | Disable 
+uart:~$ 5    | ZstuWlan                         8     | 1    (2.4GHz) | -65  | OPEN                 | 0A:5F:02:A5:AA:97 | Disable 
+uart:~$ 6    | ZstuStudentWeb                   14    | 1    (2.4GHz) | -64  | OPEN                 | 12:5F:02:A5:AA:97 | Disable 
+uart:~$ 7    | Redmi_514                        9     | 6    (2.4GHz) | -39  | WPA2-PSK             | 44:DF:65:A3:75:5C | Disable 
+uart:~$ 8    | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -75  | OPEN                 | 06:5F:02:A5:D5:BD | Disable 
+uart:~$ 9    | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -38  | OPEN                 | 06:5F:02:A5:A1:6D | Disable 
+uart:~$ 10   | ZstuWlan                         8     | 6    (2.4GHz) | -77  | OPEN                 | 0A:5F:02:A5:D5:BD | Disable 
+uart:~$ 11   | ZstuWlan                         8     | 6    (2.4GHz) | -40  | OPEN                 | 0A:5F:02:A5:A1:6D | Disable 
+uart:~$ 12   | ZstuStudentWeb                   14    | 6    (2.4GHz) | -76  | OPEN                 | 12:5F:02:A5:D5:BD | Disable 
+uart:~$ 13   | ZstuStudentWeb                   14    | 6    (2.4GHz) | -38  | OPEN                 | 12:5F:02:A5:A1:6D | Disable 
+uart:~$ 14   | Redmi_514                        9     | 6    (2.4GHz) | -36  | WPA2-PSK             | 44:DF:65:A3:75:5C | Disable 
+uart:~$ 15   | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -74  | OPEN                 | 06:5F:02:A5:D5:BD | Disable 
+uart:~$ 16   |                                  0     | 0    (2.4GHz) | 0    | OPEN                 |                   | Disable 
+uart:~$ 17   | Redmi_514                        9     | 6    (2.4GHz) | -36  | WPA2-PSK             | 44:DF:65:A3:75:5C | Disable 
+uart:~$ 18   | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -35  | OPEN                 | 06:5F:02:A5:A1:6D | Disable 
+uart:~$ 19   | Redmi_514                        9     | 6    (2.4GHz) | -35  | WPA2-PSK             | 44:DF:65:A3:75:5C | Disable 
+uart:~$ 20   | ZstuWlan                         8     | 6    (2.4GHz) | -36  | OPEN                 | 0A:5F:02:A5:A1:6D | Disable 
+uart:~$ 21   | ZstuStudentWeb                   14    | 6    (2.4GHz) | -36  | OPEN                 | 12:5F:02:A5:A1:6D | Disable 
+uart:~$ 22   | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -71  | OPEN                 | 06:5F:02:A5:D5:BD | Disable 
+uart:~$ 23   | ZstuWlan                         8     | 6    (2.4GHz) | -75  | OPEN                 | 0A:5F:02:A5:D5:BD | Disable 
+uart:~$ 24   | 21-C213                          7     | 11   (2.4GHz) | -51  | WPA2-PSK             | 42:41:80:AF:AB:91 | Disable 
+uart:~$ 25   | DIRECT-e6-514-Printer            21    | 11   (2.4GHz) | -64  | WPA2-PSK             | DE:CD:2F:0C:BB:3E | Disable 
+uart:~$ 26   | 514                              3     | 11   (2.4GHz) | -50  | WPA2-PSK             | 08:9B:4B:13:4A:39 | Disable 
+uart:~$ 27   | DIRECT-e6-514-Printer            21    | 11   (2.4GHz) | -64  | WPA2-PSK             | DE:CD:2F:0C:BB:3E | Disable 
+uart:~$ 28   | 21-C213                          7     | 11   (2.4GHz) | -53  | WPA2-PSK             | 42:41:80:AF:AB:91 | Disable 
+uart:~$ 29   | 514                              3     | 11   (2.4GHz) | -49  | WPA2-PSK             | 08:9B:4B:13:4A:39 | Disable 
+uart:~$ Scan request done
+uart:~$ wifi scan
+[00:00:25.980,000] <err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=3879 last_cb=0x00000048 completed=0
+Scan requested
+uart:~$ 
+Num  | SSID                             (len) | Chan (Band)   | RSSI | Security             | BSSID             | MFP     
+uart:~$ 1    | ZstuTeacherWeb                   14    | 1    (2.4GHz) | -64  | OPEN                 | 06:5F:02:A5:AA:97 | Disable 
+uart:~$ 2    | ZstuTeacherWeb                   14    | 1    (2.4GHz) | -51  | OPEN                 | 06:5F:02:A5:AB:4B | Disable 
+uart:~$ 3    | ZstuWlan                         8     | 1    (2.4GHz) | -50  | OPEN                 | 0A:5F:02:A5:AB:4B | Disable 
+uart:~$ 4    | ZstuWlan                         8     | 1    (2.4GHz) | -63  | OPEN                 | 0A:5F:02:A5:AA:97 | Disable 
+uart:~$ 5    | ZstuStudentWeb                   14    | 1    (2.4GHz) | -65  | OPEN                 | 12:5F:02:A5:AA:97 | Disable 
+uart:~$ 6    | ZstuTeacherWeb                   14    | 1    (2.4GHz) | -61  | OPEN                 | 06:5F:02:A5:AA:97 | Disable 
+uart:~$ 7    | ZstuWlan                         8     | 1    (2.4GHz) | -63  | OPEN                 | 0A:5F:02:A5:AA:97 | Disable 
+uart:~$ 8    | ZstuStudentWeb                   14    | 1    (2.4GHz) | -65  | OPEN                 | 12:5F:02:A5:AA:97 | Disable 
+uart:~$ 9    | Redmi_514                        9     | 6    (2.4GHz) | -34  | WPA2-PSK             | 44:DF:65:A3:75:5C | Disable 
+uart:~$ 10   | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -37  | OPEN                 | 06:5F:02:A5:A1:6D | Disable 
+uart:~$ 11   | ZstuWlan                         8     | 6    (2.4GHz) | -37  | OPEN                 | 0A:5F:02:A5:A1:6D | Disable 
+uart:~$ 12   | ZstuStudentWeb                   14    | 6    (2.4GHz) | -36  | OPEN                 | 12:5F:02:A5:A1:6D | Disable 
+uart:~$ 13   | ZstuWlan                         8     | 6    (2.4GHz) | -73  | OPEN                 | 0A:5F:02:A5:D5:BD | Disable 
+uart:~$ 14   | ZstuStudentWeb                   14    | 6    (2.4GHz) | -76  | OPEN                 | 12:5F:02:A5:D5:BD | Disable 
+uart:~$ 15   | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -39  | OPEN                 | 06:5F:02:A5:A1:6D | Disable 
+uart:~$ 16   | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -74  | OPEN                 | 06:5F:02:A5:D5:BD | Disable 
+uart:~$ 17   | ZstuWlan                         8     | 6    (2.4GHz) | -73  | OPEN                 | 0A:5F:02:A5:D5:BD | Disable 
+uart:~$ 18   | ZstuWlan                         8     | 6    (2.4GHz) | -42  | OPEN                 | 0A:5F:02:A5:A1:6D | Disable 
+uart:~$ 19   | ZstuStudentWeb                   14    | 6    (2.4GHz) | -36  | OPEN                 | 12:5F:02:A5:A1:6D | Disable 
+uart:~$ 20   | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -71  | OPEN                 | 06:5F:02:A5:D5:BD | Disable 
+uart:~$ 21   | ZstuWlan                         8     | 6    (2.4GHz) | -72  | OPEN                 | 0A:5F:02:A5:D5:BD | Disable 
+uart:~$ 22   | ZstuStudentWeb                   14    | 6    (2.4GHz) | -72  | OPEN                 | 12:5F:02:A5:D5:BD | Disable 
+uart:~$ 23   |                                  0     | 0    (2.4GHz) | 0    | OPEN                 |                   | Disable 
+uart:~$ 24   | ZstuStudentWeb                   14    | 6    (2.4GHz) | -74  | OPEN                 | 12:5F:02:A5:D5:BD | Disable 
+uart:~$ 25   | Redmi_514                        9     | 6    (2.4GHz) | -40  | WPA2-PSK             | 44:DF:65:A3:75:5C | Disable 
+uart:~$ 26   | 514                              3     | 11   (2.4GHz) | -44  | WPA2-PSK             | 08:9B:4B:13:4A:39 | Disable 
+uart:~$ 27   | ZstuTeacherWeb                   14    | 11   (2.4GHz) | -79  | OPEN                 | 2A:CD:55:99:3A:33 | Disable 
+uart:~$ 28   | 21-C213                          7     | 11   (2.4GHz) | -40  | WPA2-PSK             | 42:41:80:AF:AB:91 | Disable 
+uart:~$ 29   | 21-C213                          7     | 11   (2.4GHz) | -51  | WPA2-PSK             | 42:41:80:AF:AB:91 | Disable 
+uart:~$ 30   | ZstuWlan                         8     | 11   (2.4GHz) | -80  | OPEN                 | 2A:CD:55:99:3A:34 | Disable 
+uart:~$ 31   | ZstuTeacherWeb                   14    | 11   (2.4GHz) | -66  | OPEN                 | 06:5F:02:A5:9B:A3 | Disable 
+uart:~$ 32   | ZstuStudentWeb                   14    | 11   (2.4GHz) | -82  | OPEN                 | 2A:CD:55:99:3A:36 | Disable 
+uart:~$ 33   | ZstuWlan                         8     | 11   (2.4GHz) | -69  | OPEN                 | 0A:5F:02:A5:9B:A3 | Disable 
+uart:~$ 34   | ZstuStudentWeb                   14    | 11   (2.4GHz) | -67  | OPEN                 | 12:5F:02:A5:9B:A3 | Disable 
+uart:~$ 35   | 21-C213                          7     | 11   (2.4GHz) | -52  | WPA2-PSK             | 42:41:80:AF:AB:91 | Disable 
+uart:~$ 36   | DIRECT-e6-514-Printer            21    | 11   (2.4GHz) | -63  | WPA2-PSK             | DE:CD:2F:0C:BB:3E | Disable 
+uart:~$ 37   | ZstuTeacherWeb                   14    | 11   (2.4GHz) | -81  | OPEN                 | 2A:CD:55:99:3A:33 | Disable 
+uart:~$ 38   | ZstuWlan                         8     | 11   (2.4GHz) | -79  | OPEN                 | 2A:CD:55:99:3A:34 | Disable 
+uart:~$ 39   | ZstuTeacherWeb                   14    | 11   (2.4GHz) | -80  | OPEN                 | 2A:CD:55:99:3A:33 | Disable 
+uart:~$ 40   | ZstuWlan                         8     | 11   (2.4GHz) | -77  | OPEN                 | 2A:CD:55:99:3A:34 | Disable 
+uart:~$ 41   | ZstuTeacherWeb                   14    | 11   (2.4GHz) | -67  | OPEN                 | 06:5F:02:A5:9B:A3 | Disable 
+uart:~$ 42   | 21-C214                          7     | 11   (2.4GHz) | -69  | WPA2-PSK             | 04:67:61:59:4A:45 | Disable 
+uart:~$ Scan request done
+uart:~$ wifi scan
+[00:00:34.974,000] <err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=4477 last_cb=0x00000048 completed=0
+Scan requested
+uart:~$ 
+Num  | SSID                             (len) | Chan (Band)   | RSSI | Security             | BSSID             | MFP     
+uart:~$ 1    | ZstuTeacherWeb                   14    | 1    (2.4GHz) | -55  | OPEN                 | 06:5F:02:A5:AB:4B | Disable 
+uart:~$ 2    | ZstuStudentWeb                   14    | 1    (2.4GHz) | -54  | OPEN                 | 12:5F:02:A5:AB:4B | Disable 
+uart:~$ 3    |                                  0     | 0    (2.4GHz) | 0    | OPEN                 |                   | Disable 
+uart:~$ 4    | ZstuTeacherWeb                   14    | 1    (2.4GHz) | -54  | OPEN                 | 06:5F:02:A5:AB:4B | Disable 
+uart:~$ 5    | ZstuWlan                         8     | 1    (2.4GHz) | -53  | OPEN                 | 0A:5F:02:A5:AB:4B | Disable 
+uart:~$ 6    | ZstuTeacherWeb                   14    | 1    (2.4GHz) | -66  | OPEN                 | 06:5F:02:A5:AA:97 | Disable 
+uart:~$ 7    | ZstuWlan                         8     | 1    (2.4GHz) | -63  | OPEN                 | 0A:5F:02:A5:AA:97 | Disable 
+uart:~$ 8    | ZstuStudentWeb                   14    | 1    (2.4GHz) | -65  | OPEN                 | 12:5F:02:A5:AA:97 | Disable 
+uart:~$ 9    | ZstuStudentWeb                   14    | 1    (2.4GHz) | -54  | OPEN                 | 12:5F:02:A5:AB:4B | Disable 
+uart:~$ 10   | ZstuTeacherWeb                   14    | 1    (2.4GHz) | -54  | OPEN                 | 06:5F:02:A5:AB:4B | Disable 
+uart:~$ 11   | ZstuWlan                         8     | 1    (2.4GHz) | -55  | OPEN                 | 0A:5F:02:A5:AB:4B | Disable 
+uart:~$ 12   | ZstuStudentWeb                   14    | 1    (2.4GHz) | -53  | OPEN                 | 12:5F:02:A5:AB:4B | Disable 
+uart:~$ 13   | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -36  | OPEN                 | 06:5F:02:A5:A1:6D | Disable 
+uart:~$ 14   | ZstuWlan                         8     | 6    (2.4GHz) | -38  | OPEN                 | 0A:5F:02:A5:A1:6D | Disable 
+uart:~$ 15   | ZstuStudentWeb                   14    | 6    (2.4GHz) | -36  | OPEN                 | 12:5F:02:A5:A1:6D | Disable 
+uart:~$ 16   |                                  0     | 0    (2.4GHz) | 0    | OPEN                 |                   | Disable 
+uart:~$ 17   | Redmi_514                        9     | 6    (2.4GHz) | -34  | WPA2-PSK             | 44:DF:65:A3:75:5C | Disable 
+uart:~$ 18   | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -37  | OPEN                 | 06:5F:02:A5:A1:6D | Disable 
+uart:~$ 19   | ZstuWlan                         8     | 6    (2.4GHz) | -38  | OPEN                 | 0A:5F:02:A5:A1:6D | Disable 
+uart:~$ 20   | ZstuStudentWeb                   14    | 6    (2.4GHz) | -36  | OPEN                 | 12:5F:02:A5:A1:6D | Disable 
+uart:~$ 21   | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -71  | OPEN                 | 06:5F:02:A5:D5:BD | Disable 
+uart:~$ 22   | ZstuWlan                         8     | 6    (2.4GHz) | -72  | OPEN                 | 0A:5F:02:A5:D5:BD | Disable 
+uart:~$ 23   | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -73  | OPEN                 | 06:5F:02:A5:D5:BD | Disable 
+uart:~$ 24   | Redmi_514                        9     | 6    (2.4GHz) | -35  | WPA2-PSK             | 44:DF:65:A3:75:5C | Disable 
+uart:~$ 25   | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -37  | OPEN                 | 06:5F:02:A5:A1:6D | Disable 
+uart:~$ 26   | ZstuWlan                         8     | 6    (2.4GHz) | -78  | OPEN                 | 0A:5F:02:A5:D5:BD | Disable 
+uart:~$ 27   | ZstuStudentWeb                   14    | 6    (2.4GHz) | -74  | OPEN                 | 12:5F:02:A5:D5:BD | Disable 
+uart:~$ 28   | ZstuWlan                         8     | 6    (2.4GHz) | -40  | OPEN                 | 0A:5F:02:A5:A1:6D | Disable 
+uart:~$ 29   | ZstuStudentWeb                   14    | 6    (2.4GHz) | -37  | OPEN                 | 12:5F:02:A5:A1:6D | Disable 
+uart:~$ 30   | 514                              3     | 11   (2.4GHz) | -45  | WPA2-PSK             | 08:9B:4B:13:4A:39 | Disable 
+uart:~$ 31   | ZstuTeacherWeb                   14    | 11   (2.4GHz) | -77  | OPEN                 | 2A:CD:55:99:3A:33 | Disable 
+uart:~$ 32   | 21-C213                          7     | 11   (2.4GHz) | -50  | WPA2-PSK             | 42:41:80:AF:AB:91 | Disable 
+uart:~$ 33   | 21-C213                          7     | 11   (2.4GHz) | -41  | WPA2-PSK             | 42:41:80:AF:AB:91 | Disable 
+uart:~$ 34   | ZstuTeacherWeb                   14    | 11   (2.4GHz) | -62  | OPEN                 | 06:5F:02:A5:AF:D1 | Disable 
+uart:~$ 35   | 514                              3     | 11   (2.4GHz) | -48  | WPA2-PSK             | 08:9B:4B:13:4A:39 | Disable 
+uart:~$ 36   | ZstuTeacherWeb                   14    | 11   (2.4GHz) | -67  | OPEN                 | 06:5F:02:A5:9B:A3 | Disable 
+uart:~$ 37   | 21-C213                          7     | 11   (2.4GHz) | -48  | WPA2-PSK             | 42:41:80:AF:AB:91 | Disable 
+uart:~$ 38   | DIRECT-e6-514-Printer            21    | 11   (2.4GHz) | -63  | WPA2-PSK             | DE:CD:2F:0C:BB:3E | Disable 
+uart:~$ 39   | 514                              3     | 11   (2.4GHz) | -48  | WPA2-PSK             | 08:9B:4B:13:4A:39 | Disable 
+uart:~$ Scan request done
+uart:~$ 

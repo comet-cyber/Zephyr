@@ -1,0 +1,14 @@
+kernel stacks
+kernel - Kernel commands
+Subcommands:
+  cycles   : Kernel cycles.
+  sleep    : ms
+  thread   : Kernel threads.
+  uptime   : Kernel uptime. Can be called with the -p or --pretty options
+  version  : Kernel version.
+uart:~$ wifi status
+[00:00:55.033,000] <err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=4405 last_cb=0x00000048 completed=0
+Status: successful
+==================
+State: DISCONNECTED
+uart:~$ 

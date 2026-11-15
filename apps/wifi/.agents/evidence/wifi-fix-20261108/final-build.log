@@ -1,0 +1,603 @@
+-- Application: F:/zephyr/apps/wifi
+-- CMake version: 3.28.1
+Loading Zephyr default modules (Zephyr base (cached)).
+-- Cache files will be written to: F:/zephyr/zephyr/.cache
+-- Zephyr version: 4.5.0-rc3 (F:/zephyr/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: ra8p1_titan, qualifiers: r7ka8p1kflcac/cm85
+-- Found host-tools: zephyr 1.0.1 (F:/zephyr/toolchains/zephyr-sdk-1.0.1)
+-- Found toolchain: zephyr 1.0.1 (F:/zephyr/toolchains/zephyr-sdk-1.0.1)
+-- Found BOARD.dts: F:/zephyr/zephyr/boards/ruiside/ra8p1_titan/ra8p1_titan_r7ka8p1kflcac_cm85.dts
+-- Found devicetree overlay: F:/zephyr/apps/wifi/boards/ra8p1_titan_r7ka8p1kflcac_cm85.overlay
+-- Generated zephyr.dts: F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/zephyr/zephyr.dts
+-- Generated pickled edt: F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/zephyr/edt.pickle
+-- Generated devicetree_generated.h: F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/zephyr/include/generated/zephyr/devicetree_generated.h
+F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/zephyr/zephyr.dts:572.14-575.5: Warning (simple_bus_reg): /soc/trng: missing or empty reg/ranges property
+Parsing F:/zephyr/zephyr/Kconfig
+Loaded configuration 'F:/zephyr/zephyr/boards/ruiside/ra8p1_titan/ra8p1_titan_r7ka8p1kflcac_cm85_defconfig'
+Merged configuration 'F:/zephyr/apps/wifi/prj.conf'
+Merged configuration 'F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to 'F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/zephyr/.config'
+Kconfig header saved to 'F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/zephyr/include/generated/zephyr/autoconf.h'
+-- Could NOT find Ccache (missing: CCACHE) (Required is at least version "4.12")
+-- Found gen_kobject_list: F:/zephyr/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (30.3s)
+-- Generating done (2.2s)
+-- Build files have been written to: F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85
+[0/1] Re-running CMake...
+[1/566] Generating zephyr/include/generated/wifi_nvram_blob.inc
+[2/566] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[3/562] Building C object zephyr/lib/heap/CMakeFiles/heap_constants.dir/heap_constants.c.obj
+[4/562] Generating ../../include/generated/zephyr/heap_constants.h
+[5/562] Building C object zephyr/CMakeFiles/offsets.dir/arch/arm/core/offsets/offsets.c.obj
+[6/562] Generating include/generated/zephyr/offsets.h
+[7/562] Building C object CMakeFiles/app.dir/src/wifi_firmware_flash.c.obj
+[8/562] Building C object CMakeFiles/app.dir/src/wifi_resources.c.obj
+[9/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/dec.c.obj
+[10/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/hex.c.obj
+[11/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/set.c.obj
+[12/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitmask.c.obj
+[13/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/timeutil.c.obj
+[14/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/last_section_id.c.obj
+[15/562] Building C object zephyr/CMakeFiles/zephyr.dir/misc/generated/configs.c.obj
+[16/562] Building C object CMakeFiles/app.dir/src/main.c.obj
+[17/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_cache.c.obj
+[18/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/net/lib/utils/addr_utils.c.obj
+[19/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/libc/validate_libc.c.obj
+[20/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/clock.c.obj
+[21/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/boot_banner.c.obj
+[22/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/printk.c.obj
+[23/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/rb.c.obj
+[24/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/heap/heap.c.obj
+[25/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_packaged.c.obj
+[26/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_complete.c.obj
+[27/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitarray.c.obj
+[28/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt.c.obj
+[29/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt_common.c.obj
+[30/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/notify.c.obj
+[31/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/onoff.c.obj
+[32/562] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt_long.c.obj
+[33/562] Building C object zephyr/CMakeFiles/zephyr.dir/soc/renesas/ra/common/soc.c.obj
+[34/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/debug/thread_info.c.obj
+[35/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_mgmt.c.obj
+[36/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/mem_mgmt/mem_attr.c.obj
+[37/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_msg.c.obj
+[38/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/backends/log_backend_uart.c.obj
+[39/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_output.c.obj
+[40/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/tracing/tracing_none.c.obj
+[41/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_core.c.obj
+[42/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/modules/kernel_service/kernel_shell.c.obj
+[43/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/modules/kernel_service/cycles.c.obj
+[44/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/modules/kernel_service/sleep.c.obj
+[45/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/modules/kernel_service/uptime.c.obj
+[46/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/modules/kernel_service/version.c.obj
+[47/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/modules/kernel_service/thread/thread.c.obj
+[48/562] Linking C static library app\libapp.a
+[49/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/modules/kernel_service/thread/list.c.obj
+[50/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/modules/kernel_service/thread/stacks.c.obj
+[51/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/modules/kernel_service/thread/suspend.c.obj
+[52/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/modules/kernel_service/thread/resume.c.obj
+[53/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/modules/kernel_service/thread/kill.c.obj
+[54/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/modules/device_service.c.obj
+[55/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/modules/date_service.c.obj
+[56/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/modules/devmem_service.c.obj
+[57/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/shell_fprintf.c.obj
+[58/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/backends/shell_uart.c.obj
+[59/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/shell_help.c.obj
+[60/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/shell_utils.c.obj
+[61/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/shell.c.obj
+[62/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/shell_ops.c.obj
+[63/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/shell_wildcard.c.obj
+[64/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/shell_history.c.obj
+[65/562] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/shell/shell_cmds.c.obj
+[66/562] Building C object zephyr/CMakeFiles/zephyr.dir/drivers/flash/flash_util.c.obj
+[67/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMMON/src/whd_bus_common.c.obj
+[68/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMMON/src/whd_logging.c.obj
+[69/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMMON/src/whd_clm.c.obj
+[70/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMMON/src/whd_debug.c.obj
+[71/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMMON/src/whd_wifi.c.obj
+[72/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMMON/src/whd_utils.c.obj
+[73/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMMON/src/whd_sdpcm.c.obj
+[74/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMMON/src/whd_cdc_bdc.c.obj
+[75/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMPONENT_WIFI5/src/whd_buffer_api.c.obj
+[76/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMPONENT_WIFI5/src/whd_chip_constants.c.obj
+[77/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMPONENT_WIFI5/src/whd_network_if.c.obj
+[78/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMPONENT_WIFI5/src/whd_ap.c.obj
+[79/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMPONENT_WIFI5/src/whd_resource_if.c.obj
+[80/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMPONENT_WIFI5/src/whd_chip.c.obj
+[81/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMPONENT_WIFI5/src/whd_proto.c.obj
+[82/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMPONENT_WIFI5/src/whd_events.c.obj
+[83/562] Generating linker_zephyr_pre0.cmd
+[84/562] Building ASM object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/nmi_on_reset.S.obj
+[85/562] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/instr_mem.c.obj
+[86/562] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/init.c.obj
+[87/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMPONENT_WIFI5/src/whd_management.c.obj
+[88/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMPONENT_WIFI5/src/whd_thread.c.obj
+[89/562] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/fault_s.S.obj
+[90/562] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/thread_entry.c.obj
+[91/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMPONENT_WIFI5/src/whd_wifi_p2p.c.obj
+[92/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMPONENT_WIFI5/resources/resource_imp/whd_resources.c.obj
+[93/562] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/sem.c.obj
+[94/562] Building C object zephyr/CMakeFiles/zephyr_pre0.dir/misc/empty_file.c.obj
+[95/562] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/vector_table.S.obj
+[96/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMPONENT_WIFI5/src/bus_protocols/whd_bus.c.obj
+[97/562] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/reset.S.obj
+[98/562] Building C object zephyr/CMakeFiles/zephyr.dir/modules/hal_infineon/abstraction-rtos/source/COMPONENT_ZEPHYR/cyabs_rtos_zephyr.c.obj
+[99/562] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/svc.S.obj
+[100/562] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/sw_isr_common.c.obj
+[101/562] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/__aeabi_read_tp.S.obj
+[102/562] Building C object zephyr/arch/common/CMakeFiles/isr_tables.dir/isr_tables.c.obj
+[103/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMPONENT_WIFI5/src/bus_protocols/whd_bus_sdio_protocol.c.obj
+[104/562] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/xip.c.obj
+[105/562] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/swap_helper.S.obj
+[106/562] Building C object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/nmi.c.obj
+[107/562] Building C object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/fatal.c.obj
+[108/562] Building C object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/tls.c.obj
+[109/562] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/fpu.c.obj
+[110/562] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/fault.c.obj
+[111/562] Linking C static library zephyr\arch\common\libisr_tables.a
+[112/562] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/irq_manage.c.obj
+[113/562] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/scb.c.obj
+[114/562] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/prep_c.c.obj
+[115/562] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/thread.c.obj
+[116/562] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/cpu_idle.c.obj
+[117/562] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/thread_abort.c.obj
+[118/562] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/irq_init.c.obj
+[119/562] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/isr_wrapper.c.obj
+[120/562] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/exc_exit.c.obj
+[121/562] Linking C static library zephyr\arch\arch\arm\core\libarch__arm__core.a
+[122/562] Building C object zephyr/arch/arch/arm/core/mpu/CMakeFiles/arch__arm__core__mpu.dir/arm_mpu_regions.c.obj
+[123/562] Building C object zephyr/lib/libc/common/CMakeFiles/lib__libc__common.dir/source/time/time.c.obj
+[124/562] Building C object zephyr/arch/arch/arm/core/cortex_m/cmse/CMakeFiles/arch__arm__core__cortex_m__cmse.dir/arm_core_cmse.c.obj
+[125/562] Linking C static library zephyr\arch\common\libarch__common.a
+[126/562] Building C object zephyr/lib/libc/common/CMakeFiles/lib__libc__common.dir/source/stdlib/reallocarray.c.obj
+[127/562] Building C object zephyr/lib/libc/picolibc/CMakeFiles/lib__libc__picolibc.dir/assert.c.obj
+[128/562] Building C object zephyr/lib/libc/common/CMakeFiles/lib__libc__common.dir/source/stdlib/calloc.c.obj
+[129/562] Building C object zephyr/arch/arch/arm/core/mpu/CMakeFiles/arch__arm__core__mpu.dir/arm_core_mpu.c.obj
+[130/562] Building C object zephyr/arch/arch/arm/core/mpu/CMakeFiles/arch__arm__core__mpu.dir/arm_mpu.c.obj
+[131/562] Building C object zephyr/subsys/portability/posix/c_lib_ext/CMakeFiles/subsys__portability__posix__c_lib_ext.dir/fnmatch.c.obj
+[132/562] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMPONENT_WIFI5/src/whd_wifi_api.c.obj
+[133/562] Building C object zephyr/lib/libc/picolibc/CMakeFiles/lib__libc__picolibc.dir/chk_fail.c.obj
+[134/562] Building C object zephyr/lib/libc/picolibc/CMakeFiles/lib__libc__picolibc.dir/cbprintf.c.obj
+[135/562] Linking C static library zephyr\arch\arch\arm\core\cortex_m\libarch__arm__core__cortex_m.a
+[136/562] Building C object zephyr/lib/libc/common/CMakeFiles/lib__libc__common.dir/source/stdlib/abort.c.obj
+[137/562] Building C object zephyr/lib/libc/picolibc/CMakeFiles/lib__libc__picolibc.dir/exit.c.obj
+[138/562] Building C object zephyr/lib/libc/picolibc/CMakeFiles/lib__libc__picolibc.dir/errno_wrap.c.obj
+[139/562] Linking C static library zephyr\arch\arch\arm\core\cortex_m\cmse\libarch__arm__core__cortex_m__cmse.a
+[140/562] Building C object zephyr/lib/libc/picolibc/CMakeFiles/lib__libc__picolibc.dir/locks.c.obj
+[141/562] Building C object zephyr/lib/libc/picolibc/CMakeFiles/lib__libc__picolibc.dir/stdio.c.obj
+[142/562] Linking C static library zephyr\arch\arch\arm\core\mpu\libarch__arm__core__mpu.a
+[143/562] Building C object zephyr/lib/libc/common/CMakeFiles/lib__libc__common.dir/source/stdlib/malloc.c.obj
+[144/562] Building C object zephyr/lib/libc/common/CMakeFiles/lib__libc__common.dir/source/errno/errno.c.obj
+[145/562] Linking C static library zephyr\lib\libc\picolibc\liblib__libc__picolibc.a
+[146/562] Building C object zephyr/subsys/portability/posix/c_lib_ext/CMakeFiles/subsys__portability__posix__c_lib_ext.dir/getopt_shim.c.obj
+[147/562] Linking C static library zephyr\libzephyr.a
+[148/562] Building C object zephyr/subsys/portability/posix/c_lib_ext/CMakeFiles/subsys__portability__posix__c_lib_ext.dir/getentropy.c.obj
+[149/562] Building C object zephyr/lib/net_buf/CMakeFiles/lib__net_buf.dir/buf.c.obj
+[150/562] Building C object zephyr/subsys/random/CMakeFiles/subsys__random.dir/random_entropy_device.c.obj
+[151/562] Building C object zephyr/subsys/sd/CMakeFiles/subsys__sd.dir/sd.c.obj
+[152/562] Building C object zephyr/lib/net_buf/CMakeFiles/lib__net_buf.dir/buf_simple.c.obj
+[153/562] Linking C static library zephyr\lib\libc\common\liblib__libc__common.a
+[154/562] Building C object zephyr/subsys/sd/CMakeFiles/subsys__sd.dir/sd_ops.c.obj
+[155/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/allocs.c.obj
+[156/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/net_shell.c.obj
+[157/562] Building C object zephyr/subsys/sd/CMakeFiles/subsys__sd.dir/sdio.c.obj
+[158/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/arp.c.obj
+[159/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/conn.c.obj
+[160/562] Linking C static library zephyr\subsys\portability\posix\c_lib_ext\libsubsys__portability__posix__c_lib_ext.a
+[161/562] Linking C static library zephyr\subsys\random\libsubsys__random.a
+[162/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/capture.c.obj
+[163/562] Linking C static library zephyr\lib\net_buf\liblib__net_buf.a
+[164/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/dns.c.obj
+[165/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/dhcpv4.c.obj
+[166/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/events.c.obj
+[167/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/dhcpv6.c.obj
+[168/562] Linking C static library zephyr\subsys\sd\libsubsys__sd.a
+[169/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/gptp.c.obj
+[170/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/http_client.c.obj
+[171/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/ftp.c.obj
+[172/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/ptp.c.obj
+[173/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/http.c.obj
+[174/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/cm.c.obj
+[175/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/ipv4.c.obj
+[176/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/iface.c.obj
+[177/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/mem.c.obj
+[178/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/ipv6.c.obj
+[179/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/nbr.c.obj
+[180/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/ping.c.obj
+[181/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/pkt.c.obj
+[182/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/filter.c.obj
+[183/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/ppp.c.obj
+[184/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/pmtu.c.obj
+[185/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/sockets.c.obj
+[186/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/resume.c.obj
+[187/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/route.c.obj
+[188/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/suspend.c.obj
+[189/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/stats.c.obj
+[190/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/tftp_client.c.obj
+[191/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/tcp.c.obj
+[192/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/websocket.c.obj
+[193/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/virtual.c.obj
+[194/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/udp.c.obj
+[195/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/net_timeout.c.obj
+[196/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/quic_shell.c.obj
+[197/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/vlan.c.obj
+[198/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/qbv_shell.c.obj
+[199/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/iptables.c.obj
+[200/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/wg_shell.c.obj
+[201/562] Building C object zephyr/subsys/net/l2/ethernet/CMakeFiles/subsys__net__l2__ethernet.dir/ethernet.c.obj
+[202/562] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/lib/shell/ssh_shell.c.obj
+[203/562] Building C object zephyr/drivers/clock_control/CMakeFiles/drivers__clock_control.dir/clock_control_fixed_rate.c.obj
+[204/562] Building C object zephyr/subsys/net/l2/wifi/CMakeFiles/subsys__net__l2__wifi.dir/wifi_mgmt.c.obj
+[205/562] Building C object zephyr/subsys/net/l2/wifi/CMakeFiles/subsys__net__l2__wifi.dir/wifi_utils.c.obj
+[206/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/net_core.c.obj
+[207/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/net_mgmt.c.obj
+[208/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/icmp.c.obj
+[209/562] Linking C static library zephyr\subsys\net\l2\ethernet\libsubsys__net__l2__ethernet.a
+[210/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/utils.c.obj
+[211/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/net_tc.c.obj
+[212/562] Linking C static library zephyr\subsys\net\libsubsys__net.a
+[213/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/nbr.c.obj
+[214/562] Building C object zephyr/drivers/misc/renesas_ra_external_interrupt/CMakeFiles/drivers__misc__renesas_ra_external_interrupt.dir/renesas_ra_external_interrupt.c.obj
+[215/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/icmpv6.c.obj
+[216/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/connection.c.obj
+[217/562] Building C object zephyr/drivers/clock_control/CMakeFiles/drivers__clock_control.dir/clock_control_renesas_ra_cgc.c.obj
+[218/562] Building C object zephyr/drivers/clock_control/CMakeFiles/drivers__clock_control.dir/clock_control_renesas_ra_cgc_subclk.c.obj
+[219/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/route_ipv6.c.obj
+[220/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/udp.c.obj
+[221/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/ipv6.c.obj
+[222/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/net_pkt.c.obj
+[223/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/route.c.obj
+[224/562] Building C object zephyr/subsys/net/l2/wifi/CMakeFiles/subsys__net__l2__wifi.dir/wifi_shell.c.obj
+[225/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/ipv6_mld.c.obj
+[226/562] Building C object zephyr/drivers/flash/CMakeFiles/drivers__flash.dir/flash_page_layout.c.obj
+[227/562] Building C object zephyr/drivers/pinctrl/CMakeFiles/drivers__pinctrl.dir/common.c.obj
+[228/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/net_context.c.obj
+[229/562] Linking C static library zephyr\drivers\misc\renesas_ra_external_interrupt\libdrivers__misc__renesas_ra_external_interrupt.a
+[230/562] Linking C static library zephyr\drivers\clock_control\libdrivers__clock_control.a
+[231/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/ipv6_nbr.c.obj
+[232/562] Building C object zephyr/drivers/console/CMakeFiles/drivers__console.dir/uart_console.c.obj
+[233/562] Building C object zephyr/subsys/net/ip/CMakeFiles/subsys__net__ip.dir/net_if.c.obj
+[234/562] Linking C static library zephyr\subsys\net\l2\wifi\libsubsys__net__l2__wifi.a
+[235/562] Building C object zephyr/drivers/pinctrl/CMakeFiles/drivers__pinctrl.dir/renesas/ra/pinctrl_ra.c.obj
+[236/562] Building C object zephyr/drivers/flash/CMakeFiles/drivers__flash.dir/jesd216.c.obj
+[237/562] Building C object zephyr/drivers/entropy/CMakeFiles/drivers__entropy.dir/entropy_renesas_ra.c.obj
+[238/562] Linking C static library zephyr\drivers\console\libdrivers__console.a
+[239/562] Building C object zephyr/drivers/flash/CMakeFiles/drivers__flash.dir/soc_flash_renesas_ra_mram.c.obj
+[240/562] Building C object zephyr/drivers/flash/CMakeFiles/drivers__flash.dir/flash_shell.c.obj
+[241/562] Building C object zephyr/drivers/timer/CMakeFiles/drivers__timer.dir/sys_clock_init.c.obj
+[242/562] Linking C static library zephyr\subsys\net\ip\libsubsys__net__ip.a
+[243/562] Building C object zephyr/drivers/timer/CMakeFiles/drivers__timer.dir/cortex_m_systick.c.obj
+[244/562] Linking C static library zephyr\drivers\pinctrl\libdrivers__pinctrl.a
+[245/562] Building C object zephyr/drivers/serial/CMakeFiles/drivers__serial.dir/uart_renesas_ra8_sci_b.c.obj
+[246/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/zephyr/ra/portable/src/bsp/mcu/all/bsp_irq.c.obj
+[247/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+[248/562] Linking C static library zephyr\drivers\entropy\libdrivers__entropy.a
+[249/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/zephyr/ra/portable/src/bsp/bsp_reset.c.obj
+[250/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/zephyr/ra/ra_gen/hal_warmstart.c.obj
+[251/562] Building C object zephyr/drivers/gpio/CMakeFiles/drivers__gpio.dir/gpio_renesas_ra_ioport.c.obj
+[252/562] Building C object zephyr/drivers/sdhc/CMakeFiles/drivers__sdhc.dir/sdhc_renesas_ra.c.obj
+[253/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+[254/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/bsp/mcu/all/bsp_delay.c.obj
+[255/562] Building C object zephyr/drivers/flash/CMakeFiles/drivers__flash.dir/flash_renesas_ra_ospi_b.c.obj
+[256/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj
+[257/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/bsp/mcu/all/bsp_guard.c.obj
+[258/562] Linking C static library zephyr\drivers\timer\libdrivers__timer.a
+[259/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/bsp/mcu/all/bsp_group_irq.c.obj
+[260/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/bsp/mcu/all/bsp_common.c.obj
+[261/562] Building C object zephyr/drivers/wifi/CMakeFiles/drivers__wifi.dir/infineon/airoc_whd_hal_common.c.obj
+[262/562] Linking C static library zephyr\drivers\serial\libdrivers__serial.a
+[263/562] Linking C static library zephyr\drivers\gpio\libdrivers__gpio.a
+[264/562] Linking C static library zephyr\drivers\sdhc\libdrivers__sdhc.a
+[265/562] Building C object zephyr/drivers/wifi/CMakeFiles/drivers__wifi.dir/infineon/airoc_whd_hal_sdio.c.obj
+[266/562] Building C object zephyr/drivers/wifi/CMakeFiles/drivers__wifi.dir/infineon/airoc_wifi.c.obj
+[267/562] Linking C static library zephyr\drivers\flash\libdrivers__flash.a
+[268/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/bsp/mcu/all/bsp_io.c.obj
+[269/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/bsp/mcu/all/bsp_irq.c.obj
+[270/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/bsp/mcu/all/bsp_macl.c.obj
+[271/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/bsp/mcu/all/bsp_ipc.c.obj
+[272/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/bsp/mcu/all/bsp_ospi_b.c.obj
+[273/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/bsp/mcu/all/bsp_register_protection.c.obj
+[274/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/bsp/mcu/all/bsp_sbrk.c.obj
+[275/562] Linking C static library zephyr\drivers\wifi\libdrivers__wifi.a
+[276/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_dtc/r_dtc.c.obj
+[277/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/bsp/mcu/all/bsp_security.c.obj
+[278/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/bsp/mcu/ra8p1/bsp_linker.c.obj
+[279/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sci_b_uart/r_sci_b_uart.c.obj
+[280/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_ospi_b/r_ospi_b.c.obj
+[281/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sdhi/r_sdhi.c.obj
+[282/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_mram/r_mram.c.obj
+[283/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/DomainParams.c.obj
+[284/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/change_endian_long.c.obj
+[285/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func012.c.obj
+[286/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func017.c.obj
+[287/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func013.c.obj
+[288/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func016.c.obj
+[289/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func008.c.obj
+[290/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func027.c.obj
+[291/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func028.c.obj
+[292/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func043.c.obj
+[293/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/adaptors/r_sce_adapt.c.obj
+[294/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func044.c.obj
+[295/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func049.c.obj
+[296/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func031.c.obj
+[297/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func048.c.obj
+[298/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func052.c.obj
+[299/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func054.c.obj
+[300/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func055.c.obj
+[301/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func058.c.obj
+[302/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func053.c.obj
+[303/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func059.c.obj
+[304/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func062.c.obj
+[305/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func061.c.obj
+[306/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func057.c.obj
+[307/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func063.c.obj
+[308/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func065.c.obj
+[309/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func068.c.obj
+[310/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func071.c.obj
+[311/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func070.c.obj
+[312/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func074.c.obj
+[313/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func075.c.obj
+[314/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func076.c.obj
+[315/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func077.c.obj
+[316/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func078.c.obj
+[317/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func073.c.obj
+[318/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func087.c.obj
+[319/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func082.c.obj
+[320/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func079.c.obj
+[321/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func088.c.obj
+[322/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func081.c.obj
+[323/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func089.c.obj
+[324/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func086.c.obj
+[325/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func090.c.obj
+[326/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func091.c.obj
+[327/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func094.c.obj
+[328/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func101.c.obj
+[329/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func092.c.obj
+[330/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func095.c.obj
+[331/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func216.c.obj
+[332/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func310.c.obj
+[333/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func215.c.obj
+[334/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func304.c.obj
+[335/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func305.c.obj
+[336/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func311.c.obj
+[337/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func313.c.obj
+[338/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func314.c.obj
+[339/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func093.c.obj
+[340/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func100.c.obj
+[341/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func302.c.obj
+[342/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func303.c.obj
+[343/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func214.c.obj
+[344/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func202.c.obj
+[345/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func102.c.obj
+[346/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func312.c.obj
+[347/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func103.c.obj
+[348/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func209.c.obj
+[349/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func318.c.obj
+[350/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func316.c.obj
+[351/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func315.c.obj
+[352/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func317.c.obj
+[353/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func320.c.obj
+[354/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func402.c.obj
+[355/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func401.c.obj
+[356/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func322.c.obj
+[357/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func405.c.obj
+[358/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p29f.c.obj
+[359/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p20.c.obj
+[360/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p21.c.obj
+[361/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p29a.c.obj
+[362/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p1b.c.obj
+[363/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p14.c.obj
+[364/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func323.c.obj
+[365/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func324.c.obj
+[366/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func319.c.obj
+[367/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func321.c.obj
+[368/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p00.c.obj
+[369/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p1a.c.obj
+[370/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func406.c.obj
+[371/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p16.c.obj
+[372/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p11.c.obj
+[373/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func404.c.obj
+[374/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p07.c.obj
+[375/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p17.c.obj
+[376/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_func403.c.obj
+[377/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p18.c.obj
+[378/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p12.c.obj
+[379/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p19.c.obj
+[380/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p15.c.obj
+[381/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p13.c.obj
+[382/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p08.c.obj
+[383/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p29i.c.obj
+[384/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p29t.c.obj
+[385/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p29u.c.obj
+[386/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p2e.c.obj
+[387/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p2d.c.obj
+[388/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p32a.c.obj
+[389/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p31.c.obj
+[390/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p32f.c.obj
+[391/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p32i.c.obj
+[392/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p2c.c.obj
+[393/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p41f.c.obj
+[394/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p44i.c.obj
+[395/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p44f.c.obj
+[396/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p47u.c.obj
+[397/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p41i.c.obj
+[398/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p41u.c.obj
+[399/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p44u.c.obj
+[400/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p32t.c.obj
+[401/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p47f.c.obj
+[402/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p2b.c.obj
+[403/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p47i.c.obj
+[404/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p34a.c.obj
+[405/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p34i.c.obj
+[406/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p32u.c.obj
+[407/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p36t.c.obj
+[408/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p34f.c.obj
+[409/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p3a.c.obj
+[410/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p40.c.obj
+[411/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p36a.c.obj
+[412/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p36f.c.obj
+[413/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p34u.c.obj
+[414/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p36u.c.obj
+[415/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p34t.c.obj
+[416/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p36i.c.obj
+[417/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p3b.c.obj
+[418/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p50f.c.obj
+[419/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p50i.c.obj
+[420/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p50u.c.obj
+[421/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p53.c.obj
+[422/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p57.c.obj
+[423/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p6e.c.obj
+[424/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p56.c.obj
+[425/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p54.c.obj
+[426/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p73i.c.obj
+[427/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p73f.c.obj
+[428/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p70.c.obj
+[429/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p73r.c.obj
+[430/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p72.c.obj
+[431/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p78s.c.obj
+[432/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p74.c.obj
+[433/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p78r.c.obj
+[434/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p78f.c.obj
+[435/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p76f.c.obj
+[436/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p78i.c.obj
+[437/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p76u.c.obj
+[438/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p78u.c.obj
+[439/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p79.c.obj
+[440/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p73u.c.obj
+[441/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p7a.c.obj
+[442/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p73s.c.obj
+[443/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p75.c.obj
+[444/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p76i.c.obj
+[445/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p7b.c.obj
+[446/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p7c.c.obj
+[447/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p81.c.obj
+[448/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p7e.c.obj
+[449/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p7d.c.obj
+[450/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p7f.c.obj
+[451/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p83f.c.obj
+[452/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p83t.c.obj
+[453/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p83a.c.obj
+[454/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p82.c.obj
+[455/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p85a.c.obj
+[456/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p85t.c.obj
+[457/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p83i.c.obj
+[458/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p85i.c.obj
+[459/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p83u.c.obj
+[460/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p85u.c.obj
+[461/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p87u.c.obj
+[462/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p87f.c.obj
+[463/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p87i.c.obj
+[464/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p85f.c.obj
+[465/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p95f.c.obj
+[466/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p89f.c.obj
+[467/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p89i.c.obj
+[468/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p95u.c.obj
+[469/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p95i.c.obj
+[470/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p89u.c.obj
+[471/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p96f.c.obj
+[472/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p96i.c.obj
+[473/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p96r.c.obj
+[474/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p96s.c.obj
+[475/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p97a.c.obj
+[476/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p97f.c.obj
+[477/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p96u.c.obj
+[478/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p97t.c.obj
+[479/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p97i.c.obj
+[480/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p97s.c.obj
+[481/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p97u.c.obj
+[482/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p97r.c.obj
+[483/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p98u.c.obj
+[484/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p98f.c.obj
+[485/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p9a.c.obj
+[486/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p98i.c.obj
+[487/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pa1i.c.obj
+[488/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p9b.c.obj
+[489/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pa1f.c.obj
+[490/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pa1u.c.obj
+[491/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_p9c.c.obj
+[492/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pa4f.c.obj
+[493/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pa4i.c.obj
+[494/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pa7f.c.obj
+[495/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pa4u.c.obj
+[496/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pa7i.c.obj
+[497/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pb0f.c.obj
+[498/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pa7u.c.obj
+[499/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pb0u.c.obj
+[500/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pb0i.c.obj
+[501/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/s_flash2.c.obj
+[502/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pb3i.c.obj
+[503/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pb3u.c.obj
+[504/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pb3f.c.obj
+[505/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/main_weak.c.obj
+[506/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/device.c.obj
+[507/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/busy_wait.c.obj
+[508/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pb6i.c.obj
+[509/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/fatal.c.obj
+[510/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/init.c.obj
+[511/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pb6u.c.obj
+[512/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/version.c.obj
+[513/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/kheap.c.obj
+[514/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pb9i.c.obj
+[515/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pb6f.c.obj
+[516/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pf5.c.obj
+[517/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pc2u.c.obj
+[518/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pf4.c.obj
+[519/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/mem_slab.c.obj
+[520/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pb9f.c.obj
+[521/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/float.c.obj
+[522/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pf9.c.obj
+[523/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pb9u.c.obj
+[524/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pdcu.c.obj
+[525/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pf0.c.obj
+[526/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pdcf.c.obj
+[527/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pf1.c.obj
+[528/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pf6.c.obj
+[529/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pc2i.c.obj
+[530/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pdci.c.obj
+[531/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/idle.c.obj
+[532/562] Building C object modules/hal_renesas/CMakeFiles/..__modules__hal__renesas.dir/drivers/ra/fsp/src/r_sce/crypto_procedures/src/rsip_e50d/plainkey/primitive/hw_sce_p_pc2f.c.obj
+[533/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/mailbox.c.obj
+[534/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/msg_q.c.obj
+[535/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/mutex.c.obj
+[536/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/queue.c.obj
+[537/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/sem.c.obj
+[538/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/stack.c.obj
+[539/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/system_work_q.c.obj
+[540/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/condvar.c.obj
+[541/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/work.c.obj
+[542/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/scheduler.c.obj
+[543/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/sleep.c.obj
+[544/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/pipe.c.obj
+[545/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/thread.c.obj
+[546/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/mempool.c.obj
+[547/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/events.c.obj
+[548/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/sched.c.obj
+[549/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/dynamic_disabled.c.obj
+[550/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/thread_monitor.c.obj
+[551/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/timeslicing.c.obj
+[552/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/timer.c.obj
+[553/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/timeout.c.obj
+[554/562] Building C object zephyr/kernel/CMakeFiles/kernel.dir/poll.c.obj
+[555/562] Linking C static library zephyr\kernel\libkernel.a
+[556/562] Linking C static library modules\hal_renesas\lib..__modules__hal__renesas.a
+[557/562] Linking C executable zephyr\zephyr_pre0.elf
+[558/562] Generating linker.cmd
+[559/562] Generating isr_tables.c, isr_tables_vt.ld, isr_tables_swi.ld
+[560/562] Building C object zephyr/CMakeFiles/zephyr_final.dir/misc/empty_file.c.obj
+[561/562] Building C object zephyr/CMakeFiles/zephyr_final.dir/isr_tables.c.obj
+[562/562] Linking C executable zephyr\zephyr.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:      375284 B       768 KB     47.72%
+
+             RAM:      247264 B         1 MB     23.58%
+
+            ITCM:           0 B       128 KB      0.00%
+
+            DTCM:           0 B       128 KB      0.00%
+
+           SDRAM:           0 B        64 MB      0.00%
+
+        IDT_LIST:           0 B        32 KB      0.00%
+
+Generating files from F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/zephyr/zephyr.elf for board: ra8p1_titan/r7ka8p1kflcac/cm85

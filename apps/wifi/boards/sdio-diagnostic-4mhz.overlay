@@ -1,0 +1,4 @@
+/* Temporary diagnostic overlay to constrain SDHI1's advertised host clock. */
+&sdhc1 {
+	max-bus-freq = <4000000>;
+};

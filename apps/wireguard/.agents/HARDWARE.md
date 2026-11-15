@@ -9,7 +9,7 @@
 | RA8P1 Titan | 首轮主实验板；CM85，RJ45，以太网 PHY，UART5 控制台；板载调试器 | 本地有板定义；实物端口/板上固件待核对 |
 | RA8P1 Titan Mini | 备选；CM85，RJ45，UART2 控制台 | 本地有板定义；与原学习固件共用实物，不能直接覆盖 |
 | 鲁班猫 3 Debian 12 | Linux WireGuard 对端与回显接收端；以太网、Wi-Fi/SSH | 内核 6.1.99-rk3576-wg；物理 ping 3/3、临时 wg0/peer 已配置，握手未验收 |
-| Titan 板载 CYWL6208-GS / CYW43438 | 目标为 Titan 独立 Wi-Fi 联网，SDHI1/SDIO | 厂商示例确认硬件路径；当前 Zephyr 板级未接入，RA SDHC 有 SDIO 命令缺口，板上未验证 |
+| Titan 板载 CYWL6208-GS / CYW43438 | 目标为 Titan 独立 Wi-Fi 联网，SDHI1/SDIO | 厂商示例确认硬件路径；新上游已支持 RA SDIO，Titan 板级 Wi-Fi 尚未接入，板上未验证 |
 | J-Link S/N 601012527 | SWD 下载/调试 | 历史 Mini 主链路可用，不等于已验证 Titan 接线 |
 | DSLogic U2Pro16 | 必要时测 UART/PHY 控制信号 | 已有；默认不要求接入 |
 

@@ -1,0 +1,22 @@
+{
+  "source": "Read existing driver RAM via SWD; symbol addresses from the matched build ELF",
+  "regions_layout_address": "0x22000420",
+  "bfp_address": "0x220002e0",
+  "sfdp_header_hex": "534644500a0102ff",
+  "sfdp_signature": "SFDP",
+  "sfdp_density_dword": 536870911,
+  "sfdp_capacity_bytes": 67108864,
+  "regions": [
+    {
+      "offset": 0,
+      "size": 67108864,
+      "erase_mask": 7,
+      "page_count": 16384,
+      "page_size": 4096
+    }
+  ],
+  "write_block_size": 16,
+  "calibration_sector_size_current_mode": 0,
+  "address_mode_raw": 4,
+  "final_halted": false
+}

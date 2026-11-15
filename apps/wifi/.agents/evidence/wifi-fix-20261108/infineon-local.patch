@@ -1,0 +1,27 @@
+diff --git a/whd-expansion/WHD/COMMON/inc/whd_debug.h b/whd-expansion/WHD/COMMON/inc/whd_debug.h
+index d59c348..4002d04 100644
+--- a/whd-expansion/WHD/COMMON/inc/whd_debug.h
++++ b/whd-expansion/WHD/COMMON/inc/whd_debug.h
+@@ -35,7 +35,7 @@ extern "C"
+ ******************************************************/
+ #define WPRINT_ENABLE_WHD_ERROR
+ /* #define WPRINT_ENABLE_WHD_ERROR_RETURN */
+-/* #define WPRINT_ENABLE_WHD_INFO */
++#define WPRINT_ENABLE_WHD_INFO
+ /* #define WPRINT_ENABLE_WHD_DEBUG */
+ 
+ #define WHD_ENABLE_STATS
+diff --git a/whd-expansion/WHD/COMPONENT_WIFI5/src/bus_protocols/whd_bus_sdio_protocol.c b/whd-expansion/WHD/COMPONENT_WIFI5/src/bus_protocols/whd_bus_sdio_protocol.c
+index a2ebeae..e3b6716 100644
+--- a/whd-expansion/WHD/COMPONENT_WIFI5/src/bus_protocols/whd_bus_sdio_protocol.c
++++ b/whd-expansion/WHD/COMPONENT_WIFI5/src/bus_protocols/whd_bus_sdio_protocol.c
+@@ -1294,7 +1294,8 @@ static whd_result_t whd_bus_sdio_download_firmware(whd_driver_t whd_driver)
+          * Check that your WLAN chip matches the 'wifi_image.c' being built - in GNU toolchain, $(CHIP)
+          * makefile variable must be correct.
+          */
+-        WPRINT_WHD_ERROR( ("Timeout while waiting for high throughput clock\n") );
++        WPRINT_WHD_ERROR( ("Timeout while waiting for high throughput clock: csr=0x%02x loops=%" PRIu32 "\n",
++                           csr_val, loop_count) );
+         /* Reachable after hitting assert */
+         return WHD_TIMEOUT;
+     }

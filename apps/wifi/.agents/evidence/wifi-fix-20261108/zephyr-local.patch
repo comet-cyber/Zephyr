@@ -1,0 +1,230 @@
+diff --git a/drivers/sdhc/sdhc_renesas_ra.c b/drivers/sdhc/sdhc_renesas_ra.c
+index b0d3bf53426..d37011a642f 100644
+--- a/drivers/sdhc/sdhc_renesas_ra.c
++++ b/drivers/sdhc/sdhc_renesas_ra.c
+@@ -77,6 +77,23 @@ struct sdhc_ra_priv {
+ 	sdhc_interrupt_cb_t cb;
+ 	int cb_sources;
+ 	void *user_cb_data;
++	/*
++	 * SDIO diagnostics are sampled in the IRQ and printed only from the
++	 * thread context after a CMD53 wait fails.  Printing from the IRQ would
++	 * perturb the transfer timing we are trying to diagnose.
++	 */
++	volatile uint32_t sdio_irq_count;
++	volatile uint32_t sdio_last_info1;
++	volatile uint32_t sdio_last_info1_mask;
++	volatile uint32_t sdio_last_sd_info1;
++	volatile uint32_t sdio_last_sd_info2;
++	volatile uint32_t sdio_last_err_sts1;
++	volatile uint32_t sdio_last_err_sts2;
++	volatile uint32_t sdio_last_clk_ctrl;
++	volatile uint32_t sdio_last_mode;
++	volatile uint32_t sdhimmc_accs_irq_count;
++	volatile uint32_t transfer_callback_count;
++	volatile uint32_t last_transfer_callback_event;
+ };
+ 
+ void sdhimmc_accs_isr(void);
+@@ -85,7 +102,9 @@ void sdhimmc_dma_req_isr(void);
+ 
+ static void ra_sdmmc_accs_isr(const struct device *dev)
+ {
+-	ARG_UNUSED(dev);
++	struct sdhc_ra_priv *priv = dev->data;
++
++	priv->sdhimmc_accs_irq_count++;
+ 	sdhimmc_accs_isr();
+ }
+ 
+@@ -108,6 +127,17 @@ void ra_sdio_int_isr(const struct device *dev)
+ 
+ 	uint32_t info1 = priv->sdmmc_ctrl.p_reg->SDIO_INFO1;
+ 
++	/* Keep a low-impact snapshot before clearing the peripheral flags. */
++	priv->sdio_irq_count++;
++	priv->sdio_last_info1 = info1;
++	priv->sdio_last_info1_mask = priv->sdmmc_ctrl.p_reg->SDIO_INFO1_MASK;
++	priv->sdio_last_sd_info1 = priv->sdmmc_ctrl.p_reg->SD_INFO1;
++	priv->sdio_last_sd_info2 = priv->sdmmc_ctrl.p_reg->SD_INFO2;
++	priv->sdio_last_err_sts1 = priv->sdmmc_ctrl.p_reg->SD_ERR_STS1;
++	priv->sdio_last_err_sts2 = priv->sdmmc_ctrl.p_reg->SD_ERR_STS2;
++	priv->sdio_last_clk_ctrl = priv->sdmmc_ctrl.p_reg->SD_CLK_CTRL;
++	priv->sdio_last_mode = priv->sdmmc_ctrl.p_reg->SDIO_MODE;
++
+ 	/* Clear peripheral flags first */
+ 	priv->sdmmc_ctrl.p_reg->SDIO_INFO1 = SDHC_RA_SDIO_INFO1_IRQ_CLEAR;
+ 
+@@ -472,6 +502,9 @@ static int sdhc_ra_request(const struct device *dev, struct sdhc_command *cmd,
+ 
+ 		ret = err_fsp2zep(fsp_err);
+ 		if (ret < 0) {
++			LOG_ERR("CMD53 setup failed: fsp=%d ret=%d arg=0x%08x write=%u blocks=%u bytes=%u",
++				(int)fsp_err, ret, (unsigned int)cmd->arg, (unsigned int)is_write,
++				(unsigned int)block_count, (unsigned int)byte_count);
+ 			goto end;
+ 		}
+ 
+@@ -487,7 +520,33 @@ static int sdhc_ra_request(const struct device *dev, struct sdhc_command *cmd,
+ 
+ 		ret = k_sem_take(&priv->sdmmc_event.transfer_sem, K_MSEC(ra_cmd.timeout_ms));
+ 		if (ret < 0) {
+-			LOG_ERR("Can not take sem!");
++			LOG_ERR("CMD53 timeout: sem=%d sdio_irq=%u accs_irq=%u callbacks=%u last_cb=%u "
++				"completed=%u",
++				ret, (unsigned int)priv->sdio_irq_count,
++				(unsigned int)priv->sdhimmc_accs_irq_count,
++				(unsigned int)priv->transfer_callback_count,
++				(unsigned int)priv->last_transfer_callback_event,
++				(unsigned int)priv->sdmmc_event.transfer_completed);
++			LOG_ERR("CMD53 live SDIO_INFO1=0x%08x MASK=0x%08x MODE=0x%08x "
++				"SD_INFO1=0x%08x SD_INFO1_MASK=0x%08x",
++				(unsigned int)priv->sdmmc_ctrl.p_reg->SDIO_INFO1,
++				(unsigned int)priv->sdmmc_ctrl.p_reg->SDIO_INFO1_MASK,
++				(unsigned int)priv->sdmmc_ctrl.p_reg->SDIO_MODE,
++				(unsigned int)priv->sdmmc_ctrl.p_reg->SD_INFO1,
++				(unsigned int)priv->sdmmc_ctrl.p_reg->SD_INFO1_MASK);
++			LOG_ERR("CMD53 live SD_INFO2=0x%08x SD_INFO2_MASK=0x%08x ERR1=0x%08x "
++				"ERR2=0x%08x SD_CLK_CTRL=0x%08x",
++				(unsigned int)priv->sdmmc_ctrl.p_reg->SD_INFO2,
++				(unsigned int)priv->sdmmc_ctrl.p_reg->SD_INFO2_MASK,
++			(unsigned int)priv->sdmmc_ctrl.p_reg->SD_ERR_STS1,
++			(unsigned int)priv->sdmmc_ctrl.p_reg->SD_ERR_STS2,
++			(unsigned int)priv->sdmmc_ctrl.p_reg->SD_CLK_CTRL);
++			LOG_ERR("CMD53 SD_CMD=0x%08x ARG=0x%04x%04x SIZE=0x%08x SECCNT=0x%08x",
++				(unsigned int)priv->sdmmc_ctrl.p_reg->SD_CMD,
++				(unsigned int)priv->sdmmc_ctrl.p_reg->SD_ARG1,
++				(unsigned int)(priv->sdmmc_ctrl.p_reg->SD_ARG & UINT16_MAX),
++				(unsigned int)priv->sdmmc_ctrl.p_reg->SD_SIZE,
++				(unsigned int)priv->sdmmc_ctrl.p_reg->SD_SECCNT);
+ 			goto end;
+ 		}
+ 		if (!priv->sdmmc_event.transfer_completed) {
+@@ -526,6 +585,17 @@ end:
+ 	} else {
+ 		priv->app_cmd = false;
+ 	}
++	if ((ret < 0) && (cmd->opcode != SD_SEND_IF_COND)) {
++		LOG_ERR("SDHC request failed: opcode=%u arg=0x%08x ret=%d SD_CMD=0x%08x "
++			"SD_INFO1=0x%08x SD_INFO2=0x%08x cb=%u last_cb=0x%08x completed=%u",
++			(unsigned int)cmd->opcode, (unsigned int)cmd->arg, ret,
++			(unsigned int)priv->sdmmc_ctrl.p_reg->SD_CMD,
++			(unsigned int)priv->sdmmc_ctrl.p_reg->SD_INFO1,
++			(unsigned int)priv->sdmmc_ctrl.p_reg->SD_INFO2,
++			(unsigned int)priv->transfer_callback_count,
++			(unsigned int)priv->last_transfer_callback_event,
++			(unsigned int)priv->sdmmc_event.transfer_completed);
++	}
+ 
+ 	k_sem_give(&priv->thread_lock);
+ 
+@@ -844,12 +914,15 @@ static DEVICE_API(sdhc, sdhc_api) = {
+ 	{                                                                                          \
+ 		const struct device *dev = DEVICE_DT_INST_GET(index);                              \
+ 		struct sdhc_ra_priv *priv = dev->data;                                             \
+-		if (p_args->event == SDMMC_EVENT_TRANSFER_COMPLETE) {                              \
+-			priv->sdmmc_event.transfer_completed = true;                               \
+-			k_sem_give(&priv->sdmmc_event.transfer_sem);                               \
+-		} else if (p_args->event == SDMMC_EVENT_TRANSFER_ERROR) {                          \
++		priv->transfer_callback_count++;                                                  \
++		priv->last_transfer_callback_event = p_args->event;                               \
++		/* FSP may OR response/transfer flags into one callback event. */                  \
++		if ((p_args->event & SDMMC_EVENT_TRANSFER_ERROR) != 0U) {                           \
+ 			priv->sdmmc_event.transfer_completed = false;                              \
+ 			k_sem_give(&priv->sdmmc_event.transfer_sem);                               \
++		} else if ((p_args->event & SDMMC_EVENT_TRANSFER_COMPLETE) != 0U) {                \
++			priv->sdmmc_event.transfer_completed = true;                               \
++			k_sem_give(&priv->sdmmc_event.transfer_sem);                               \
+ 		} else if (p_args->event == SDMMC_EVENT_CARD_INSERTED) {                           \
+ 			if (priv->cb && (priv->cb_sources & SDHC_INT_INSERTED)) {                  \
+ 				priv->cb(dev, SDHC_INT_INSERTED, priv->user_cb_data);              \
+diff --git a/drivers/wifi/infineon/airoc_whd_hal_sdio.c b/drivers/wifi/infineon/airoc_whd_hal_sdio.c
+index cf9f254be42..2a212389711 100644
+--- a/drivers/wifi/infineon/airoc_whd_hal_sdio.c
++++ b/drivers/wifi/infineon/airoc_whd_hal_sdio.c
+@@ -44,7 +44,8 @@ int airoc_wifi_init_primary(const struct device *dev, whd_interface_t *interface
+ 	const struct airoc_wifi_config *config = dev->config;
+ 
+ 	whd_sdio_config_t whd_sdio_config = {
+-		.sdio_1bit_mode = WHD_FALSE,
++		/* Keep the card's bus width consistent with the SDHC host configuration. */
++		.sdio_1bit_mode = (DT_PROP(DT_INST_PARENT(0), bus_width) == 1) ? WHD_TRUE : WHD_FALSE,
+ 		.high_speed_sdio_clock = WHD_FALSE,
+ 	};
+ 
+@@ -70,6 +71,7 @@ int airoc_wifi_init_primary(const struct device *dev, whd_interface_t *interface
+ 
+ 	ret = sd_init(config->bus_dev.bus_sdio, &data->card);
+ 	if (ret) {
++		LOG_ERR("sd_init failed: ret=%d", ret);
+ 		return ret;
+ 	}
+ 
+@@ -108,19 +110,26 @@ int airoc_wifi_init_primary(const struct device *dev, whd_interface_t *interface
+ 	/* Init wifi host driver (whd) */
+ 	cy_rslt_t whd_ret = whd_init(&data->whd_drv, &init_config_default, &resource_ops, buffer_if,
+ 				     netif_funcs);
+-	if (whd_ret == CY_RSLT_SUCCESS) {
+-		whd_ret = whd_bus_sdio_attach(data->whd_drv, &whd_sdio_config,
+-					      (whd_sdio_t)&data->card);
+-
+-		if (whd_ret == CY_RSLT_SUCCESS) {
+-			whd_ret = whd_wifi_on(data->whd_drv, interface);
+-		}
+-
+-		if (whd_ret != CY_RSLT_SUCCESS) {
+-			whd_deinit(*interface);
+-			return -ENODEV;
+-		}
++	if (whd_ret != CY_RSLT_SUCCESS) {
++		LOG_ERR("whd_init failed: result=0x%08x", (unsigned int)whd_ret);
++		return whd_ret;
+ 	}
++
++	whd_ret = whd_bus_sdio_attach(data->whd_drv, &whd_sdio_config,
++				      (whd_sdio_t)&data->card);
++	if (whd_ret != CY_RSLT_SUCCESS) {
++		LOG_ERR("whd_bus_sdio_attach failed: result=0x%08x", (unsigned int)whd_ret);
++		whd_deinit(*interface);
++		return -ENODEV;
++	}
++
++	whd_ret = whd_wifi_on(data->whd_drv, interface);
++	if (whd_ret != CY_RSLT_SUCCESS) {
++		LOG_ERR("whd_wifi_on failed: result=0x%08x", (unsigned int)whd_ret);
++		whd_deinit(*interface);
++		return -ENODEV;
++	}
++
+ 	return 0;
+ }
+ 
+@@ -246,10 +255,13 @@ void whd_bus_sdio_oob_irq_handler(const struct device *port, struct gpio_callbac
+ 	const whd_oob_config_t *oob_config = &data->whd_drv->bus_priv->sdio_config.oob_config;
+ 	const struct gpio_dt_spec *host_oob_pin = oob_config->host_oob_pin;
+ 
+-	/* Check OOB state is correct */
++	/* WHD describes a physical edge, so compare the raw GPIO level. The
++	 * devicetree helper inverts GPIO_ACTIVE_LOW and would reject a valid IRQ.
++	 */
+ 	int expected_event = (oob_config->is_falling_edge == WHD_TRUE) ? 0 : 1;
+ 
+-	if (!(pins & BIT(host_oob_pin->pin)) || (gpio_pin_get_dt(host_oob_pin) != expected_event)) {
++	if (!(pins & BIT(host_oob_pin->pin)) ||
++	    (gpio_pin_get_raw(host_oob_pin->port, host_oob_pin->pin) != expected_event)) {
+ 		WPRINT_WHD_ERROR(("Unexpected interrupt event %d\n", expected_event));
+ 		WHD_BUS_STATS_INCREMENT_VARIABLE(data->whd_drv->bus_priv, error_intrs);
+ 		return;
+@@ -331,9 +343,10 @@ whd_result_t whd_bus_sdio_enable_oob_intr(whd_driver_t whd_driver, whd_bool_t en
+ 	uint32_t trig_conf =
+ 		(oob_config->is_falling_edge == WHD_TRUE) ? GPIO_INT_TRIG_LOW : GPIO_INT_TRIG_HIGH;
+ 
+-	/* Enable OOB pin interrupts */
++	/* WHD also calls this API to mask OOB interrupts while servicing the chip. */
+ 	ret = gpio_pin_interrupt_configure_dt(oob_config->host_oob_pin,
+-					      GPIO_INT_ENABLE | GPIO_INT_EDGE | trig_conf);
++					      enable ? (GPIO_INT_ENABLE | GPIO_INT_EDGE | trig_conf)
++						     : GPIO_INT_DISABLE);
+ 	if (ret != 0) {
+ 		WPRINT_WHD_ERROR(("%s: Failed at gpio_pin_interrupt_configure_dt for host_oob_pin, "
+ 				  "result code = %d\n",

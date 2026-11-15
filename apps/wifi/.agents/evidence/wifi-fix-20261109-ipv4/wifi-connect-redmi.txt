@@ -1,0 +1,23 @@
+wifi connect -s "Redmi_5G" -p "<redacted>" -k 1
+[00:04:04.123,000] <err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=3660 last_cb=0x00000048 completed=0
+[00:04:13.179,000] <err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=3827 last_cb=0x00000048 completed=0
+
+[253199] whd_wifi_join_wait_for_complete: not ready to transceive (err 33555456); left network
+
+[253208] Function whd_wifi_join failed at line 2179 checkres = 33555456 
+[00:04:13.216,000] <err> infineon_airoc_wifi: Failed to connect with network
+CConnection request failed (UNKNOWN/-11)
+onnection request failed with error: -11
+uart:~$ wifi status
+[00:04:29.177,000] <err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=3843 last_cb=0x00000048 completed=0
+Status: successful
+==================
+State: DISCONNECTED
+uart:~$ net iface
+Default interface: 1
+
+
+Interface wlan0 (0x22001c18) (WiFi) [1]
+===============================
+Interface is down.
+uart:~$ 

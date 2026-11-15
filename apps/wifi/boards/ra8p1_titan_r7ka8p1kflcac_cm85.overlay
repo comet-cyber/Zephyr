@@ -1,0 +1,168 @@
+/* SDHI1：连接板载 CYW43438 Wi-Fi 模块。 */
+&sdhc1 {
+	status = "okay";
+
+	pinctrl-0 = <&sdhc1_default>;
+	pinctrl-names = "default";
+
+	bus-width = <4>;
+	max-bus-freq = <25000000>;
+
+	/delete-property/ card-detect;
+
+	interrupt-names = "accs", "card", "dma-req", "sdio-int";
+	interrupts = <31 12>, <32 12>, <33 12>, <34 12>;
+
+	wifi0: wifi {
+		compatible = "infineon,airoc-wifi";
+		status = "okay";
+
+		/* P404：主控控制 Wi-Fi 模块使能。 */
+		wifi-reg-on-gpios = <&ioport4 4 GPIO_ACTIVE_HIGH>;
+
+		/* P514：Wi-Fi 模块向主控发出通知。 */
+		wifi-host-wake-gpios = <&ioport5 14 GPIO_ACTIVE_LOW>;
+	};
+};
+
+/* P514 对应外部中断通道 13，分配 CPU 中断号 35。 */
+&port_irq13 {
+	interrupts = <35 12>;
+	status = "okay";
+};
+
+
+
+
+
+
+
+#include <zephyr/dt-bindings/flash_controller/ospi.h>
+
+/* Titan 的 PLL2Q 已配置为 800 MHz，分频后 OCTACLK 为 100 MHz。 */
+&octaspiclk {
+	clocks = <&pll2q>;
+	div = <8>;
+	status = "okay";
+};
+
+&pinctrl {
+	titan_ospi0_default: titan_ospi0_default {
+		group1 {
+			psels = <RA_PSEL(RA_PSEL_OSPI, 8, 8)>, /* CLK */
+				<RA_PSEL(RA_PSEL_OSPI, 8, 1)>, /* DQS */
+				<RA_PSEL(RA_PSEL_OSPI, 1, 0)>, /* D0 */
+				<RA_PSEL(RA_PSEL_OSPI, 8, 3)>, /* D1 */
+				<RA_PSEL(RA_PSEL_OSPI, 1, 3)>, /* D2 */
+				<RA_PSEL(RA_PSEL_OSPI, 1, 1)>, /* D3 */
+				<RA_PSEL(RA_PSEL_OSPI, 1, 2)>, /* D4 */
+				<RA_PSEL(RA_PSEL_OSPI, 8, 0)>, /* D5 */
+				<RA_PSEL(RA_PSEL_OSPI, 8, 2)>, /* D6 */
+				<RA_PSEL(RA_PSEL_OSPI, 8, 4)>; /* D7 */
+			drive-strength = "highspeed-high";
+		};
+
+		group2 {
+			psels = <RA_PSEL(RA_PSEL_OSPI, 1, 4)>, /* CS1 */
+				<RA_PSEL(RA_PSEL_OSPI, 1, 6)>; /* RESET */
+			drive-strength = "high";
+		};
+	};
+};
+
+&ospi0 {
+	pinctrl-0 = <&titan_ospi0_default>;
+	pinctrl-names = "default";
+	status = "okay";
+
+	titan_ospi_flash_ctrl: flash-controller@1 {
+		compatible = "renesas,ra-ospi-b-nor";
+		reg = <1>;
+
+		/* 子节点偏移 0 对应 CPU 地址 0x90000000。 */
+		ranges = <0x0 0x90000000 DT_SIZE_M(64)>;
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		/* 先用单线 SPI 模式验证通信。 */
+		protocol-mode = <OSPI_SPI_MODE>;
+		nor-max-frequency = <DT_FREQ_M(50)>;
+		jedec-id = [ef 5b 1a];
+		status = "okay";
+
+		titan_ospi_flash: nor-flash@0 {
+			compatible = "soc-nv-flash";
+			reg = <0x0 DT_SIZE_M(64)>;
+			write-block-size = <16>;
+			erase-block-size = <DT_SIZE_K(4)>;
+		};
+	};
+};
+
+&titan_ospi_flash {
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		/* 应用规划的 Wi-Fi 固件分区：32 MiB 起，512 KiB。 */
+		whd_firmware_partition: partition@2000000 {
+			label = "whd-firmware";
+			reg = <0x02000000 DT_SIZE_K(512)>;
+		};
+	};
+};
+
+
+
+
+
+
+
+
+
+/* 当前应用先验证 Wi-Fi，关闭两路有线以太网控制器。 */
+&eth0 {
+	status = "disabled";
+};
+
+&eth1 {
+	status = "disabled";
+};
+
+/* 关闭对应 PHY 的管理总线。 */
+&mdio0 {
+	status = "disabled";
+};
+
+&mdio1 {
+	status = "disabled";
+};
+
+/* 关闭两颗有线以太网 PHY。 */
+&phy1 {
+	status = "disabled";
+};
+
+&phy2 {
+	status = "disabled";
+};
+
+/* 关闭有线以太网交换模块。 */
+&eswm {
+	status = "disabled";
+};
+
+
+
+
+
+&option_setting_ofs0 { status = "disabled"; };
+&option_setting_ofs2 { status = "disabled"; };
+&option_setting_sas { status = "disabled"; };
+&option_setting_ofs1_sec { status = "disabled"; };
+&option_setting_ofs3_sec { status = "disabled"; };
+&option_setting_ofs1_sel { status = "disabled"; };
+&option_setting_ofs3_sel { status = "disabled"; };
+&option_setting_bps_sec { status = "disabled"; };
+&option_setting_otp_pbps_sec { status = "disabled"; };

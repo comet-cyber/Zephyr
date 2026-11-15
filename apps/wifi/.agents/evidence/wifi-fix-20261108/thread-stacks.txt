@@ -1,0 +1,10 @@
+kernel thread stacks
+0x220028a0 rx_q[0]                          (real size 1504):	unused 1296	usage  208 / 1504 (13 %)
+0x22002750 net_mgmt                         (real size 4096):	unused 3160	usage  936 / 4096 (22 %)
+0x22002190 shell_uart                       (real size 4096):	unused 2244	usage 1852 / 4096 (45 %)
+0x2200f170 WHD                              (real size 5120):	unused 3884	usage 1236 / 5120 (24 %)
+0x22002a38 airoc_event                      (real size 4096):	unused 3792	usage  304 / 4096 ( 7 %)
+0x22002eb8 sysworkq                         (real size 1024):	unused  792	usage  232 / 1024 (22 %)
+0x22002b50 idle                             (real size  320):	unused  252	usage   68 /  320 (21 %)
+0x2200b740 IRQ 00                           (real size 2048):	unused 1640	usage  408 / 2048 (19 %)
+uart:~$ 

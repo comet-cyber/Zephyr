@@ -1,0 +1,22 @@
+
+uart:~$ net ping -c 3 192.168.28.1
+PING 192.168.28.1
+[00:12:41.617,000] <err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=7667 last_cb=0x00000048 completed=0
+28 bytes from 192.168.28.1 to 192.168.28.198: icmp_seq=1 ttl=64 time=24.29 ms
+[00:12:42.617,000] <err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=7699 last_cb=0x00000048 completed=0
+28 bytes from 192.168.28.1 to 192.168.28.198: icmp_seq=2 ttl=64 time=25.60 ms
+[00:12:43.617,000] <err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=7731 last_cb=0x00000048 completed=0
+28 bytes from 192.168.28.1 to 192.168.28.198: icmp_seq=3 ttl=64 time=23.38 ms
+--- ping statistics ---
+uart:~$ 3 packets transmitted, 3 received, 0% packet loss
+uart:~$ rtt min/avg/max = 23.38/24.43/25.60 ms
+uart:~$ uart:~$ kernel thread stacks
+0x22002930 rx_q[0]                          (real size 1504):	unused  532	usage  972 / 1504 (64 %)
+0x220027e0 net_mgmt                         (real size 4096):	unused 3160	usage  936 / 4096 (22 %)
+0x22002190 shell_uart                       (real size 4096):	unused 1948	usage 2148 / 4096 (52 %)
+0x2200f6a8 WHD                              (real size 5120):	unused 3812	usage 1308 / 5120 (25 %)
+0x22002b48 airoc_event                      (real size 4096):	unused 3792	usage  304 / 4096 ( 7 %)
+0x22002fc8 sysworkq                         (real size 1024):	unused  428	usage  596 / 1024 (58 %)
+0x22002c60 idle                             (real size  320):	unused  252	usage   68 /  320 (21 %)
+0x2200bc78 IRQ 00                           (real size 2048):	unused 1640	usage  408 / 2048 (19 %)
+uart:~$ 

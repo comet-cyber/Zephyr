@@ -1,0 +1,146 @@
+{
+  "elf": "F:\\zephyr\\apps\\wifi\\build\\ra8p1_titan\\r7ka8p1kflcac\\cm85\\zephyr\\zephyr.elf",
+  "elf_sha256": "5f4ce489649da6a5d9b56981d88673b4e2717bd4ac917927baa5d8dfd5cc0c86",
+  "sections": [
+    {
+      "name": "rom_start",
+      "load_address": 33554432,
+      "size": 448,
+      "matches": true
+    },
+    {
+      "name": "text",
+      "load_address": 33554880,
+      "size": 85384,
+      "matches": true
+    },
+    {
+      "name": ".ARM.exidx",
+      "load_address": 33640264,
+      "size": 8,
+      "matches": true
+    },
+    {
+      "name": "initlevel",
+      "load_address": 33640272,
+      "size": 376,
+      "matches": true
+    },
+    {
+      "name": "device_area",
+      "load_address": 33640648,
+      "size": 1248,
+      "matches": true
+    },
+    {
+      "name": "sw_isr_table",
+      "load_address": 33641896,
+      "size": 768,
+      "matches": true
+    },
+    {
+      "name": "device_api_area",
+      "load_address": 33642664,
+      "size": 232,
+      "matches": true
+    },
+    {
+      "name": "log_const_area",
+      "load_address": 33642896,
+      "size": 112,
+      "matches": true
+    },
+    {
+      "name": "log_backend_area",
+      "load_address": 33643008,
+      "size": 16,
+      "matches": true
+    },
+    {
+      "name": "zephyr_dbg_info",
+      "load_address": 33643024,
+      "size": 76,
+      "matches": true
+    },
+    {
+      "name": "shell_area",
+      "load_address": 33643100,
+      "size": 48,
+      "matches": true
+    },
+    {
+      "name": "shell_root_cmds_area",
+      "load_address": 33643148,
+      "size": 48,
+      "matches": true
+    },
+    {
+      "name": "shell_subcmds_area",
+      "load_address": 33643196,
+      "size": 260,
+      "matches": true
+    },
+    {
+      "name": "shell_dynamic_subcmds_area",
+      "load_address": 33643456,
+      "size": 12,
+      "matches": true
+    },
+    {
+      "name": "rodata",
+      "load_address": 33643472,
+      "size": 19760,
+      "matches": true
+    },
+    {
+      "name": ".ramfunc",
+      "load_address": 33663232,
+      "size": 288,
+      "matches": true
+    },
+    {
+      "name": "datas",
+      "load_address": 33663520,
+      "size": 3180,
+      "matches": true
+    },
+    {
+      "name": "device_states",
+      "load_address": 33666700,
+      "size": 80,
+      "matches": true
+    },
+    {
+      "name": "log_mpsc_pbuf_area",
+      "load_address": 33666780,
+      "size": 56,
+      "matches": true
+    },
+    {
+      "name": "log_msg_ptr_area",
+      "load_address": 33666836,
+      "size": 4,
+      "matches": true
+    },
+    {
+      "name": "log_dynamic_area",
+      "load_address": 33666840,
+      "size": 56,
+      "matches": true
+    },
+    {
+      "name": "k_heap_area",
+      "load_address": 33666896,
+      "size": 20,
+      "matches": true
+    },
+    {
+      "name": ".last_section",
+      "load_address": 33666916,
+      "size": 4,
+      "matches": true
+    }
+  ],
+  "note": "PT_LOAD padding excluded; actual allocated sections compared.",
+  "all_allocated_sections_match": true
+}

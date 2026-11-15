@@ -1,0 +1,5 @@
+/* Diagnostic A/B: keep the clock low and use only SDIO CMD, CLK, and DAT0. */
+&sdhc1 {
+	max-bus-freq = <1000000>;
+	bus-width = <1>;
+};

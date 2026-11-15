@@ -4,7 +4,8 @@
 
 ## 当前需要解决
 
-- Titan CYW43438 的 Zephyr 适配：RA SDHC 补 CMD5/52/53、SDIO 数据传输及必要通知机制；板级 SDHI1、供电/唤醒 GPIO 和固件/模块参数核对。
+- Titan CYW43438 的板级接入：新版上游已补 RA SDIO 命令/数据/中断，当前核对 SDHI1、供电/唤醒 GPIO、中断编号、overlay 与固件/CLM/NVRAM 参数。
+- 用户已更新 Zephyr 主仓，但 hal_renesas 与 hal_infineon 尚未达到新 west.yml 指定的提交；编译前需对齐必要依赖，不仅更新 Zephyr 主仓。
 - 两个网络的实际接入方式与公网入口：直接互为 peer，还是接受 VPS 中心转发。尚未检查任一侧是否有可达公网 IPv4/IPv6。
 - 既有项目已 active，当前有线使用 eth0；不再要求重复项目启动。
 

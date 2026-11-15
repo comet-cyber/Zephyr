@@ -1,0 +1,31 @@
+--- a/drivers/wifi/infineon/airoc_whd_hal_sdio.c
++++ b/drivers/wifi/infineon/airoc_whd_hal_sdio.c
+@@ -255,10 +255,13 @@
+ 	const whd_oob_config_t *oob_config = &data->whd_drv->bus_priv->sdio_config.oob_config;
+ 	const struct gpio_dt_spec *host_oob_pin = oob_config->host_oob_pin;
+ 
+-	/* Check OOB state is correct */
++	/* WHD describes a physical edge, so compare the raw GPIO level. The
++	 * devicetree helper inverts GPIO_ACTIVE_LOW and would reject a valid IRQ.
++	 */
+ 	int expected_event = (oob_config->is_falling_edge == WHD_TRUE) ? 0 : 1;
+ 
+-	if (!(pins & BIT(host_oob_pin->pin)) || (gpio_pin_get_dt(host_oob_pin) != expected_event)) {
++	if (!(pins & BIT(host_oob_pin->pin)) ||
++	    (gpio_pin_get_raw(host_oob_pin->port, host_oob_pin->pin) != expected_event)) {
+ 		WPRINT_WHD_ERROR(("Unexpected interrupt event %d\n", expected_event));
+ 		WHD_BUS_STATS_INCREMENT_VARIABLE(data->whd_drv->bus_priv, error_intrs);
+ 		return;
+@@ -340,9 +343,10 @@
+ 	uint32_t trig_conf =
+ 		(oob_config->is_falling_edge == WHD_TRUE) ? GPIO_INT_TRIG_LOW : GPIO_INT_TRIG_HIGH;
+ 
+-	/* Enable OOB pin interrupts */
++	/* WHD also calls this API to mask OOB interrupts while servicing the chip. */
+ 	ret = gpio_pin_interrupt_configure_dt(oob_config->host_oob_pin,
+-					      GPIO_INT_ENABLE | GPIO_INT_EDGE | trig_conf);
++					      enable ? (GPIO_INT_ENABLE | GPIO_INT_EDGE | trig_conf)
++						     : GPIO_INT_DISABLE);
+ 	if (ret != 0) {
+ 		WPRINT_WHD_ERROR(("%s: Failed at gpio_pin_interrupt_configure_dt for host_oob_pin, "
+ 				  "result code = %d\n",

@@ -1,0 +1,142 @@
+{
+  "timestamp": "2026-10-28T15:48:36.552718+08:00",
+  "probe_serial": 24060501,
+  "dll": "D:\\Program Files\\IAR\\arm\\bin\\JLink_x64.dll",
+  "target": "R7KA8P1KF_CPU0",
+  "swd_khz": 4000,
+  "flash_base": 2415919104,
+  "flash_size": 67108864,
+  "classification_unit": 4096,
+  "reserved_tail": 65536,
+  "mode": "read-only; no reset, halt, erase, programming, or download",
+  "status": "complete",
+  "initial_halted": false,
+  "image_sha256": "a91aaf1a9feef8ed1cd2b386385349d52975f053e57b4cf1885f8713173ebb95",
+  "non_ff_bytes": 9228289,
+  "ranges": [
+    {
+      "start": 0,
+      "end_exclusive": 3719168,
+      "all_ff": false
+    },
+    {
+      "start": 3719168,
+      "end_exclusive": 3932160,
+      "all_ff": true
+    },
+    {
+      "start": 3932160,
+      "end_exclusive": 4202496,
+      "all_ff": false
+    },
+    {
+      "start": 4202496,
+      "end_exclusive": 4456448,
+      "all_ff": true
+    },
+    {
+      "start": 4456448,
+      "end_exclusive": 4460544,
+      "all_ff": false
+    },
+    {
+      "start": 4460544,
+      "end_exclusive": 4702208,
+      "all_ff": true
+    },
+    {
+      "start": 4702208,
+      "end_exclusive": 4706304,
+      "all_ff": false
+    },
+    {
+      "start": 4706304,
+      "end_exclusive": 5345280,
+      "all_ff": true
+    },
+    {
+      "start": 5345280,
+      "end_exclusive": 6590464,
+      "all_ff": false
+    },
+    {
+      "start": 6590464,
+      "end_exclusive": 6598656,
+      "all_ff": true
+    },
+    {
+      "start": 6598656,
+      "end_exclusive": 10346496,
+      "all_ff": false
+    },
+    {
+      "start": 10346496,
+      "end_exclusive": 10612736,
+      "all_ff": true
+    },
+    {
+      "start": 10612736,
+      "end_exclusive": 11046912,
+      "all_ff": false
+    },
+    {
+      "start": 11046912,
+      "end_exclusive": 12079104,
+      "all_ff": true
+    },
+    {
+      "start": 12079104,
+      "end_exclusive": 12091392,
+      "all_ff": false
+    },
+    {
+      "start": 12091392,
+      "end_exclusive": 12288000,
+      "all_ff": true
+    },
+    {
+      "start": 12288000,
+      "end_exclusive": 12300288,
+      "all_ff": false
+    },
+    {
+      "start": 12300288,
+      "end_exclusive": 16777216,
+      "all_ff": true
+    },
+    {
+      "start": 16777216,
+      "end_exclusive": 16781312,
+      "all_ff": false
+    },
+    {
+      "start": 16781312,
+      "end_exclusive": 66060288,
+      "all_ff": true
+    },
+    {
+      "start": 66060288,
+      "end_exclusive": 66064384,
+      "all_ff": false
+    },
+    {
+      "start": 66064384,
+      "end_exclusive": 67108864,
+      "all_ff": true
+    }
+  ],
+  "candidate": {
+    "offset": 33554432,
+    "size": 524288,
+    "end_exclusive": 34078720,
+    "sha256": "043e238a765f7cfbc62596a50e53c8ffb6b188a99357b0ebede251725d67589f",
+    "reads_verified": 3,
+    "all_ff": true,
+    "logical_ownership_confirmed": false,
+    "erase_write_tested": false
+  },
+  "mram_sha256": "0e22fb427709e1b20b5c17ba6e7ab4059eaaf9b839a1640a922372e0e87fb3b7",
+  "mram_unchanged": true,
+  "final_halted": false,
+  "elapsed_seconds": 409.125
+}

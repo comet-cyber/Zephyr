@@ -1,21 +1,35 @@
 # 当前状态
 
-更新日期：2026-10-24
+更新日期：2026-10-26
 
-## 最新摘要与下次入口（2026-10-24）
+## 最新摘要与下次入口（2026-10-26 驱动需求审查）
 
-- 底层补充：本地 FSP r_sdhi.c 的 R_SDHI_ReadIo/WriteIo/ReadIoExt/WriteIoExt/IoIntEnable 都是返回 FSP_ERR_UNSUPPORTED 的占位实现；Zephyr RA SDHC 也未提供 SDIO enable_interrupt/disable_interrupt 回调。需要核对通知方式并实现必要传输，不能只包装现成 HAL 函数。下一验证目标为最小 SDIO 枚举及实际响应，再接入完整 Wi-Fi 固件与接口。
+- 完整证据与源码位置见 [UPSTREAM_REVIEW](UPSTREAM_REVIEW.md)。本地上游仍为 2a9e8ac155a，HAL 依赖仍未对齐；旧构建仍为 4.4.99，不代表新驱动已运行。
+- SDIO 命令/数据/中断和 AIROC 单 STA 原生网络路径已具备；Titan SDHI1/Wi-Fi 尚未接入。REG_ON=P404、HOST_WAKE=P514 的厂商编码已与 HAL 枚举核对；使用 OOB 时还需启用其 port_irq13，SDHI1 本身需四组不冲突的 IRQ。
+- 新发现：CYW43438 CMake 只默认选择 firmware，缺 CLM/NVRAM 默认分支；本地 blob 不存在。厂商正常 FW/CLM 已以内存方式校验，与 manifest 清单哈希一致；NVRAM 主要参数与本地 AW-CU427-P 候选一致。
+- 新发现：airoc_whd_hal_sdio.c 在 whd_init 本身失败时仍返回 0。需修复并核算 WHD 堆；未在板上触发，不推定已发生崩溃。
+- 当前 AIROC 管理路径明确使 AP 与 STA 互斥；apsta_mode 不能直接作为 Titan 验收。项目以单 STA 连热点/路由器为当前需求，不因此增加 APSTA 任务。
+- 上网配置仍为有线静态地址/空网关，需按 Wi-Fi 网络配置；CM85 当前 768 KiB MRAM，Wi-Fi FW/CLM 约 417 KiB，需要新构建后核算。复位后 WireGuard 握手还需解决默认 uptime 时间戳的递增问题。
+- 当前 src/main.c 原 UDP 与 VPN 查找代码全部被注释，活动 main 只返回 0；已成功的 UDP 实验保留为历史依据。
+- 本轮仅静态审查、只读读取公开厂商资源并同步项目记录；未改业务/驱动/配置、同步模块、创建新构建、下载目标板或更改系统网络，未提交/推送 Git。
 
-- 扫描失败补充：用户截图执行 wifi scan 后立即显示 Scan request failed，没有 Scan requested 或结果列表。本地 prj.conf 已由用户增加 CONFIG_WIFI=y、CONFIG_NET_L2_WIFI_SHELL=y；15:45 的 .config 与 15:46 的 ELF/HEX 已生成。该构建没有 CONFIG_WIFI_AIROC/CONFIG_CYW43438，SDIO_STACK 未启用、sdhc1 disabled，也没有 infineon,airoc-wifi 节点。当前只具备命令/管理层，未接入板载模块；用户随后贴出 net iface：默认接口 1，仅 eth0[1]、eth1[2]、wg0[3]、wg_ctrl[4]，全部 down，没有 Wi-Fi 接口。此输出确认运行时未注册 Wi-Fi，不能把接口 down 与接口不存在混为一谈。
-- 已定位原文：wifi_shell.c 在 net_mgmt(NET_REQUEST_WIFI_SCAN, ...) 返回非零时打印不带错误码的 Scan request failed；不能仅凭该文本认定具体 errno 或热点/信号问题。本轮未修改用户新增配置、业务源码、驱动或目标板。
+## 最新摘要与下次入口（2026-10-24 上游更新后复核）
 
-- 用户明确目标：Titan 与鲁班猫 3 分别处在两个不同网络，通过 WireGuard 打通应用通信；Titan 优先使用板载 CYW43438 Wi-Fi 独立联网。有线直连作为联调基线，不是最终验收拓扑。
-- 本次静态核对：厂商 Wi-Fi 示例确认 CYWL6208-GS 模块（CYW43438）、SDHI1/SDIO、WHD。当前 Zephyr 有 CONFIG_CYW43438 和 AIROC 原生网络驱动，但 Titan 板级 DTS 没有 Wi-Fi 子节点，最初构建 CONFIG_WIFI 未启用；用户随后新增的构建已启用 Wi-Fi 命令支持，但 sdhc1 仍 disabled，AIROC/CYW43438 驱动未启用。
-- 当前 RA SDHC 驱动的 request switch 未实现 CMD5/52/53，未支持命令走 -ENOTSUP；AIROC SDIO 路径需要这些命令。存在明确适配缺口，尚未构建、下载或在板上验证 Wi-Fi。不能承诺仅改 Kconfig 即可联网。详见 [核对依据](WIFI_FEASIBILITY.md)。
-- 本对话已有进度：普通 UDP 编号、长度及内容校验按用户成功反馈通过，100 条统计移至隧道应用阶段。现源码含 memcmp 与 app_wireguard_init()，后者目前只定位 VPN 接口。
-- 对端已从 Windows 切换鲁班猫 3，实测 Debian 12、内核 6.1.99-rk3576-wg。以太网临时 192.168.50.1/24，Titan 192.168.50.2/24，鲁班猫 ping Titan 3/3 成功；鲁班猫临时 wg0/peer 已配置。Titan 隧道初始化、握手及隧道 IP 通信尚无验收证据。
-- 公网入口、直接 peer 或 VPS 中心转发尚未选定。下一增量围绕 Wi-Fi/SDIO 适配与必要原理推进，不反复要求普通 UDP 100 条作为门槛。
-- 本轮只读核对本地源码与厂商公开示例，并同步项目文档；未改业务源码、未构建、未下载、未调整任何设备或 VPS 网络。
+- 用户已更新 Zephyr 主仓，当前为 4.5.0-rc3 / 2a9e8ac155a；主仓工作树干净。本轮只读复核并更新项目文档，没有继续拉取或修改上游源码。
+- 现包含提交 37ff7a7f1b1（drivers: sdhc: Add support for SDIO command for Renesas RA），已实现 CMD5/52、CMD53 数据传输、SDIO 带内中断和 enable_interrupt/disable_interrupt。之前基于 4c6971ba90a 的“RA SDIO 缺失，需从零补驱动”结论不再适用于当前版本。
+- 新实现经 r_sdhi_command_send_no_wait、r_sdhi_transfer_read/write、r_sdhi_read_write_common 等路径工作，没有调用 R_SDHI_ReadIo/WriteIo/ReadIoExt/WriteIoExt/IoIntEnable 这些占位接口。HAL 中它们仍返回 FSP_ERR_UNSUPPORTED，不能单凭这一点判定新版 Zephyr SDIO 不支持。
+- Titan 板级仅给现有 sdhc0 增加了 sdio-int 中断；未创建板载 Wi-Fi 节点，也未启用 SDHI1/Wi-Fi 路径。应用 prj.conf 仍只增加 Wi-Fi 基础支持和 shell。当前下一增量为依赖对齐、SDHI1/Wi-Fi overlay、驱动选择、固件/CLM/NVRAM 核对与构建；没有实际故障前不预先改动新驱动。
+- west list 显示依赖未对齐：hal_renesas 当前 f2eb9bc7352f4dadae08e9f5f16b05bb26779b87，期望 0c0beea010e78899c8ffbfd995cbfe50d3e6595e；hal_infineon 当前 13e4b3cd70fb2d862a37e55665f03af09fe74201，期望 eae914ed1ad0b54af28191d13da9b8e98fb5cb2b。两模块工作树干净；本轮没有执行 west update 或下载 blob。
+- 项目目标保持：Titan 与鲁班猫 3 在两个不同网络通过 WireGuard 通信；Titan 优先使用板载 Wi-Fi，有线作为联调基线。公网入口/直接 peer 或 VPS 中心转发待选。
+- 普通 UDP 编号与回复长度/内容校验按用户反馈通过，100 条统计留到隧道阶段；当前 C 的 app_wireguard_init() 只定位 VPN 接口。鲁班猫实测 Debian 12、6.1.99-rk3576-wg，物理 ping 3/3 成功、临时 wg0/peer 已配置；握手与隧道业务尚未验收。
+- 本轮是静态源码复核，尚未重新构建、下载、扫描或验证 Wi-Fi；不以源码支持代替板上验收。
+
+## 更新前的扫描与驱动检查（历史，基于旧版 4c6971ba90a）
+
+- 用户新增 CONFIG_WIFI=y 与 CONFIG_NET_L2_WIFI_SHELL=y，15:45 生成 .config、15:46 生成 ELF/HEX；截图 wifi scan 返回 Scan request failed，无 Scan requested 或结果列表。旧构建没有 AIROC/CYW43438 驱动与 Wi-Fi 节点，SDIO_STACK 未启用、sdhc1 disabled。
+- 用户随后 net iface：默认接口 1，仅 eth0[1]、eth1[2]、wg0[3]、wg_ctrl[4]，全部 down，没有 Wi-Fi 接口。这是旧固件未注册无线接口的运行证据，不表示新上游配置已生效。
+- wifi_shell.c 在扫描请求返回非零时打印不带错误码的通用消息，不能据此认定具体 errno 或热点不存在。
+- 旧 RA SDHC 没有 CMD5/52/53 与中断回调，HAL SDIO 高层入口也为占位函数；该旧版检查真实有效，但当前应使用上方更新后的调用路径与支持结论。
 
 ## 2026-10-23 历史摘要（当前入口以上节为准）
 

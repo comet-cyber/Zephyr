@@ -1,0 +1,22 @@
+[00:00:01.299,000] [0m<inf> sd: Card does not support CMD8, assuming legacy card[0m
+
+[1316] chip ID: 43430 
+
+[4264] Timeout while waiting for high throughput clock: csr=0x40 loops=2500
+
+[4264] WLAN FW download size: 419799 bytes
+
+[4264] WLAN FW download time: 2948 ms
+
+[4264] SDIO firmware download error, whd_bus_sdio_init failed at 584 
+
+[4264] Could not initialize bus
+
+[4264] Could not initialize wifi platform
+[00:00:04.264,000] [1;31m<err> infineon_airoc_wifi: whd_wifi_on failed: result=0x02000002[0m
+
+[4264] Interface is not up/NULL and failed in function whd_deinit at line 203 
+[00:00:04.264,000] [1;31m<err> infineon_airoc_wifi: airoc_wifi_init_primary failed ret = -19 
+[0m
+*** Booting Zephyr OS build v4.5.0-rc3-3-g2a9e8ac155a3 ***
+[00:00:16.980,000] [1;31m<err> net_wifi_shell: No default interface found for type: STA[0m

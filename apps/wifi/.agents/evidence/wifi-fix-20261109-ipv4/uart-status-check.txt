@@ -1,0 +1,14 @@
+
+uart:~$ wifi status
+[00:17:57.057,000] <err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=3398 last_cb=0x00000048 completed=0
+Status: successful
+==================
+State: DISCONNECTED
+uart:~$ net iface
+Default interface: 1
+
+
+Interface wlan0 (0x22001c18) (WiFi) [1]
+===============================
+Interface is down.
+uart:~$ 

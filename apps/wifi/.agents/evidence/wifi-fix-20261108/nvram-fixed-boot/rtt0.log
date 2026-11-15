@@ -1,0 +1,241 @@
+[00:00:01.299,000] [0m<inf> sd: Card does not support CMD8, assuming legacy card[0m
+
+[1316] chip ID: 43430 
+
+[1554] WLAN FW download size: 419799 bytes
+
+[1554] WLAN FW download time: 238 ms
+
+[1606] Unexpected interrupt event 0
+
+[1632] Unexpected interrupt event 0
+
+[1633] Unexpected interrupt event 0
+
+[1634] Unexpected interrupt event 0
+
+[1635] Unexpected interrupt event 0
+
+[1636] Unexpected interrupt event 0
+
+[1637] Unexpected interrupt event 0
+
+[1638] Unexpected interrupt event 0
+
+[1641] Unexpected interrupt event 0
+
+[1642] Unexpected interrupt event 0
+
+[1642] Unexpected interrupt event 0
+
+[1643] Unexpected interrupt event 0
+
+[1674] Unexpected interrupt event 0
+
+[1674] Unexpected interrupt event 0
+
+[1675] Unexpected interrupt event 0
+
+[1677] Unexpected interrupt event 0
+
+[1677] WLAN MAC Address : 8C:EA:12:52:AE:32
+
+[1678] Unexpected interrupt event 0
+
+[1678] WLAN Firmware    : wl0: Mar 28 2021 22:55:55 version 7.45.98.117 (dc5d9c4 CY) FWID 01-d36e8386
+
+[1679] Unexpected interrupt event 0
+
+[1679] WLAN CLM         : API: 12.2 Data: 9.10.39 Compiler: 1.29.4 ClmImport: 1.36.3 Creation: 2021-03-28 22:47:33 
+
+[1679] WHD VERSION      : 3.3.3.26653
+[1679]  : WIFI5-v3.3.3
+[1679]  : GCC 14.3
+[1679]  : 2025-04-14 03:18:50 +0000
+
+[1680] Unexpected interrupt event 0
+
+[1680] Unexpected interrupt event 0
+
+[1680] Unexpected interrupt event 0
+
+[1681] Unexpected interrupt event 0
+
+[1681] Unexpected interrupt event 0
+*** Booting Zephyr OS build v4.5.0-rc3-3-g2a9e8ac155a3 ***
+[00:00:01.299,000] [0m<inf> sd: Card does not support CMD8, assuming legacy card[0m
+
+[1316] chip ID: 43430 
+
+[1554] WLAN FW download size: 419799 bytes
+
+[1554] WLAN FW download time: 238 ms
+
+[1606] Unexpected interrupt event 0
+
+[1632] Unexpected interrupt event 0
+
+[1633] Unexpected interrupt event 0
+
+[1634] Unexpected interrupt event 0
+
+[1636] Unexpected interrupt event 0
+
+[1637] Unexpected interrupt event 0
+
+[1638] Unexpected interrupt event 0
+
+[1639] Unexpected interrupt event 0
+
+[1641] Unexpected interrupt event 0
+
+[1642] Unexpected interrupt event 0
+
+[1643] Unexpected interrupt event 0
+
+[1643] Unexpected interrupt event 0
+
+[1674] Unexpected interrupt event 0
+
+[1674] Unexpected interrupt event 0
+
+[1675] Unexpected interrupt event 0
+
+[1677] Unexpected interrupt event 0
+
+[1677] WLAN MAC Address : 8C:EA:12:52:AE:32
+
+[1678] Unexpected interrupt event 0
+
+[1678] WLAN Firmware    : wl0: Mar 28 2021 22:55:55 version 7.45.98.117 (dc5d9c4 CY) FWID 01-d36e8386
+
+[1679] Unexpected interrupt event 0
+
+[1679] WLAN CLM         : API: 12.2 Data: 9.10.39 Compiler: 1.29.4 ClmImport: 1.36.3 Creation: 2021-03-28 22:47:33 
+
+[1679] WHD VERSION      : 3.3.3.26653
+[1679]  : WIFI5-v3.3.3
+[1679]  : GCC 14.3
+[1679]  : 2025-04-14 03:18:50 +0000
+
+[1680] Unexpected interrupt event 0
+
+[1680] Unexpected interrupt event 0
+
+[1680] Unexpected interrupt event 0
+
+[1681] Unexpected interrupt event 0
+
+[1681] Unexpected interrupt event 0
+*** Booting Zephyr OS build v4.5.0-rc3-3-g2a9e8ac155a3 ***
+[00:00:16.980,000] [1;31m<err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=3406 last_cb=0x00000048 completed=0[0m
+[00:00:16.980,000] [1;31m<err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=3407 last_cb=0x00000048 completed=0[0m
+[00:00:16.981,000] [1;31m<err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x12003e00 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=3408 last_cb=0x00000048 completed=0[0m
+[00:00:16.982,000] [1;31m<err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=3409 last_cb=0x00000048 completed=0[0m
+[00:00:16.982,000] [1;31m<err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x12003e00 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=3410 last_cb=0x00000048 completed=0[0m
+
+[16984] Unexpected interrupt event 0
+
+[17013] Unexpected interrupt event 0
+
+[17019] Unexpected interrupt event 0
+
+[17020] Unexpected interrupt event 0
+
+[17021] Unexpected interrupt event 0
+
+[17039] Unexpected interrupt event 0
+
+[17164] Unexpected interrupt event 0
+
+[17240] Unexpected interrupt event 0
+
+[17240] Unexpected interrupt event 0
+
+[17242] Unexpected interrupt event 0
+
+[17244] Unexpected interrupt event 0
+
+[17256] Unexpected interrupt event 0
+
+[17257] Unexpected interrupt event 0
+
+[17258] Unexpected interrupt event 0
+
+[17258] Unexpected interrupt event 0
+
+[17259] Unexpected interrupt event 0
+
+[17260] Unexpected interrupt event 0
+
+[17262] Unexpected interrupt event 0
+
+[17266] Unexpected interrupt event 0
+
+[17267] Unexpected interrupt event 0
+
+[17271] Unexpected interrupt event 0
+
+[17364] Unexpected interrupt event 0
+
+[17368] Unexpected interrupt event 0
+
+[17373] Unexpected interrupt event 0
+
+[17389] Unexpected interrupt event 0
+
+[17447] Unexpected interrupt event 0
+
+[17448] Unexpected interrupt event 0
+
+[17451] Unexpected interrupt event 0
+
+[17456] Unexpected interrupt event 0
+
+[17458] Unexpected interrupt event 0
+
+[17464] Unexpected interrupt event 0
+
+[17465] Unexpected interrupt event 0
+
+[17475] Unexpected interrupt event 0
+
+[17476] Unexpected interrupt event 0
+
+[17476] Unexpected interrupt event 0
+
+[17478] Unexpected interrupt event 0
+
+[17518] Unexpected interrupt event 0
+
+[17548] Unexpected interrupt event 0
+
+[17575] Unexpected interrupt event 0
+[00:00:25.982,000] [1;31m<err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=3860 last_cb=0x00000048 completed=0[0m
+[00:00:25.982,000] [1;31m<err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=3861 last_cb=0x00000048 completed=0[0m
+[00:00:25.982,000] [1;31m<err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x12003e00 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=3862 last_cb=0x00000048 completed=0[0m
+[00:00:25.984,000] [1;31m<err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=3863 last_cb=0x00000048 completed=0[0m
+[00:00:25.984,000] [1;31m<err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x12003e00 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=3864 last_cb=0x00000048 completed=0[0m
+
+[25986] Unexpected interrupt event 0
+
+[26015] Unexpected interrupt event 0
+
+[26041] Unexpected interrupt event 0
+
+[26050] Unexpected interrupt event 0
+[00:00:26.050,000] [1;31m<err> os: ***** USAGE FAULT *****[0m
+[00:00:26.050,000] [1;31m<err> os:   Illegal load of EXC_RETURN into PC[0m
+[00:00:26.050,000] [1;31m<err> os: r0/a1:  0x00000000  r1/a2:  0x00000000  r2/a3:  0x00000000[0m
+[00:00:26.050,000] [1;31m<err> os: r3/a4:  0x00000000 r12/ip:  0x01000800 r14/lr:  0xca000000[0m
+[00:00:26.050,000] [1;31m<err> os:  xpsr:  0x00064a00[0m
+[00:00:26.051,000] [1;31m<err> os: No EXC_RETURN available; assuming extended FP stack frame[0m
+[00:00:26.051,000] [1;31m<err> os: s[ 0]:  0x00000000  s[ 1]:  0x00000000  s[ 2]:  0x00000000  s[ 3]:  0x00000000[0m
+[00:00:26.051,000] [1;31m<err> os: s[ 4]:  0x00000000  s[ 5]:  0x00000000  s[ 6]:  0x00000000  s[ 7]:  0x00000000[0m
+[00:00:26.051,000] [1;31m<err> os: s[ 8]:  0x0000002f  s[ 9]:  0x00000000  s[10]:  0x00000001  s[11]:  0xd0d00000[0m
+[00:00:26.051,000] [1;31m<err> os: s[12]:  0x22002c80  s[13]:  0x00000000  s[14]:  0xffffffff  s[15]:  0xffffffff[0m
+[00:00:26.051,000] [1;31m<err> os: fpscr:  0x00040000[0m
+[00:00:26.051,000] [1;31m<err> os: Faulting instruction address (r15/pc): 0xa5025f0a[0m
+[00:00:26.051,000] [1;31m<err> os: >>> ZEPHYR FATAL ERROR 34: Unknown error on CPU 0[0m
+[00:00:26.052,000] [1;31m<err> os: Current thread: 0x220038b0 (net_mgmt)[0m
+[00:00:26.052,000] [1;31m<err> os: Halting system[0m

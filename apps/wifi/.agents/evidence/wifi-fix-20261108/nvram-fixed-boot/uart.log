@@ -1,0 +1,39 @@
+[m
+[1;32muart:~$ [mwifi scan
+Scan requested
+[1;32muart:~$ [m[8D[J
+Num  | SSID                             (len) | Chan (Band)   | RSSI | Security             | BSSID             | MFP     
+[1;32muart:~$ [m[8D[J1    | ZstuTeacherWeb                   14    | 1    (2.4GHz) | -56  | OPEN                 | 06:5F:02:A5:AB:4B | Disable 
+[1;32muart:~$ [m[8D[J2    | ZstuWlan                         8     | 1    (2.4GHz) | -56  | OPEN                 | 0A:5F:02:A5:AB:4B | Disable 
+[1;32muart:~$ [m[8D[J3    | ZstuStudentWeb                   14    | 1    (2.4GHz) | -57  | OPEN                 | 12:5F:02:A5:AB:4B | Disable 
+[1;32muart:~$ [m[8D[J4    | ZstuTeacherWeb                   14    | 1    (2.4GHz) | -55  | OPEN                 | 06:5F:02:A5:AB:4B | Disable 
+[1;32muart:~$ [m[8D[J5    | Redmi_514                        9     | 6    (2.4GHz) | -35  | WPA2-PSK             | 44:DF:65:A3:75:5C | Disable 
+[1;32muart:~$ [m[8D[J6    | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -75  | OPEN                 | 06:5F:02:A5:D5:BD | Disable 
+[1;32muart:~$ [m[8D[J7    | ZstuWlan                         8     | 6    (2.4GHz) | -73  | OPEN                 | 0A:5F:02:A5:D5:BD | Disable 
+[1;32muart:~$ [m[8D[J8    | ZstuStudentWeb                   14    | 6    (2.4GHz) | -74  | OPEN                 | 12:5F:02:A5:D5:BD | Disable 
+[1;32muart:~$ [m[8D[J9    | Redmi_514                        9     | 6    (2.4GHz) | -36  | WPA2-PSK             | 44:DF:65:A3:75:5C | Disable 
+[1;32muart:~$ [m[8D[J10   | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -74  | OPEN                 | 06:5F:02:A5:D5:BD | Disable 
+[1;32muart:~$ [m[8D[J11   | ZstuWlan                         8     | 6    (2.4GHz) | -74  | OPEN                 | 0A:5F:02:A5:D5:BD | Disable 
+[1;32muart:~$ [m[8D[J12   | ZstuStudentWeb                   14    | 6    (2.4GHz) | -76  | OPEN                 | 12:5F:02:A5:D5:BD | Disable 
+[1;32muart:~$ [m[8D[J13   | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -75  | OPEN                 | 06:5F:02:A5:D5:BD | Disable 
+[1;32muart:~$ [m[8D[J14   | ZstuWlan                         8     | 6    (2.4GHz) | -75  | OPEN                 | 0A:5F:02:A5:D5:BD | Disable 
+[1;32muart:~$ [m[8D[J15   | ZstuStudentWeb                   14    | 6    (2.4GHz) | -72  | OPEN                 | 12:5F:02:A5:D5:BD | Disable 
+[1;32muart:~$ [m[8D[J16   | Redmi_514                        9     | 6    (2.4GHz) | -28  | WPA2-PSK             | 44:DF:65:A3:75:5C | Disable 
+[1;32muart:~$ [m[8D[J17   | ZstuTeacherWeb                   14    | 6    (2.4GHz) | -36  | OPEN                 | 06:5F:02:A5:A1:6D | Disable 
+[1;32muart:~$ [m[8D[J18   | ZstuWlan                         8     | 6    (2.4GHz) | -37  | OPEN                 | 0A:5F:02:A5:A1:6D | Disable 
+[1;32muart:~$ [m[8D[J19   | ZstuTeacherWeb                   14    | 11   (2.4GHz) | -66  | OPEN                 | 06:5F:02:A5:AF:D1 | Disable 
+[1;32muart:~$ [m[8D[J20   | ZstuWlan                         8     | 11   (2.4GHz) | -66  | OPEN                 | 0A:5F:02:A5:AF:D1 | Disable 
+[1;32muart:~$ [m[8D[J21   | 514                              3     | 11   (2.4GHz) | -41  | WPA2-PSK             | 08:9B:4B:13:4A:39 | Disable 
+[1;32muart:~$ [m[8D[J22   | 21-C213                          7     | 11   (2.4GHz) | -51  | WPA2-PSK             | 42:41:80:AF:AB:91 | Disable 
+[1;32muart:~$ [m[8D[J23   | ZstuTeacherWeb                   14    | 11   (2.4GHz) | -67  | OPEN                 | 06:5F:02:A5:9B:A3 | Disable 
+[1;32muart:~$ [m[8D[J24   | ZstuWlan                         8     | 11   (2.4GHz) | -66  | OPEN                 | 0A:5F:02:A5:9B:A3 | Disable 
+[1;32muart:~$ [m[8D[J25   | ZstuTeacherWeb                   14    | 11   (2.4GHz) | -69  | OPEN                 | 06:5F:02:A5:AF:D1 | Disable 
+[1;32muart:~$ [m[8D[J26   | 21-C213                          7     | 11   (2.4GHz) | -49  | WPA2-PSK             | 42:41:80:AF:AB:91 | Disable 
+[1;32muart:~$ [m[8D[J27   | ZstuWlan                         8     | 11   (2.4GHz) | -78  | OPEN                 | 2A:CD:55:99:3A:34 | Disable 
+[1;32muart:~$ [m[8D[J28   | ZstuStudentWeb                   14    | 11   (2.4GHz) | -82  | OPEN                 | 2A:CD:55:99:3A:36 | Disable 
+[1;32muart:~$ [m[8D[J29   | DIRECT-e6-514-Printer            21    | 11   (2.4GHz) | -71  | WPA2-PSK             | DE:CD:2F:0C:BB:3E | Disable 
+[1;32muart:~$ [m[8D[JScan request done
+[1;32muart:~$ [mwifi scan
+Scan requested
+[1;32muart:~$ [m[8D[J
+Num  | SSID                             (len) | Chan (Band)   | RSSI | Security             | BSSI

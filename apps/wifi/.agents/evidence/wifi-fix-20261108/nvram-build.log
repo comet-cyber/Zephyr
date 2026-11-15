@@ -1,0 +1,43 @@
+Loading Zephyr default modules (Zephyr base (cached)).
+-- Application: F:/zephyr/apps/wifi
+-- CMake version: 3.28.1
+-- Cache files will be written to: F:/zephyr/zephyr/.cache
+-- Zephyr version: 4.5.0-rc3 (F:/zephyr/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: ra8p1_titan, qualifiers: r7ka8p1kflcac/cm85
+-- Found host-tools: zephyr 1.0.1 (F:/zephyr/toolchains/zephyr-sdk-1.0.1)
+-- Found toolchain: zephyr 1.0.1 (F:/zephyr/toolchains/zephyr-sdk-1.0.1)
+-- Found BOARD.dts: F:/zephyr/zephyr/boards/ruiside/ra8p1_titan/ra8p1_titan_r7ka8p1kflcac_cm85.dts
+-- Found devicetree overlay: F:/zephyr/apps/wifi/boards/ra8p1_titan_r7ka8p1kflcac_cm85.overlay
+-- Generated zephyr.dts: F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/diag-default-rtt/zephyr/zephyr.dts
+-- Generated pickled edt: F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/diag-default-rtt/zephyr/edt.pickle
+-- Generated devicetree_generated.h: F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/diag-default-rtt/zephyr/include/generated/zephyr/devicetree_generated.h
+F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/diag-default-rtt/zephyr/zephyr.dts:572.14-575.5: Warning (simple_bus_reg): /soc/trng: missing or empty reg/ranges property
+Parsing F:/zephyr/zephyr/Kconfig
+Loaded configuration 'F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/diag-default-rtt/zephyr/.config'
+No change to configuration in 'F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/diag-default-rtt/zephyr/.config'
+No change to Kconfig header in 'F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/diag-default-rtt/zephyr/include/generated/zephyr/autoconf.h'
+-- Could NOT find Ccache (missing: CCACHE) (Required is at least version "4.12")
+-- Found gen_kobject_list: F:/zephyr/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (26.3s)
+-- Generating done (1.9s)
+-- Build files have been written to: F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/diag-default-rtt
+[0/1] Re-running CMake...
+[1/546] Generating zephyr/include/generated/wifi_nvram_blob.inc
+[2/546] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[3/9] Building C object zephyr/CMakeFiles/zephyr.dir/F_/zephyr/modules/hal/infineon/whd-expansion/WHD/COMPONENT_WIFI5/resources/resource_imp/whd_resources.c.obj
+[4/9] Linking C static library zephyr\libzephyr.a
+[5/9] Linking C executable zephyr\zephyr_pre0.elf
+[6/9] Generating linker.cmd
+[7/9] Generating isr_tables.c, isr_tables_vt.ld, isr_tables_swi.ld
+[8/9] Building C object zephyr/CMakeFiles/zephyr_final.dir/isr_tables.c.obj
+[9/9] Linking C executable zephyr\zephyr.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:      377180 B       768 KB     47.96%
+             RAM:      257912 B         1 MB     24.60%
+            ITCM:           0 B       128 KB      0.00%
+            DTCM:           0 B       128 KB      0.00%
+           SDRAM:           0 B        64 MB      0.00%
+        IDT_LIST:           0 B        32 KB      0.00%
+
+Generating files from F:/zephyr/apps/wifi/build/ra8p1_titan/r7ka8p1kflcac/cm85/diag-default-rtt/zephyr/zephyr.elf for board: ra8p1_titan/r7ka8p1kflcac/cm85

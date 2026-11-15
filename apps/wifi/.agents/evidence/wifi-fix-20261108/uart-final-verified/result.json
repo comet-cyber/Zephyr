@@ -1,0 +1,29 @@
+{
+  "elf": "F:\\zephyr\\apps\\wifi\\build\\ra8p1_titan\\r7ka8p1kflcac\\cm85\\zephyr\\zephyr.elf",
+  "elf_sha256": "22c7e9ba26fac4f40c5c17adf0dafa17e65088b540fe6e2190646e6f847223f8",
+  "segments": [
+    {
+      "address": "0x2000000",
+      "size": 368100
+    },
+    {
+      "address": "0x2059de4",
+      "size": 7180
+    },
+    {
+      "address": "0x205b9f0",
+      "size": 4
+    }
+  ],
+  "rtt_address": null,
+  "port": "COM4",
+  "probe": 24060501,
+  "flashed": false,
+  "initial_halted": false,
+  "verified_sections": 34,
+  "final_halted": false,
+  "scan_commands_sent": 3,
+  "scan_completions": 3,
+  "fatal_error": false,
+  "scan_passed": true
+}

@@ -1,0 +1,100 @@
+wifi connect -s "Redmi_514" -p "<redacted>" -k 1
+[00:10:31.375,000] <err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=4304 last_cb=0x00000048 completed=0
+Connected
+Connection requested
+uart:~$ [00:10:34.759,000] <err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=4629 last_cb=0x00000048 completed=0
+[00:10:35.286,000] <err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=4707 last_cb=0x00000048 completed=0
+[00:10:36.286,000] <err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=4745 last_cb=0x00000048 completed=0
+wifi statu[s
+00:10:46.443,000] <err> sdhc_renesas_ra: SDHC request failed: opcode=52 arg=0x9a003e01 ret=-5 SD_CMD=0x00000034 SD_INFO1=0x00000400 SD_INFO2=0x00002080 cb=4925 last_cb=0x00000048 completed=0
+Status: successful
+==================
+State: COMPLETED
+Interface Mode: STATION
+Link Mode: WIFI 4 (802.11n/HT)
+SSID: Redmi_514
+BSSID: 44:DF:65:A3:75:5C
+Band: 2.4GHz
+Channel: 6
+Security:  WPA2-PSK
+MFP: Disable
+RSSI: -39
+Beacon Interval: 100
+DTIM: 1
+TWT: Not supported
+Current PHY TX rate (Mbps) : 130.0
+uart:~$ net iface
+Default interface: 1
+
+
+Interface wlan0 (0x22001c18) (WiFi) [1]
+===============================
+Link addr : 8C:EA:12:52:AE:32
+MTU       : 1544
+Flags     : AUTO_START,IPv4,IPv6
+Device    : wifi (0x2047cf0)
+Status    : oper=UP, admin=UP, carrier=ON
+Ethernet capabilities supported:
+	MAC address filtering
+Ethernet PHY device: <none> (0)
+IPv6 unicast addresses (max 2):
+	fe80::8eea:12ff:fe52:ae32 autoconf preferred infinite
+IPv6 multicast addresses (max 3):
+	ff02::1
+	ff02::1:ff52:ae32
+IPv6 prefixes (max 2):
+	<none>
+IPv6 hop limit           : 64
+IPv6 base reachable time : 30000
+IPv6 reachable time      : 44393
+IPv6 retransmit timer    : 0
+IPv4 unicast addresses (max 1):
+	192.168.28.198/255.255.255.0 DHCP preferred
+IPv4 multicast addresses (max 1):
+	<none>
+IPv4 gateway : 192.168.28.1
+DHCPv4 lease time : 43200
+DHCPv4 renew time : 21600
+DHCPv4 server     : 192.168.28.1
+DHCPv4 requested  : 192.168.28.198
+DHCPv4 state      : bound
+DHCPv4 attempts   : 1
+DHCPv4 state      : bound
+uart:~$ net iface
+Default interface: 1
+
+
+Interface wlan0 (0x22001c18) (WiFi) [1]
+===============================
+Link addr : 8C:EA:12:52:AE:32
+MTU       : 1544
+Flags     : AUTO_START,IPv4,IPv6
+Device    : wifi (0x2047cf0)
+Status    : oper=UP, admin=UP, carrier=ON
+Ethernet capabilities supported:
+	MAC address filtering
+Ethernet PHY device: <none> (0)
+IPv6 unicast addresses (max 2):
+	fe80::8eea:12ff:fe52:ae32 autoconf preferred infinite
+IPv6 multicast addresses (max 3):
+	ff02::1
+	ff02::1:ff52:ae32
+IPv6 prefixes (max 2):
+	<none>
+IPv6 hop limit           : 64
+IPv6 base reachable time : 30000
+IPv6 reachable time      : 44393
+IPv6 retransmit timer    : 0
+IPv4 unicast addresses (max 1):
+	192.168.28.198/255.255.255.0 DHCP preferred
+IPv4 multicast addresses (max 1):
+	<none>
+IPv4 gateway : 192.168.28.1
+DHCPv4 lease time : 43200
+DHCPv4 renew time : 21600
+DHCPv4 server     : 192.168.28.1
+DHCPv4 requested  : 192.168.28.198
+DHCPv4 state      : bound
+DHCPv4 attempts   : 1
+DHCPv4 state      : bound
+uart:~$ 

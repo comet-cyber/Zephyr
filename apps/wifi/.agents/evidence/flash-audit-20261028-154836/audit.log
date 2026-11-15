@@ -1,0 +1,71 @@
+Known Flash samples match; CPU is running.
+SWD 4000 kHz matches the 1000 kHz reference.
+Read  1/64 MiB; elapsed 13.0s
+Read  2/64 MiB; elapsed 19.2s
+Read  3/64 MiB; elapsed 25.3s
+Read  4/64 MiB; elapsed 31.4s
+Read  5/64 MiB; elapsed 37.6s
+Read  6/64 MiB; elapsed 43.7s
+Read  7/64 MiB; elapsed 49.8s
+Read  8/64 MiB; elapsed 55.9s
+Read  9/64 MiB; elapsed 62.0s
+Read 10/64 MiB; elapsed 68.2s
+Read 11/64 MiB; elapsed 74.4s
+Read 12/64 MiB; elapsed 80.7s
+Read 13/64 MiB; elapsed 87.0s
+Read 14/64 MiB; elapsed 93.2s
+Read 15/64 MiB; elapsed 99.5s
+Read 16/64 MiB; elapsed 105.7s
+Read 17/64 MiB; elapsed 111.8s
+Read 18/64 MiB; elapsed 117.9s
+Read 19/64 MiB; elapsed 124.1s
+Read 20/64 MiB; elapsed 130.2s
+Read 21/64 MiB; elapsed 136.3s
+Read 22/64 MiB; elapsed 142.4s
+Read 23/64 MiB; elapsed 148.5s
+Read 24/64 MiB; elapsed 154.6s
+Read 25/64 MiB; elapsed 160.7s
+Read 26/64 MiB; elapsed 166.8s
+Read 27/64 MiB; elapsed 172.8s
+Read 28/64 MiB; elapsed 179.0s
+Read 29/64 MiB; elapsed 185.1s
+Read 30/64 MiB; elapsed 191.2s
+Read 31/64 MiB; elapsed 197.3s
+Read 32/64 MiB; elapsed 203.4s
+Read 33/64 MiB; elapsed 209.5s
+Read 34/64 MiB; elapsed 215.7s
+Read 35/64 MiB; elapsed 221.8s
+Read 36/64 MiB; elapsed 227.8s
+Read 37/64 MiB; elapsed 233.9s
+Read 38/64 MiB; elapsed 240.0s
+Read 39/64 MiB; elapsed 246.1s
+Read 40/64 MiB; elapsed 252.1s
+Read 41/64 MiB; elapsed 258.2s
+Read 42/64 MiB; elapsed 264.2s
+Read 43/64 MiB; elapsed 270.3s
+Read 44/64 MiB; elapsed 276.4s
+Read 45/64 MiB; elapsed 282.5s
+Read 46/64 MiB; elapsed 288.6s
+Read 47/64 MiB; elapsed 294.7s
+Read 48/64 MiB; elapsed 300.8s
+Read 49/64 MiB; elapsed 306.9s
+Read 50/64 MiB; elapsed 313.1s
+Read 51/64 MiB; elapsed 319.2s
+Read 52/64 MiB; elapsed 325.3s
+Read 53/64 MiB; elapsed 331.4s
+Read 54/64 MiB; elapsed 337.4s
+Read 55/64 MiB; elapsed 343.5s
+Read 56/64 MiB; elapsed 349.6s
+Read 57/64 MiB; elapsed 355.7s
+Read 58/64 MiB; elapsed 361.7s
+Read 59/64 MiB; elapsed 367.8s
+Read 60/64 MiB; elapsed 373.8s
+Read 61/64 MiB; elapsed 379.9s
+Read 62/64 MiB; elapsed 386.0s
+Read 63/64 MiB; elapsed 392.1s
+Read 64/64 MiB; elapsed 398.2s
+Candidate reread 1: all 524288 bytes are FF.
+Candidate reread 2: all 524288 bytes are FF.
+Candidate offset=0x02000000, size=0x00080000
+Full readback complete; code MRAM unchanged.
+Final halted state: False

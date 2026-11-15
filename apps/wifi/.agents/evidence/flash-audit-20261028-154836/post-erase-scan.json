@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-10-31T17:22:10+0800",
+  "mode": "read-only J-Link memory scan; no reset, halt, erase, write, or download",
+  "flash_cpu_base": "0x90000000",
+  "flash_size": 67108864,
+  "non_ff_bytes": 0,
+  "sha256": "dd30d9e07e89c1749cd420e998190ab9e31d4b43d27b5862887320ba2a2b8b0f",
+  "initial_halted": false,
+  "final_halted": false,
+  "elapsed_seconds": 389.891
+}

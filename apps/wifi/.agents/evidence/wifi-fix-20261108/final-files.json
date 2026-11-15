@@ -1,0 +1,38 @@
+{
+  "F:\\zephyr\\apps\\wifi\\CMakeLists.txt": {
+    "size": 2886,
+    "sha256": "946950560bacbb572328a1d8137a441b895f8c4f71e606e9f5c8b899932e7b03"
+  },
+  "F:\\zephyr\\apps\\wifi\\prj.conf": {
+    "size": 1609,
+    "sha256": "bc55ec061562181b871a0a50bd9a0dee6dcd35ace741b8861f239b4fa898713b"
+  },
+  "F:\\zephyr\\apps\\wifi\\src\\wifi_nvram_image_data.h": {
+    "size": 554,
+    "sha256": "4d82dd3d78655129f80825c8ab346c26c3e7905470fad63fbb11fffa0c27b665"
+  },
+  "F:\\zephyr\\apps\\wifi\\scripts\\generate_nvram.py": {
+    "size": 1824,
+    "sha256": "26e3dacedfba857698615510ec6c86a2b575658730c8cc81a060464dc2ca178f"
+  },
+  "F:\\zephyr\\zephyr\\drivers\\wifi\\infineon\\airoc_whd_hal_sdio.c": {
+    "size": 11692,
+    "sha256": "402daf0818b4f58b51391367c386fc4a1d4307d342e0eff6d80f9ec5fcf83499"
+  },
+  "F:\\zephyr\\zephyr\\drivers\\sdhc\\sdhc_renesas_ra.c": {
+    "size": 38765,
+    "sha256": "2aac40cd52e13ad193a511821fbf3f5cd5d8c160fb920417f45fbf3e3992b3e5"
+  },
+  "F:\\zephyr\\apps\\wifi\\build\\ra8p1_titan\\r7ka8p1kflcac\\cm85\\zephyr\\zephyr.bin": {
+    "size": 375284,
+    "sha256": "4ce6db60b4b1e877fae45b77733aa8209c0134f92eeb0604a620513143703d07"
+  },
+  "F:\\zephyr\\apps\\wifi\\build\\ra8p1_titan\\r7ka8p1kflcac\\cm85\\zephyr\\zephyr.hex": {
+    "size": 1055754,
+    "sha256": "0d79ecd4c379819a391e3f1cce0654c43fe977e81fbbda6c4b9e322de0d8acce"
+  },
+  "F:\\zephyr\\apps\\wifi\\build\\ra8p1_titan\\r7ka8p1kflcac\\cm85\\zephyr\\zephyr.elf": {
+    "size": 17077248,
+    "sha256": "22c7e9ba26fac4f40c5c17adf0dafa17e65088b540fe6e2190646e6f847223f8"
+  }
+}

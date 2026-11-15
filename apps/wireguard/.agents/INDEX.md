@@ -1,10 +1,10 @@
 # Zephyr WireGuard 项目
 
-更新日期：2026-10-24
+更新日期：2026-10-26
 
 - phase: active
 - home: F:\zephyr\apps\wireguard
-- 最终目标：Titan 与鲁班猫 3 在两个不同网络中，通过 WireGuard 完成应用双向通信；Titan 优先使用板载 CYW43438 独立联网。当前增量为 Wi-Fi/SDIO 适配可行性核对，已确认本地 RA SDHC 驱动存在 SDIO 命令缺口。有线链路保留为本地隧道联调基线。
+- 最终目标：Titan 与鲁班猫 3 在两个不同网络中通过 WireGuard 完成应用双向通信，Titan 优先使用板载 CYW43438。用户已更新 Zephyr 到 4.5.0-rc3 / 2a9e8ac155a；新 RA SDHC 驱动已具备 CMD5/52/53 与 SDIO 中断，旧版驱动缺口不再作为当前阻塞。下一增量是依赖版本对齐、SDHI1/Wi-Fi 的 overlay、驱动选项与固件资源接入。
 
 ## 当前入口
 
@@ -17,14 +17,18 @@
 
 ## 最新事实
 
-- 2026-10-24 扫描排查：用户新增 CONFIG_WIFI=y 与 CONFIG_NET_L2_WIFI_SHELL=y，15:45 配置/15:46 构建已包含命令支持；用户截图 wifi scan 返回 Scan request failed。当前构建没有启用 AIROC/CYW43438 驱动，SDIO_STACK 未启用，sdhc1 仍 disabled、没有 Wi-Fi 设备节点；用户随后提供 net iface：仅 eth0、eth1、wg0、wg_ctrl，全部 down，没有 Wi-Fi 接口，运行时缺少 Wi-Fi 接口已确认。下一步处理板级与 SDIO 适配，不再重复要求列接口。
+- 2026-10-26 [上游驱动审查](UPSTREAM_REVIEW.md)：主要 SDIO/STA/native networking 接口已具备，但 Titan SDHI1/Wi-Fi 接入、CYW43438 的 CLM/NVRAM 默认选择、本地 blob 和依赖仍有缺口；SDIO 封装存在 whd_init 失败仍返回 0 的错误路径。当前 AIROC 管理路径不支持 AP/STA 并发，项目单 STA 目标可继续。厂商 FW/CLM 的哈希与上游清单一致，NVRAM 主要参数也匹配；仍需资源接入、新构建与板上验收。WireGuard 默认 uptime 时间戳需处理复位恢复。当前 main.c 的 UDP/VPN 代码全部被注释，实际为 return 0；此前功能通过结论属于历史实验。本轮仅审查和保存文档。
+
+- 2026-10-24 上游更新复核：Zephyr 现包含 37ff7a7f1b1，已补 RA SDIO 命令、数据传输与中断。此路径不调用 HAL 的 ReadIo/WriteIo 占位接口；不能再据这些占位接口认定缺少 SDIO 支持。Titan 仍无板级 Wi-Fi 节点，HAL 模块与新 west.yml 未对齐；尚无新版本 Wi-Fi 构建/板上验收。
+
+- 2026-10-24 更新前的扫描排查（旧固件）：用户新增 CONFIG_WIFI=y 与 CONFIG_NET_L2_WIFI_SHELL=y，15:45 配置/15:46 构建已包含命令支持；用户截图 wifi scan 返回 Scan request failed。当前构建没有启用 AIROC/CYW43438 驱动，SDIO_STACK 未启用，sdhc1 仍 disabled、没有 Wi-Fi 设备节点；用户随后提供 net iface：仅 eth0、eth1、wg0、wg_ctrl，全部 down，没有 Wi-Fi 接口，运行时缺少 Wi-Fi 接口已确认。该旧固件的接口排查已完成，不再重复要求列接口；后续按上方新版本结论推进。
 
 - 2026-10-24：用户明确最终目标为两个不同网络下的 Titan ↔ 鲁班猫 WireGuard 项目。有线直连是联调手段；Wi-Fi 已纳入项目范围。公网入口与是否接受 VPS 中心转发仍待选择。
 - 普通 UDP 的编号、回复长度与内容校验已由用户反馈成功；已进入 WireGuard 学习。当前源码包含 VPN 接口定位、长度比较与 memcmp；没有握手成功证据。
 
 - 2026-10-23：用户确认程序下载已恢复；保留已成功使用的下载配置，不重复搭环境或继续无关的探针排障。下载成功与应用收发分别验收；本轮未提供带序号正文的实际收发输出。
 - 2026-10-21：用户贴出十次发送成功、十次接收超时和 socket 关闭日志；只读检查当时 Windows 的 UDP 4242 无监听进程。指导先启动回显脚本再复位后，用户确认“成功了”。最小真实双向回显按用户报告完成；未获得该轮逐包日志，不推定十包全收或无丢包。
-- 目标为 Titan 大板 Cortex-M85，board target：ra8p1_titan/r7ka8p1kflcac/cm85；Zephyr 4.4.99，源码 4c6971ba90a。
+- 目标为 Titan 大板 Cortex-M85，board target：ra8p1_titan/r7ka8p1kflcac/cm85；原基线为 Zephyr 4.4.99 / 4c6971ba90a；用户现已更新至 4.5.0-rc3 / 2a9e8ac155a。
 - 最小 main + printk 已由用户报告运行成功；网络 shell 输出由用户提供。
 - 当前对端已切换为鲁班猫 3（实测 Debian 12，内核 6.1.99-rk3576-wg）；eth0 临时 192.168.50.1/24，Wi-Fi 192.168.28.172 保留管理用途。鲁班猫 ping Titan 3/3 成功，临时 wg0 与 peer 已配置，尚无隧道握手验收。
 - 首轮 Windows 真实以太网 192.168.50.1/24；Titan eth0（接口1）192.168.50.2/24，carrier ON，千兆全双工，MAC 74:90:50:01:02:03；eth1未用。

@@ -1,0 +1,74 @@
+
+cmake_minimum_required(VERSION 3.28.0)
+
+# 应用只引用上游资源文件的路径；不修改上游模块，也不把固件加入 CM85 镜像。
+get_filename_component(TITAN_INFINEON_DIR
+    "${CMAKE_CURRENT_LIST_DIR}/../../modules/hal/infineon"
+    ABSOLUTE
+)
+
+set(WIFI_FIRMWARE_IMAGE
+    "${TITAN_INFINEON_DIR}/zephyr/blobs/img/whd/resources/firmware/COMPONENT_43438/43438A1.bin"
+)
+
+set(WIFI_CLM_IMAGE
+    "${TITAN_INFINEON_DIR}/zephyr/blobs/img/whd/resources/clm/COMPONENT_43438/COMPONENT_AW-CU427-P/43438A1.clm_blob"
+)
+
+set(WIFI_NVRAM_IMAGE
+    "${TITAN_INFINEON_DIR}/whd-expansion/WHD/COMPONENT_WIFI5/resources/nvram/COMPONENT_43438/COMPONENT_AW-CU427-P/cyw943438_aw-cu427.txt"
+)
+
+if(NOT EXISTS "${WIFI_FIRMWARE_IMAGE}")
+    message(FATAL_ERROR "Wi-Fi firmware image not found: ${WIFI_FIRMWARE_IMAGE}")
+endif()
+
+if(NOT EXISTS "${WIFI_CLM_IMAGE}")
+    message(FATAL_ERROR "Wi-Fi CLM image not found: ${WIFI_CLM_IMAGE}")
+endif()
+
+if(NOT EXISTS "${WIFI_NVRAM_IMAGE}")
+    message(FATAL_ERROR "Wi-Fi NVRAM image not found: ${WIFI_NVRAM_IMAGE}")
+endif()
+
+# 固件已经预先写入外部 Flash；这里只读取源文件大小作为运行时边界，
+# 不生成 firmware .inc，也不会把 firmware 二进制链接进主控镜像。
+file(SIZE "${WIFI_FIRMWARE_IMAGE}" WIFI_FIRMWARE_IMAGE_SIZE)
+
+find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
+project(wifi)
+
+set(WIFI_GENERATED_DIR
+    "${ZEPHYR_BINARY_DIR}/include/generated"
+)
+
+zephyr_include_directories(
+    "${CMAKE_CURRENT_LIST_DIR}/src"
+    "${WIFI_GENERATED_DIR}"
+)
+
+# 让 WHD 的 resource_read() 把外部资源交给应用回调。
+zephyr_compile_definitions(USES_RESOURCES_IN_EXTERNAL_STORAGE)
+target_compile_definitions(app PRIVATE
+    WIFI_FW_IMAGE_SIZE=${WIFI_FIRMWARE_IMAGE_SIZE}
+)
+
+# custom resource 模式下，上游仍需要 CLM/NVRAM 的 C 数组；这两个生成文件
+# 只包含 CLM/NVRAM，不包含 419799 字节的 Wi-Fi 固件。
+generate_inc_file_for_target(
+    app
+    "${WIFI_CLM_IMAGE}"
+    "${WIFI_GENERATED_DIR}/wifi_clm_blob.inc"
+)
+
+generate_inc_file_for_target(
+    app
+    "${WIFI_NVRAM_IMAGE}"
+    "${WIFI_GENERATED_DIR}/wifi_nvram_blob.inc"
+)
+
+target_sources(app PRIVATE
+    src/main.c
+    src/wifi_firmware_flash.c
+    src/wifi_resources.c
+)
