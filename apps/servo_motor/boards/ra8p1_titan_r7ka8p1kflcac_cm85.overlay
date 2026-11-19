@@ -1,0 +1,52 @@
+#include <zephyr/dt-bindings/pwm/pwm.h>
+#include <zephyr/dt-bindings/pinctrl/renesas/pinctrl-ra.h>
+
+
+/{
+	servo:servo {
+		compatible = "pwm-servo";
+		pwms = <&pwm12 1 PWM_MSEC(20) PWM_POLARITY_NORMAL>;
+		min-pulse = <PWM_USEC(500)>; /* 0.5ms */
+		max-pulse = <PWM_USEC(2500)>; /* 2.5ms */
+	};
+
+};
+
+&pinctrl {
+	pwm12_servo_default: pwm12_servo_default {
+		group1 {
+			/* GTIOC12A */
+			psels = <RA_PSEL(RA_PSEL_GPT1, 7, 15)>;
+			drive-strength = "medium";
+		};
+
+		group2 {
+			/* GTIOC12B */
+			psels = <RA_PSEL(RA_PSEL_GPT1, 7, 14)>;
+			drive-strength = "medium";
+		};
+	};
+};
+
+&pwm12 {
+	pinctrl-0 = <&pwm12_servo_default>;
+	pinctrl-names = "default";
+	interrupts = <31 1>, <32 1>;
+	interrupt-names = "gtioca", "overflow";
+	status = "okay";
+};
+
+
+
+
+/* 与本仓库 apps/ 保持一致：禁用 option_setting 节点，防止烧录时触碰配置/OTP 区 */
+&option_setting_ofs0 { status = "disabled"; };
+&option_setting_ofs2 { status = "disabled"; };
+&option_setting_sas { status = "disabled"; };
+&option_setting_ofs1_sec { status = "disabled"; };
+&option_setting_ofs3_sec { status = "disabled"; };
+&option_setting_ofs1_sel { status = "disabled"; };
+&option_setting_ofs3_sel { status = "disabled"; };
+&option_setting_bps_sec { status = "disabled"; };
+&option_setting_otp_pbps_sec { status = "disabled"; };
+
