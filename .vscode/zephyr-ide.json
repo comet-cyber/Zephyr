@@ -112,6 +112,168 @@
         "config": [],
         "overlay": []
       }
+    },
+    "sys_heap": {
+      "relPath": "apps/sys_heap",
+      "name": "sys_heap",
+      "buildConfigs": {
+        "build/ra8p1_titan/r7ka8p1kflcac/cm85": {
+          "relBoardSubDir": "ruiside/ra8p1_titan",
+          "board": "ra8p1_titan/r7ka8p1kflcac/cm85",
+          "name": "build/ra8p1_titan/r7ka8p1kflcac/cm85",
+          "compilerOptimization": "debug",
+          "westBuildArgs": [],
+          "westBuildCMakeArgs": [
+            "-DCONFIG_DEBUG_OPTIMIZATIONS=y",
+            "-DCONFIG_DEBUG_THREAD_INFO=y"
+          ],
+          "confFiles": {
+            "config": [],
+            "overlay": []
+          },
+          "activeProfile": "Ra8p1 Titan Board"
+        }
+      },
+      "twisterConfigs": {},
+      "confFiles": {
+        "config": [],
+        "overlay": []
+      }
+    },
+    "threads": {
+      "relPath": "apps/threads",
+      "name": "threads",
+      "buildConfigs": {
+        "build/ra8p1_titan/r7ka8p1kflcac/cm85": {
+          "relBoardSubDir": "ruiside/ra8p1_titan",
+          "board": "ra8p1_titan/r7ka8p1kflcac/cm85",
+          "name": "build/ra8p1_titan/r7ka8p1kflcac/cm85",
+          "compilerOptimization": "debug",
+          "westBuildArgs": [],
+          "westBuildCMakeArgs": [
+            "-DCONFIG_DEBUG_OPTIMIZATIONS=y",
+            "-DCONFIG_DEBUG_THREAD_INFO=y"
+          ],
+          "confFiles": {
+            "config": [],
+            "overlay": []
+          },
+          "activeProfile": "Ra8p1 Titan Board"
+        }
+      },
+      "twisterConfigs": {},
+      "confFiles": {
+        "config": [],
+        "overlay": []
+      }
+    },
+    "synchronization": {
+      "relPath": "apps/synchronization",
+      "name": "synchronization",
+      "buildConfigs": {
+        "build/ra8p1_titan/r7ka8p1kflcac/cm85": {
+          "relBoardSubDir": "ruiside/ra8p1_titan",
+          "board": "ra8p1_titan/r7ka8p1kflcac/cm85",
+          "name": "build/ra8p1_titan/r7ka8p1kflcac/cm85",
+          "compilerOptimization": "debug",
+          "westBuildArgs": [],
+          "westBuildCMakeArgs": [
+            "-DCONFIG_DEBUG_OPTIMIZATIONS=y",
+            "-DCONFIG_DEBUG_THREAD_INFO=y"
+          ],
+          "confFiles": {
+            "config": [],
+            "overlay": []
+          },
+          "activeProfile": "Ra8p1 Titan Board"
+        }
+      },
+      "twisterConfigs": {},
+      "confFiles": {
+        "config": [],
+        "overlay": []
+      }
+    },
+    "msg_queue": {
+      "relPath": "apps/msg_queue",
+      "name": "msg_queue",
+      "buildConfigs": {
+        "build/ra8p1_titan/r7ka8p1kflcac/cm85": {
+          "relBoardSubDir": "ruiside/ra8p1_titan",
+          "board": "ra8p1_titan/r7ka8p1kflcac/cm85",
+          "name": "build/ra8p1_titan/r7ka8p1kflcac/cm85",
+          "compilerOptimization": "debug",
+          "westBuildArgs": [],
+          "westBuildCMakeArgs": [
+            "-DCONFIG_DEBUG_OPTIMIZATIONS=y",
+            "-DCONFIG_DEBUG_THREAD_INFO=y"
+          ],
+          "confFiles": {
+            "config": [],
+            "overlay": []
+          },
+          "activeProfile": "Ra8p1 Titan Board"
+        }
+      },
+      "twisterConfigs": {},
+      "confFiles": {
+        "config": [],
+        "overlay": []
+      }
+    },
+    "condvar": {
+      "relPath": "apps/condition_variables/condvar",
+      "name": "condvar",
+      "buildConfigs": {
+        "build/ra8p1_titan/r7ka8p1kflcac/cm85": {
+          "relBoardSubDir": "ruiside/ra8p1_titan",
+          "board": "ra8p1_titan/r7ka8p1kflcac/cm85",
+          "name": "build/ra8p1_titan/r7ka8p1kflcac/cm85",
+          "compilerOptimization": "debug",
+          "westBuildArgs": [],
+          "westBuildCMakeArgs": [
+            "-DCONFIG_DEBUG_OPTIMIZATIONS=y",
+            "-DCONFIG_DEBUG_THREAD_INFO=y"
+          ],
+          "confFiles": {
+            "config": [],
+            "overlay": []
+          },
+          "activeProfile": "Ra8p1 Titan Board"
+        }
+      },
+      "twisterConfigs": {},
+      "confFiles": {
+        "config": [],
+        "overlay": []
+      }
+    },
+    "simple": {
+      "relPath": "apps/condition_variables/simple",
+      "name": "simple",
+      "buildConfigs": {
+        "build/ra8p1_titan/r7ka8p1kflcac/cm85": {
+          "relBoardSubDir": "ruiside/ra8p1_titan",
+          "board": "ra8p1_titan/r7ka8p1kflcac/cm85",
+          "name": "build/ra8p1_titan/r7ka8p1kflcac/cm85",
+          "compilerOptimization": "debug",
+          "westBuildArgs": [],
+          "westBuildCMakeArgs": [
+            "-DCONFIG_DEBUG_OPTIMIZATIONS=y",
+            "-DCONFIG_DEBUG_THREAD_INFO=y"
+          ],
+          "confFiles": {
+            "config": [],
+            "overlay": []
+          },
+          "activeProfile": "Ra8p1 Titan Board"
+        }
+      },
+      "twisterConfigs": {},
+      "confFiles": {
+        "config": [],
+        "overlay": []
+      }
     }
   },
   "runnerProfiles": [

@@ -1,0 +1,15 @@
+
+
+
+
+/* 与本仓库 apps/ 保持一致：禁用 option_setting 节点，防止烧录时触碰配置/OTP 区 */
+&option_setting_ofs0 { status = "disabled"; };
+&option_setting_ofs2 { status = "disabled"; };
+&option_setting_sas { status = "disabled"; };
+&option_setting_ofs1_sec { status = "disabled"; };
+&option_setting_ofs3_sec { status = "disabled"; };
+&option_setting_ofs1_sel { status = "disabled"; };
+&option_setting_ofs3_sel { status = "disabled"; };
+&option_setting_bps_sec { status = "disabled"; };
+&option_setting_otp_pbps_sec { status = "disabled"; };
+
