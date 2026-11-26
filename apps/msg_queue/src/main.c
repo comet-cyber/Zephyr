@@ -8,7 +8,8 @@
 
 #define BUF_SIZE 10
 #define INACTIVE -1
-#define PRIORITY 5
+#define CONSUMER_PRIORITY 6
+#define PRODUCER_PRIORITY 5
 
 K_MSGQ_DEFINE(my_msgq, sizeof(char), BUF_SIZE, 1);
 
@@ -62,7 +63,7 @@ void consumer_function(void *p1, void *p2, void *p3)
 }
 
 K_THREAD_DEFINE(consumer_thread, 2048, consumer_function,
-	NULL, NULL, NULL, PRIORITY, 0, INACTIVE);
+	NULL, NULL, NULL, CONSUMER_PRIORITY, 0, INACTIVE);
 
 K_THREAD_DEFINE(producer_thread, 2048, producer_function,
-	((void *) consumer_thread), NULL, NULL, PRIORITY, 0, 0);
+	((void *) consumer_thread), NULL, NULL, PRODUCER_PRIORITY, 0, 0);
